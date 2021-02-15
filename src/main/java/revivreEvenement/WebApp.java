@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Revivre_Evenement.controller;
+package revivreEvenement;
+
 
 /**
  *
  * @author QUENTIN
  */
-public class EvenementController {
+
+public class WebApp {
+    
+    public static void main(String[] args) {
+        
+	}
     
 }

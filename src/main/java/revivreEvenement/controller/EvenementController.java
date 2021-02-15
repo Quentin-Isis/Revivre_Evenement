@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Revivre_Evenement.dao;
+package revivreEvenement.controller;
 
 /**
  *
  * @author QUENTIN
  */
-public class EvenementRepository {
+public class EvenementController {
     
 }
