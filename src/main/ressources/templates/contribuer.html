@@ -4,7 +4,7 @@
         <title>Revivre l'évènement: Wiki</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/style.css"/>
+        <link rel="stylesheet" href="../static/css/contribuer.css"/>
         <link rel="icon" href="../images/logo_icon.ico"/>
     </head>
     <body>
@@ -12,7 +12,7 @@
             <a href="../static/index.html"> <img id="logo" src="../images/header/logo_v1.png" alt="logo_v1.png"/> </a>
             <a href="templates/search.html">Rechercher un évènement</a>
             <nav id="lien_top_right">
-                <ul>
+                <ul id="liens">
                     <li><a href="../static/index.html">Accueil</a></li>
                     <li><a href='contribuer.html'>Contribuer</a></li>
                     <li><a href="wiki.html">Évent au hasard</a></li>
@@ -20,5 +20,12 @@
             </nav>
         </header>
         <h1>Contribuer</h1>
+        <form id="formulaire">
+            <label for="pseudo">Pseudo : </label><input id="pseudo" type="text" />
+            <label for="latitude">Latitude : </label><input id="latitude" type="text" />
+            <label for="longitude">Longitude : </label><input id="longitude" type="text" />
+            <label for="PJ">Pièce jointe : </label><input id="PJ" type="file" />            
+            <input type = "submit"/>
+        </form>
     </body>
 </html>
