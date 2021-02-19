@@ -12,6 +12,10 @@ and open the template in the editor.
 
 /** HEADER */
 
+
+body{
+    background-color:grey;
+}
 header img{
     width: 150px;
     height: 150px;
@@ -21,6 +25,24 @@ header img{
 
 #map {
     height: 100%;
+  }
+  
+  header{
+      display:flex;
+      border-bottom: solid 1px black;
+      justify-content: space-between;
+  }
+  
+  #recherche{
+      text-decoration: none;
+      color: black;
+      position:relative;
+      top:131px;
+      height:19px;
+  }
+ 
+  #recherche:hover{
+      background-color: yellow;
   }
   
   /* Optional: Makes the sample page fill the window. */
