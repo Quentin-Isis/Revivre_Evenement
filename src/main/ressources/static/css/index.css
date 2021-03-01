@@ -10,31 +10,18 @@ and open the template in the editor.
     Promis j'apprendrais à utiliser bootscrap ou des framework
 */
 
-/** HEADER */
+
 
 
 body{
     background-color:rgba(235,210,152,92);
 }
+/** HEADER */
 #logo{
     width: 150px;
     height: 150px;
 }
 
-#affichage{
-    height:50px;
-    background-color: rgba(235,210,152,92);
-    background-image: url(../images/header/mini_mode_jour.png);
-}
-
-
-
-/** MAP*/
-
-#map {
-    height: 100%;
-  }
-  
   header{
       display:flex;
       border-bottom: solid 1px black;
@@ -69,6 +56,22 @@ body{
   #recherche:hover{
       background-color: yellow;
   }
+  
+#affichage{
+    height:50px;
+    background-color: rgba(235,210,152,92);
+    background-image: url(../images/header/mini_mode_jour.png);
+}
+
+
+
+/** MAP*/
+
+#map {
+    height: 100%;
+  }
+  
+
   
   #timeline{
       height:30px;
