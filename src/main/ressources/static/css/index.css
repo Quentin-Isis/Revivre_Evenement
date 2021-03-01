@@ -16,10 +16,17 @@ and open the template in the editor.
 body{
     background-color:grey;
 }
-header img{
+#logo{
     width: 150px;
     height: 150px;
 }
+
+#affichage{
+    width:52px;
+    height:31px;
+}
+
+
 
 /** MAP*/
 
@@ -31,8 +38,25 @@ header img{
       display:flex;
       border-bottom: solid 1px black;
       justify-content: space-between;
+      flex-direction: row;
   }
+  ul{
+      display:flex;
+      position:relative;
+      top:117px;      
+  }
+  li{
+      list-style-type :none;
+      margin-right:10px;
+  }
+  a{
+      text-decoration: none;
+      color:black;
+  } 
   
+  a:hover{
+      background-color: yellow;      
+  }
   #recherche{
       text-decoration: none;
       color: black;
@@ -45,6 +69,30 @@ header img{
       background-color: yellow;
   }
   
+  #timeline{
+      height:30px;
+      border:solid 1px black;
+      margin-top:10px;
+      margin-bottom: 10px;
+      margin-left: 3%;
+      margin-right: 3%;
+  }
+  .row{
+      display:flex;
+  }
+  #description{
+      width:35%;
+      margin-left: 3%;
+      margin-right: 4%;
+      height:500px;
+      border:solid 1px black;
+  }
+
+  #map{
+      width:55%;
+      height:500px;
+      border:solid 1px black;
+  }
   /* Optional: Makes the sample page fill the window. */
   /**
   html,
