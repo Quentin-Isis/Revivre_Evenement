@@ -10,23 +10,23 @@
 
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Revivre l'évènement: Wiki</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/style.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
         <link rel="icon" href="../images/logo_icon.ico"/>
     </head>
     <body>
         <header>
-            <a href="../static/index.html"> <img id="logo" src="../images/header/logo_v1.png" alt="logo_v1.png"/> </a>
-            <a href="templates/search.html">Rechercher un évènement</a>
+            <a th:href="@{/}" href="../static/index.html"> <img id="logo" src="../images/header/logo_v1.png" alt="logo_v1.png"/> </a>
+            <a th:href="@{/evenement/search}">Rechercher un évènement</a>
             <nav id="lien_top_right">
                 <ul>
-                    <li><a href="../static/index.html">Accueil</a></li>
-                    <li><a href='contribuer.html'>Contribuer</a></li>
-                    <li><a href="wiki.html">Évent au hasard</a></li>
+                    <li><a th:href="@{/}" href="../static/index.html">Accueil</a></li>
+                    <li><a th:href="@{/evenement/contribuer}" >Contribuer</a></li>
+                    <li><a th:href="@{/evenement/eventRandom}">Évent au hasard</a></li>
                 </ul>
             </nav>
         </header>
@@ -43,9 +43,9 @@
         <div>
             <h1>Description</h1>
             <p>.............................</p>
-            <a href="map.html">Lieu</a>
-            <img src="../images/header/logo_v1.png">
-            <a href="liste_ressources_event.html">Liste des ressources</a>
+            <a th:href="@{/map/show}">Lieu</a>
+            <img src="../images/header/logo_v1.png"/>
+            <a th:href="@{/evenement/listeRessourcesEvent}">Liste des ressources</a>
         </div>
     </body>
 </html>

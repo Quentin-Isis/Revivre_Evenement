@@ -4,23 +4,23 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Revivre l'évènement</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="icon" href="images/logo_icon.ico"/>
     </head>
     <body>
         <header>
             <img id="logo" src="images/header/logo_v1.png" alt="logo_v1.png"/>
-            <a href="../templates/search.html">Rechercher un évènement</a>
+            <a href="evenement/search">Rechercher un évènement</a>
             <nav id="lien_top_right">
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href='../templates/contribuer.html'>Contribuer</a></li>
-                    <li><a href="../templates/wiki.html">Évent au hasard</a></li>
+                    <li><a th:href="@{/}" href="../static/index.html">Accueil</a></li>
+                    <li><a href='evenement/contribuer'>Contribuer</a></li>
+                    <li><a href="evenement/eventRandom">Évent au hasard</a></li>
                 </ul>
             </nav>
         </header>
