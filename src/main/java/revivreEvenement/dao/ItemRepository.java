@@ -6,12 +6,12 @@
 package revivreEvenement.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import revivreEvenement.entity.Evenement;
+import revivreEvenement.entity.Item;
 
 /**
  *
  * @author Mathieu
  */
-public interface EvenementRepository extends JpaRepository<Evenement, Integer>{
+public interface ItemRepository extends JpaRepository<Item, Integer>{
     
 }
