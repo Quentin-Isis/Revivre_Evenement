@@ -11,9 +11,24 @@ and open the template in the editor.
 */
 
 /** HEADER */
+
+
 #logo{
     width: 150px;
     height: 150px;
+    margin-right: 220px;
+}
+
+#recherche{
+    margin-right: 150px;
+}
+
+#Accueil{
+    margin-right: 20px;
+}
+
+#Contribuer{
+    margin-right: 20px;
 }
 
 /*  header{
