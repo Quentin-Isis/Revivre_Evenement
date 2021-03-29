@@ -5,14 +5,13 @@
  */
 package revivreEvenement.entity;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,26 +26,25 @@ import lombok.ToString;
  */
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity
-public class Evenement {
+public class SousEvenement {
+    
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer idEvenement;
-
+    private Integer idSsEvenement;
+    
     @Column(unique=true)
     @NonNull
-    private String nomEvenement;
+    private String nomSsEvenement;
     
     @Column(unique=true)
     @NonNull
     private String description;
     
-    @OneToOne(mappedBy = "event")
-    private Temporalite organise;
+    @ManyToOne
+    private Evenement evenement;
     
-    @OneToMany (mappedBy = "evenement")
-    List<SousEvenement> ssEvenement = new LinkedList<>();
+    @ManyToOne
+    private Item items; 
+    
+    @OneToOne(mappedBy = "ssEvenement")
+    private Position idPosition;
 }
-
-
-
-
-
