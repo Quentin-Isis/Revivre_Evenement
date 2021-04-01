@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import lombok.Getter;
@@ -37,13 +38,14 @@ public class Item {
     @NonNull
     private String type;
     
-    @OneToMany (mappedBy = "items")
-    List<SousEvenement> ssEvenement = new LinkedList<>();
+    @Column(unique=true)
+    @NonNull
+    private LocalDate date;
     
-    @OneToOne(mappedBy = "item")
-    private Temporalite idTemporalite;
+    @ManyToOne 
+    private Evenement evenement;
     
-    @OneToOne(mappedBy = "item")
-    private Position idPosition;
+    @OneToMany (mappedBy = "item")
+    List <Position> position = new LinkedList<>();
     
 }

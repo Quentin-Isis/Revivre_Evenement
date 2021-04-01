@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,17 +39,9 @@ public class Position {
     private int latitude;
     
     @Column(unique=true)
-    @NonNull
-    private float echelle;
-    
-    @Column(unique=true)
-    @NonNull
     private String orientation;
     
-    @OneToOne
+    @ManyToOne
     private Item item;
-    
-    @OneToOne
-    private SousEvenement ssEvenement;
     
 }

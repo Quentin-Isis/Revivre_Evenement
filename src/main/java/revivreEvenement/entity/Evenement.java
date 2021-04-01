@@ -5,6 +5,7 @@
  */
 package revivreEvenement.entity;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.Column;
@@ -39,11 +40,16 @@ public class Evenement {
     @NonNull
     private String description;
     
-    @OneToOne(mappedBy = "idEvenement")
-    private Temporalite idTemporalite;
+    @Column(unique=true)
+    @NonNull
+    private LocalDate date_debut;
     
-    @OneToMany (mappedBy = "idEvenement")
-    List<SousEvenement> ssEvenement = new LinkedList<>();
+    @Column(unique=true)
+    @NonNull
+    private LocalDate date_fin;
+    
+    @OneToMany (mappedBy = "evenement")
+    List <Item> items = new LinkedList<>();
 }
 
 
