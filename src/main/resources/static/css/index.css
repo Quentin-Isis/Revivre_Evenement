@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 févr. 2021, 09:31:38
+    Author     : Mathieu
+
+    Promis j'apprendrais à utiliser bootscrap ou des framework
+*/
+
+/** HEADER */
+
+
+#logo{
+    width: 150px;
+    height: 150px;
+    margin-right: 220px;
+}
+
+#recherche{
+    margin-right: 150px;
+}
+
+#Accueil{
+    margin-right: 20px;
+}
+
+#Contribuer{
+    margin-right: 20px;
+}
+
+/*  header{
+      display:flex;
+      border-bottom: solid 1px black;
+      justify-content: space-between;
+      flex-direction: row;
+  }
+  ul{
+      display:flex;
+      position:relative;
+      top:117px;      
+  }
+  li{
+      list-style-type :none;
+      margin-right:10px;
+  }
+  a{
+      text-decoration: none;
+      color:black;
+  } 
+  
+  a:hover{
+      background-color: yellow;      
+  }*/
+
+ 
+
+
+#affichage{
+    height:50px;
+    background-color: rgba(235,210,152,92);
+    background-image: url(../images/header/mini_mode_jour.png);
+}
+
+
