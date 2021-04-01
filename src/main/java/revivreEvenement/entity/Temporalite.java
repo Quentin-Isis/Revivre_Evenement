@@ -43,7 +43,7 @@ public class Temporalite {
     private LocalDate date;
     
     @OneToOne
-    private Evenement idEvenement;
+    private Evenement event;
     
     @OneToOne
     private Item item;

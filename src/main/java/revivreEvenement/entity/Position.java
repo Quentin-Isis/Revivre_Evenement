@@ -46,7 +46,7 @@ public class Position {
     private String orientation;
     
     @OneToOne
-    private Item item;
+    private Item it;
     
     @OneToOne
     private SousEvenement ssEvenement;
