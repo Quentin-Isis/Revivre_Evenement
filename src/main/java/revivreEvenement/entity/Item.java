@@ -38,14 +38,14 @@ public class Item {
     @NonNull
     private String type;
     
-    @ManyToOne
+    @Column(unique=true)
     @NonNull
-    private SousEvenement ssEvenement;
+    private LocalDate date;
     
-    @OneToOne(mappedBy = "item")
-    private Temporalite idTemporalite;
+    @ManyToOne 
+    private Evenement evenement;
     
-    @OneToOne(mappedBy = "it")
-    private Position idPosition;
+    @OneToMany (mappedBy = "item")
+    List <Position> position = new LinkedList<>();
     
 }
