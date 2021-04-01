@@ -39,10 +39,10 @@ public class Evenement {
     @NonNull
     private String description;
     
-    @OneToOne(mappedBy = "event")
-    private Temporalite organise;
+    @OneToOne(mappedBy = "idEvenement")
+    private Temporalite idTemporalite;
     
-    @OneToMany (mappedBy = "evenement")
+    @OneToMany (mappedBy = "idEvenement")
     List<SousEvenement> ssEvenement = new LinkedList<>();
 }
 
