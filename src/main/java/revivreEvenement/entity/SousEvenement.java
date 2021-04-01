@@ -40,7 +40,7 @@ public class SousEvenement {
     private String description;
     
     @ManyToOne
-    private Evenement evenement;
+    private Evenement idEvenement;
     
     @ManyToOne
     private Item items; 

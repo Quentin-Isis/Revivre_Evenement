@@ -40,10 +40,10 @@ public class Temporalite {
     
     @Column(unique=true)
     @NonNull
-    private LocalDate _date;
+    private LocalDate date;
     
     @OneToOne
-    private Evenement event;
+    private Evenement idEvenement;
     
     @OneToOne
     private Item item;
