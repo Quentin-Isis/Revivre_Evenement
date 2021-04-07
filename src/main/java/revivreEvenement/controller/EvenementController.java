@@ -20,7 +20,7 @@ import revivreEvenement.dao.EvenementRepository;
 public class EvenementController{
     
     @Autowired
-    private EvenementRepository daoEvent;
+    private EvenementRepository evenementRepository;
     
     @GetMapping("eventRandom")
     public String showEvenementRandom(Model model){
@@ -45,6 +45,11 @@ public class EvenementController{
     @GetMapping("search")
     public String showSearchPage(Model model){
         return "search";
+    }
+    
+    @GetMapping("liste_evenements")
+    public String showListEventPage(Model model){
+        return "liste_evenements";
     }
 }
     
