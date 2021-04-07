@@ -40,6 +40,9 @@ public class Evenement {
     @NonNull
     private String description;
     
+    @NonNull
+    private String lieu;
+    
   //  @Column(unique=true)
     @NonNull
     private LocalDate dateDebut;
