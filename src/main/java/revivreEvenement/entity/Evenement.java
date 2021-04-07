@@ -30,23 +30,23 @@ import lombok.ToString;
 @Entity
 public class Evenement {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer idEvenement;
+    private Integer id;
 
-    @Column(unique=true)
+  //  @Column(unique=true)
     @NonNull
     private String nomEvenement;
     
-    @Column(unique=true)
+  //  @Column(unique=true)
     @NonNull
     private String description;
     
-    @Column(unique=true)
+  //  @Column(unique=true)
     @NonNull
-    private LocalDate date_debut;
+    private LocalDate dateDebut;
     
-    @Column(unique=true)
+  //  @Column(unique=true)
     @NonNull
-    private LocalDate date_fin;
+    private LocalDate dateFin;
     
     @OneToMany (mappedBy = "evenement")
     List <Item> items = new LinkedList<>();
