@@ -50,19 +50,9 @@ public class EvenementController{
         return "contribuer";
     }
     
-    @PostMapping("save")
-    public String enregistrerNouvelEvenement(Model model, @Valid Evenement evenement, BindingResult bindingResult){
-        
-        // vérification des erreurs
-        if (bindingResult.hasErrors()) {
-            return "contribuer";
-        }
-        evenementRepository.save(evenement);
-        return "liste_evenements";
-    }
-    
     @GetMapping("listeRessourcesEvent")
     public String showListeRessourcesEvent(Model model){
+        // Accessible depuis 
         return "liste_ressources_event";
     }
     
