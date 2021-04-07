@@ -3,29 +3,35 @@
         <title>Revivre l'évènement: Liste des Ressources</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="../css/index.css"/>
+        <link rel="stylesheet" href="../css/listeRessourcesEvent.css"/>
+         <!-- Il est connecté au map.css car les 2 doivent avoir le footer en bas de page forcé 
+        car pas assez de contenu dans la page pour l'y mettre de base.
+         Soucis que je ne comprends pas, background qui se remplit pas -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
-        <link rel="icon" href="images/logo_icon.ico"/>
+        <link rel="icon" href="../images/logo_icon.ico"/>
         <script src="javascript/map.js"></script>
     </head>
     <body>
         <header>
-            <div class="bg-dark">
-                <div class="container">
-                    <div class="row justify-content-around">
-                        <nav class=" col-12 navbar navbar-expand-md navbar-dark" id="lien_top_right">
-                            <a class="navbar-brand " th:href="@{/}" href="../static/index.html"><img id="logo" src="../images/header/logo_v1.png" alt="logo_v1.png" /></a>
-                            <a th:href="@{/evenement/search}" id="recherche" class="text-light text-decoration-none">Rechercher un évènement</a>                       
+            <div class="bg-dark container-fluid">
+                <div class="row ">
+                    <div class="col-12">
+                        <nav class= "navbar navbar-expand-md navbar-dark " id="lien_top_right">
+                            <a class="navbar-brand" th:href="@{/}" href="#"><img id="logo" src="../images/header/logo_v1.png" alt="logo_v1.png" /></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-				<span class="navbar-toggler-icon"></span>
+                                <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div id="navbarContent" class="collapse navbar-collapse">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item active "><a id="Accueil" class="nav-link " th:href="@{/}" href="../static/index.html">Accueil</a></li>
-                                    <li class="nav-item active "><a id="Contribuer" class="nav-link " th:href="@{/evenement/contribuer}">Contribuer</a></li>
-                                    <li class="nav-item active "><a id="Hasard" class="nav-link " th:href="@{/evenement/eventRandom}">Évènement au hasard</a></li>
-                                </ul>
+                            <div id="navbarContent" class="collapse navbar-collapse row">
+                                <div class="col-12">   
+                                    <ul class="navbar-nav mr-auto justify-content-around">
+                                        <li class="nav-item active "><a id="Accueil" class="nav-link " th:href="@{/}" href="#">Accueil</a></li>
+                                        <li class="nav-item active "><a id="Contribuer" class="nav-link" th:href="@{/evenement/contribuer}" href="evenement/contribuer">Contribuer</a></li>
+                                        <li class="nav-item active "><a id="Hasard" class="nav-link" th:href="@{/evenement/eventRandom}" href="evenement/eventRandom">Évènement au hasard</a></li>
+                                        <li class="nav-item active "><a th:href="@{/evenement/search}" href="evenement/search" id="recherche" class="nav-link text-light text-decoration-none">Rechercher un évènement</a></li>
+                                    </ul>
+                                </div>    
                             </div>
+                                                  
                            <!-- <button id="affichage" ><img id="mode" src="../images/header/mini_mode_jour.jpg" alt="mode jour/nuit"/></button>-->
                         </nav>
                     </div>
@@ -33,7 +39,25 @@
             </div>
         </header>
         <main>
-            <h1>Liste des ressources:</h1>
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div id= "liste" class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Liste
+                                    </h5>
+                                        <ul id="emplacementEvenement" class="card-text" >
+                                            <li>event1</li>
+                                            <li>event2</li>
+                                        </ul>
+                                    <!--texte qui va changer-->                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="bg-light">
@@ -56,5 +80,5 @@
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
-        </body>
+    </body>
 </html>

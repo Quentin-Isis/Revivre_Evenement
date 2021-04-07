@@ -34,7 +34,26 @@
             </div>
         </header>
         <main>
-            <h1>MAP</h1>
+            <h1>Liste des évènements</h1>
+            <table>
+                <tr>
+                    <th>ID</th><th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
+                </tr>
+                <tr th:each="e:${listEvenements}">
+                    <td th:text="${e.id}"></td>
+                    <td th:text="${e.nomEvenement}"></td>
+                    <td th:text="${e.description}"></td>
+                    <td th:text="${e.lieu}"></td>
+                    <td th:text="${#temporals.format(e.dateDebut, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${#temporals.format(e.dateFin, 'dd/MM/yyyy')}"></td>
+                </tr>
+            </table>
+            <ul>
+                <!-- Pour la pagination (10 évènements par pages (LE CSS N'EST PAS FAIT) -->
+                <li th:each="page,status:${pages}">
+                    <a th:href="@{/evenement/liste_evenements(page=${status.index})}" th:text="${status.index}"></a>
+                </li>
+            </ul>
         </main>
         <footer>
             <div class="bg-light">
