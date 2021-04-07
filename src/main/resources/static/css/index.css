@@ -45,3 +45,7 @@ and open the template in the editor.
 #lieu{
     text-decoration: none;    
 }
+
+#evenement{
+    margin-bottom: 25px;
+}
