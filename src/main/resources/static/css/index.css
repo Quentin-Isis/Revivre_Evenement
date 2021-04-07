@@ -26,7 +26,22 @@ and open the template in the editor.
     height: 400px;
 }
 
+#emplacementSE{
+    height: 400px;
+}
+
 #description{
     margin-bottom: 25px;
 }
 
+#map{
+    margin-bottom: 25px;
+}
+
+#liste{
+    text-decoration: none;
+}
+
+#lieu{
+    text-decoration: none;    
+}

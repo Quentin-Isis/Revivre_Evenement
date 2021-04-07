@@ -2,8 +2,6 @@
  * Integration de la carte sur la page
  */
 
-
-
 let map;
 
 function initMap() {
