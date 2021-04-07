@@ -32,15 +32,15 @@ import lombok.ToString;
 public class Item {
     
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer idItem;
+    private Integer id;
     
-    @Column(unique=true)
+  //  @Column(unique=true)
     @NonNull
-    private String type;
+    private String typeItem;
     
-    @Column(unique=true)
+  //  @Column(unique=true)
     @NonNull
-    private LocalDate date;
+    private LocalDate dateItem;
     
     @ManyToOne 
     private Evenement evenement;

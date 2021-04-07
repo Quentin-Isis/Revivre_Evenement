@@ -28,17 +28,17 @@ import lombok.ToString;
 public class Position {
     
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer idPosition;
+    private Integer id;
     
-    @Column(unique=true)
+   // @Column(unique=true)
     @NonNull
     private int longitude;
     
-    @Column(unique=true)
+   // @Column(unique=true)
     @NonNull
     private int latitude;
     
-    @Column(unique=true)
+   // @Column(unique=true)
     private String orientation;
     
     @ManyToOne
