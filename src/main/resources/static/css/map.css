@@ -8,21 +8,14 @@ and open the template in the editor.
     Author     : tfrederi
 */
 
+html{
+    background-color: rgb(248,249,250);
+    overflow:scroll;
+}
+
 #logo{
     width: 150px;
     height: 150px;
-}
-
-#emplacementCarte{
-    height: 400px;
-}
-
-#emplacementEvenement{
-    height:400px;
-}
-
-#description{
-    margin-bottom: 25px;
 }
 
 #map{
@@ -30,17 +23,12 @@ and open the template in the editor.
     margin-bottom: 25px;
 }
 
-#liste{
-    margin-top: 25px;
-    margin-bottom: 25px;
+#emplacementCarte{
+    height: 400px;
 }
 
 footer{
     position:fixed;
     bottom: 0px;
     width: 100%;
-}
-
-html{
-    background-color: rgb(248,249,250);
 }
