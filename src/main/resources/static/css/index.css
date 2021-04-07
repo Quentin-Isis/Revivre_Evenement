@@ -18,6 +18,19 @@ and open the template in the editor.
     height: 150px;
 }
 
+div a {
+    font-size: 20px;
+}
+
+.annee {
+    
+}
+
+.timeline-date-button {
+    max-width: 45px;
+    height: 45px;
+}
+
 #emplacementCarte{
     height: 400px;
 }
