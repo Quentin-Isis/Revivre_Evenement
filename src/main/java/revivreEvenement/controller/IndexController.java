@@ -3,6 +3,7 @@ package revivreEvenement.controller;
 
 
 import java.util.List;
+import java.util.Random;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,10 +35,17 @@ public class IndexController{
     public String showEvenementRandom(Model model){
         /**
          * Return la page wiki d'un évènement choisi au hasard
-         * pour l'instant, renvoie juste la page wiki
+         *
          */
         
-        return "wiki"; /// Provisoire
+        List<Evenement> listEvenements = evenementRepository.findAll();
+        Random random = new Random();
+        int indexRandom = random.nextInt(listEvenements.size());
+        Evenement evenementRandom = listEvenements.get(indexRandom);
+        
+        model.addAttribute("evenement", evenementRandom);
+     
+        return "wiki";
     }
     
     @GetMapping("contribuer")
