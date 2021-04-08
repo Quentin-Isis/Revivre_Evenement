@@ -45,15 +45,14 @@
                         <textarea id="description" name="description" rows ="5" cols="10" th:field="*{description}" required="true"></textarea><br/>
                         <span th:errors="${evenement.description}"></span>
                         <label for="lieu">Lieu de l'évènement : </label>
-                        <input id="lieu" type="text" name="lieu" th:field="*{lieu}" required="true"/><br/>
+                        <input id="lieu" type="text" name="lieu" th:field="*{lieu}" required="true" /><br/>
                         <span th:errors="${evenement.lieu}"></span>
                         <label for="dateDebut">Date de début: </label>
                         <input id="dateDebut" name="dateDebut" type="date" th:field="*{dateDebut}" required="true" /><br/><!-- MARCHE PAS FAIT EXRPRES-->
                         <label for="dateFin">Date de fin: </label>
                         <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/> <!-- MARCHE PAS FAIT EXRPRES-->
                         <!--<label for="PJ">Pièce jointe : </label><input id="PJ" type="file" /><br/>  -->          
-                        <button type = "submit">Enregistrer</button><br/><!-- comment -->
-                        <input type="reset" value="Réinitialiser" />  
+                    <input type = "submit"></input><input type="reset" value="Réinitialiser" />
                     </div>
                 </form>
             </div>

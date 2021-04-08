@@ -18,3 +18,23 @@ HEADER
     height: 150px;
 }
 
+div a {
+    font-size: 20px;
+}
+
+#emplacementEvenement{
+    height: 400px;
+}
+
+#emplacementDescription{
+    height: 400px;
+}
+
+#evenement{
+    margin-bottom: 25px;
+}
+
+#description{
+    margin-bottom: 25px;
+}
+
