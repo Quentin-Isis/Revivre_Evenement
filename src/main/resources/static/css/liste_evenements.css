@@ -4,11 +4,26 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 19 févr. 2021, 10:49:04
+    Created on : 19 fï¿½vr. 2021, 10:49:04
     Author     : tfrederi
 */
 
-header img{
+html{
+    background-color: rgb(248,249,250);
+    overflow:scroll;
+}
+
+div a {
+    font-size: 20px;
+}
+
+#logo{
     width: 150px;
     height: 150px;
+}
+
+footer{
+    position:fixed;
+    bottom: 0px;
+    width: 100%;
 }
