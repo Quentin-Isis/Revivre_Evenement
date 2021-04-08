@@ -18,9 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path="/map")
 public class MapController {
     
-    @GetMapping("show")
-    public String showMap(Model model){
-        return "map";
-    }
+    
     
 }

@@ -1,54 +1,32 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package revivreEvenement.controller;
 
-
-import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.entity.Evenement;
 
-
 /**
  *
- * @author Mathieu
+ * @author Léa
  */
-
 @Controller
-@RequestMapping(path="/evenement")
-public class EvenementController{
+@RequestMapping(path="/wiki")
+public class WikiController {
     
     @Autowired
     private EvenementRepository evenementRepository;
     
-    @GetMapping("eventRandom")
-    public String showEvenementRandom(Model model){
-        /**
-         * Return la page wiki d'un évènement choisi au hasard
-         * pour l'instant, renvoie juste la page wiki
-         */
-        
-        return "wiki"; /// Provisoire
-    }
-    
-    @GetMapping("contribuer")
-    public String showContribuer(Model model){
-        /**
-         * Montre la page pour ajouter un évènement
-         */
-        model.addAttribute("evenement", new Evenement());
-        
-        return "contribuer";
-    }
     
     @GetMapping("listeRessourcesEvent")
     public String showListeRessourcesEvent(Model model){
@@ -56,9 +34,9 @@ public class EvenementController{
         return "liste_ressources_event";
     }
     
-    @GetMapping("search")
-    public String showSearchPage(Model model){
-        return "search";
+    @GetMapping("show")
+    public String showMap(Model model){
+        return "map";
     }
     
     @GetMapping("liste_evenements")
@@ -77,6 +55,3 @@ public class EvenementController{
         return "liste_evenements";
     }
 }
-    
-    
-

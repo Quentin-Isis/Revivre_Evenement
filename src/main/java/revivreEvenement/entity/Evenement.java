@@ -21,6 +21,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -32,22 +33,21 @@ public class Evenement {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
 
-  //  @Column(unique=true)
+    @Column(unique=true)
     @NonNull
     private String nomEvenement;
     
-  //  @Column(unique=true)
     @NonNull
     private String description;
     
     @NonNull
     private String lieu;
     
-  //  @Column(unique=true)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NonNull
     private LocalDate dateDebut;
-    
-  //  @Column(unique=true)
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NonNull
     private LocalDate dateFin;
     
