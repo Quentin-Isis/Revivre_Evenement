@@ -51,6 +51,9 @@
             <div class="bg-light">
                 <br/>
                 <div class="container">
+                    <div>
+                        <h1 th:text="${evenement.nomEvenement}"></h1> <!-- NOM DE L'EVENT choisi aléatoirement -->
+                    </div>
                     <div class="row">
                         <div class="col" id="timeline">
                             <div class="card">
@@ -96,8 +99,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"> Description
                                     </h5>
-                                    <div id="emplacementDescription" class="card-text"> Description du sous-évènement choisi.
-                                        <div class="row justify-content-around">
+                                    <div id="emplacementDescription" class="card-text" th:text="${evenement.description}">                                         <div class="row justify-content-around">
                                             <a th:href="@{/wiki/liste_evenements}">Liste des évènements</a>
                                             <a th:href="@{/wiki/listeRessourcesEvent}">Liste des ressources</a>
                                         <!--texte qui va changer-->
