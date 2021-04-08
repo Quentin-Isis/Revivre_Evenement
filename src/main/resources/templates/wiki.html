@@ -79,16 +79,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="description" class ="col-md-8 col-12">
+                        <div id="carte" class="col-md-8 col-12" >
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Carte
+                                    </h5>
+                                    <div id="emplacementCarte" class="card-text"> On affichera la carte en dessous
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="description" class="col-12" >
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"> Description
                                     </h5>
-                                    <p id="emplacementCarte" class="card-text"> Description du sous-évènement choisi. </p>
-                                    <a th:href="@{/wiki/show}">Lieu</a>
-                                    <a th:href="@{/wiki/liste_evenements}">Liste des évènements</a>
-                                    <a th:href="@{/wiki/listeRessourcesEvent}">Liste des ressources</a>
-                                    <!--texte qui va changer-->
+                                    <div id="emplacementDescription" class="card-text"> Description du sous-évènement choisi.
+                                        <div class="row justify-content-around">
+                                            <a th:href="@{/evenement/liste_evenements}">Liste des évènements</a>
+                                            <a th:href="@{/evenement/listeRessourcesEvent}">Liste des ressources</a>
+                                        <!--texte qui va changer-->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
