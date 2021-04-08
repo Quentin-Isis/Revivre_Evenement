@@ -13,6 +13,10 @@ html{
     overflow:scroll;
 }
 
+div a {
+    font-size: 20px;
+}
+
 #logo{
     width: 150px;
     height: 150px;

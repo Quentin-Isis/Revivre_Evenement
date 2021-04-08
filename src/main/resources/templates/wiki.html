@@ -15,7 +15,7 @@
         <title>Revivre l'évènement: Wiki</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="../css/index.css"/>
+        <link rel="stylesheet" href="../css/wiki.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
         <link rel="icon" href="../images/logo_icon.ico"/>
         <script src="javascript/map.js"></script>
@@ -66,12 +66,12 @@
                     </div>
                     <br/>
                     <div class="row">
-                        <div id= "description" class="col-md-4 col-12">
+                        <div id= "evenement" class="col-md-4 col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"> Évènement
                                     </h5>
-                                    <ul id="emplacementSE" class="card-text" >
+                                    <ul id="emplacementEvenement" class="card-text" >
                                         <li>ss-event1</li>
                                         <li>ss-event2</li>
                                     </ul>
@@ -79,19 +79,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="map" class ="col-md-8 col-12">
+                        <div id="carte" class="col-md-8 col-12" >
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Carte
+                                    </h5>
+                                    <div id="emplacementCarte" class="card-text"> On affichera la carte en dessous
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="description" class="col-12" >
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"> Description
                                     </h5>
                                     <div id="emplacementDescription" class="card-text"> Description du sous-évènement choisi.
-                                        <div class="row justify-content-around"> 
-                                            <br/>
+                                        <div class="row justify-content-around">
                                             <a th:href="@{/map/show}">Lieu</a>
                                             <a th:href="@{/evenement/liste_evenements}">Liste des évènements</a>
                                             <a th:href="@{/evenement/listeRessourcesEvent}">Liste des ressources</a>
-                                        </div>
                                         <!--texte qui va changer-->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
