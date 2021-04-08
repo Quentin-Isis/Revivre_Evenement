@@ -47,6 +47,6 @@ public class FormEventController {
         // Ici on transmet un message de succès ou d'erreur
         // Ce message est accessible et affiché dans la vue 'contribuer.html'
         redirectInfo.addFlashAttribute("message", message);
-        return "redirect:/evenement/contribuer";
+        return "redirect:/index/contribuer";
     }
 }
