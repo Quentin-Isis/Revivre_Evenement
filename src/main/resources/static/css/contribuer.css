@@ -4,11 +4,15 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 19 févr. 2021, 10:49:04
+    Created on : 19 fï¿½vr. 2021, 10:49:04
     Author     : tfrederi
 */
 
-header img{
+#logo{
     width: 150px;
     height: 150px;
+}
+
+div a {
+    font-size: 20px;
 }
