@@ -22,6 +22,28 @@ div a {
     height: 150px;
 }
 
+#liste{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+table{
+    border: solid 5px black;
+    border-collapse: collapse;
+}
+
+th{
+    border: solid 1px black;
+}
+
+td{
+    border: solid 1px black;
+}
+
+li{
+    list-style-type: none;
+}
+
 footer{
     position:fixed;
     bottom: 0px;

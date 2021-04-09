@@ -27,6 +27,10 @@ div a {
     margin-bottom: 25px;
 }
 
+li{
+    list-style-type:'- ';
+}
+
 #emplacementEvenement{
     height:400px;
 }
