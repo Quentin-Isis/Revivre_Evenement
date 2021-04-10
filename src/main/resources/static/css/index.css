@@ -23,7 +23,13 @@ div a {
 }
 
 .annee {
-    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#test{
+    display:flex;
+    flex-wrap: wrap;
 }
 
 .timeline-date-button {

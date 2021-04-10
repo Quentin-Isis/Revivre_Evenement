@@ -37,27 +37,38 @@
             </div>
         </header>
         <main>
-            <div class="container">
-            <h1>Contribuer</h1>
-                <form id="formulaire" th:object="${evenement}" th:action="@{/formulaireEvenement/save}" method="POST">
-                    <div>
-                        <label for="nomEvenement">Nom de l'évènement : </label>
-                        <input id="nomEvenement" type="text" name="nomEvenement" th:field="*{nomEvenement}" required="true"/><br/>
-                        <span th:errors="${evenement.nomEvenement}"></span>
-                        <label for="description">Brève description : </label>
-                        <textarea id="description" name="description" rows ="5" cols="10" th:field="*{description}" required="true"></textarea><br/>
-                        <span th:errors="${evenement.description}"></span>
-                        <label for="lieu">Lieu de l'évènement : </label>
-                        <input id="lieu" type="text" name="lieu" th:field="*{lieu}" required="true" /><br/>
-                        <span th:errors="${evenement.lieu}"></span>
-                        <label for="dateDebut">Date de début: </label>
-                        <input id="dateDebut" name="dateDebut" type="date" th:field="*{dateDebut}" required="true" /><br/><!-- MARCHE PAS FAIT EXRPRES-->
-                        <label for="dateFin">Date de fin: </label>
-                        <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/> <!-- MARCHE PAS FAIT EXRPRES-->
-                        <!--<label for="PJ">Pièce jointe : </label><input id="PJ" type="file" /><br/>  -->          
-                    <input type = "submit"></input><input type="reset" value="Réinitialiser" />
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div id= "liste" class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Contribuer
+                                    </h5>
+                                        <form id="formulaire" th:object="${evenement}" th:action="@{/formulaireEvenement/save}" method="POST">
+                                            <div>
+                                                <label for="nomEvenement">Nom de l'évènement : </label>
+                                                <input id="nomEvenement" type="text" name="nomEvenement" th:field="*{nomEvenement}" required="true"/><br/>
+                                                <span th:errors="${evenement.nomEvenement}"></span>
+                                                <label for="description">Brève description : </label><br/>
+                                                <textarea id="description" name="description" rows ="5" cols="10" th:field="*{description}" required="true"></textarea><br/>
+                                                <span th:errors="${evenement.description}"></span>
+                                                <label for="lieu">Lieu de l'évènement : </label>
+                                                <input id="lieu" type="text" name="lieu" th:field="*{lieu}" required="true" /><br/>
+                                                <span th:errors="${evenement.lieu}"></span>
+                                                <label for="dateDebut">Date de début: </label>
+                                                <input id="dateDebut" name="dateDebut" type="date" th:field="*{dateDebut}" required="true" /><br/><!-- MARCHE PAS FAIT EXRPRES-->
+                                                <label for="dateFin">Date de fin: </label>
+                                                <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/> <!-- MARCHE PAS FAIT EXRPRES-->
+                                                <!--<label for="PJ">Pièce jointe : </label><input id="PJ" type="file" /><br/>  -->          
+                                            <input type = "submit"></input><input type="reset" value="Réinitialiser" />
+                                            </div>
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </main>
         <footer>
@@ -67,7 +78,7 @@
                         <div class="col">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item text-primary">A propos</li>
-                                <li class="list-inline-item text-primary">Copyright</li>
+                                <li class="list-inline-item text-primary">© Revivre l'évènement</li>
                             </ul>
                         </div>
                     </div>

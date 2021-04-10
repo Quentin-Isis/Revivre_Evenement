@@ -43,9 +43,3 @@ td{
 li{
     list-style-type: none;
 }
-
-footer{
-    position:fixed;
-    bottom: 0px;
-    width: 100%;
-}
