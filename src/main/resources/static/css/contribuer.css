@@ -23,11 +23,10 @@ div a {
 
 #liste{
     margin-top: 25px;
+    height:500px;
+    margin-bottom: 25px;
 }
 
-footer{
-    position:fixed;
-    bottom: 0px;
-    width: 100%;
-    
+#description{
+    resize: none;
 }
