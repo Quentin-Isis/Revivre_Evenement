@@ -5,6 +5,8 @@
  */
 package revivreEvenement.dao;
 
+import java.util.List;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import revivreEvenement.entity.Evenement;
 
@@ -14,4 +16,8 @@ import revivreEvenement.entity.Evenement;
  */
 public interface EvenementRepository extends JpaRepository<Evenement, Integer>{
     
+    // Fonction qui cherche un mot clé dans le nom d'un évènement
+    // Return un liste d'évènement. Si on se rend compte qu'il y a trop d'évènement affichés, on pourra faire un système de pagination
+    public List<Evenement> findByNomEvenementContains(String motCle);
+    public List<Evenement> findByLieuContains(String motCle);
 }

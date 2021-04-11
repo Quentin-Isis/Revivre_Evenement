@@ -4,6 +4,12 @@
 
 document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
 document.getElementById("date").addEventListener("click", afficheRechercheDate);
+/**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
+
+for(let i = 0; i < bouttons_rechercher.length; i++) {
+  bouttons_rechercher[i].addEventListener("click", affichageResultats)
+}
+*/
 
 function afficheRechercheLieu(event){
     let texteHTML = "<div id=espace class=col-md-6 col-12 >"+
@@ -16,7 +22,7 @@ function afficheRechercheLieu(event){
                                             "<label for=pays>Pays : </label><input id=recherchePays type=text /><br/>"+
                                             "<label for=ville>Ville : </label><input id=rechercheVille type=text /><br/>"+
                                             "<label for=adresse>Adresse : </label><input id=rechercheAdresse type=text /><br/>\n\
-                                             <input type=submit value=Recherche /> \n\
+                                             <input class=\"btn-rechercher\" type=submit value=Recherche /> \n\
                                         </form> \n\
                                 </div> \n\
                             </div> \n\
@@ -31,13 +37,21 @@ function afficheRechercheLieu(event){
                                     "<form id=formulaire>"+
                                         "<label for=latitude>Latitude : </label><input id=rechercheLatitude type=text /><br/>"+
                                         "<label for=longitude>Longitude : </label><input id=rechercheLongitude type=text /><br/>"+
-                                        "<input type=submit value=Recherche /> \n\
+                                        "<input class=\"btn-rechercher\" type=submit value=Recherche /> \n\
                                     </form> \n\
                                 </div> \n\
                             </div> \n\
                         </div> \n\
-                    </div>";          
+                    </div>"+
+                    "<button id=\"btn-retour\" >Retour</button>";          
     document.getElementById("rechercher").innerHTML = texteHTML;
+    document.getElementById("btn-retour").addEventListener("click", retour);
+    /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
+
+    for(let i = 0; i < bouttons_rechercher.length; i++) {
+      bouttons_rechercher[i].addEventListener("click", affichageResultats)
+    }*/
+
 }
 
 function afficheRechercheDate(event){
@@ -51,11 +65,74 @@ function afficheRechercheDate(event){
                                             "<label for=annee>Année : </label><input id=rechercheAnnée type=text /><br/>"+
                                             "<label for=mois>Mois : </label><input id=rechercheMois type=text /><br/>"+
                                             "<label for=jour>Jour : </label><input id=rechercheJour type=text /><br/>\n\
-                                             <input type=submit value=Recherche /> \n\
+                                             <input class=\"btn-rechercher\" type=submit value=Recherche /> \n\
                                         </form> \n\
                                 </div> \n\
                             </div> \n\
                         </div> \n\
-                    </div>";          
+                    </div>"+
+                    "<button id=\"btn-retour\">Retour</button>";          
     document.getElementById("rechercher").innerHTML = texteHTML;
+    document.getElementById("btn-retour").addEventListener("click", retour);
+    /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
+
+    for(let i = 0; i < bouttons_rechercher.length; i++) {
+      bouttons_rechercher[i].addEventListener("click", affichageResultats)
+    }
+*/
 }
+
+
+//BOUTON RETOUR
+
+function retour(event){
+    console.log("click me")
+    let textHTML = "<div id=\"espace\" class=\"col\">"+
+                            "<div class=\"card\">"+
+                                "<div class=\"card-body\">"+
+                                    "<div class=\"row \" >"+
+                                        "<div class=\"col-12 col-md-6\">"+
+                                            "<h5 class=\"card-title \"> Rechercher un évènement"+
+                                            "</h5>"+
+                                            "<div >"+
+                                                "<form th:action=\"search\" method=\"get\">"+
+                                                    "<label for=motCle>Mot-clé : </label>"+
+                                                    "<input id=rechercheMot type=text name=\"motCle\" th:value=\"${motCle}\"/><br/>"+
+                                                    "<input class=\"btn-rechercher\" type=submit value=\"Recherche par mot-clé\" />"+
+                                                "</form>"+
+                                            "</div>"+
+                                        "</div>"+
+                                        "<div class=\"emplacementRecherche card-text col-12 col-md-6\">" +
+                                            "<div class=\"row\">"+
+                                                "<div class=\"col-6\">"+
+                                                    "<input  id=\"lieu\" type=\"button\" value=\"Par lieu\"/>"+
+                                                "</div>"+
+                                                "<div class=\"col-6\">"+
+                                                    "<input id=\"date\" type=\"button\" value=\"Par date\"/>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+                                    "</div>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>";
+    document.getElementById("rechercher").innerHTML = textHTML;
+    document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
+    document.getElementById("date").addEventListener("click", afficheRechercheDate);
+    /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
+
+    for(let i = 0; i < bouttons_rechercher.length; i++) {
+      bouttons_rechercher[i].addEventListener("click", affichageResultats)
+    }*/
+}
+
+// AFFICHAGE DES Résultats
+
+//Recherche par mot clé:
+/**
+function affichageResultats(event){
+    //console.log("click me");
+    document.getElementById("resultats").innerHTML = "<h1>Salut</h1>"
+}
+
+*/
