@@ -42,6 +42,7 @@
             <div class="bg-light">
                 <div class="container">
                     <div id="rechercher"class="row">
+                        <!-- SI MODIF, PENSER A MODIFIER LE FICHIER JS -->
                         <div id="espace" class="col">
                             <div class="card">
                                 <div class="card-body">
@@ -50,8 +51,11 @@
                                             <h5 class="card-title "> Rechercher un évènement
                                             </h5>
                                             <div >
-                                                <label for=mot>Mot-clé : </label><input id=rechercheMot type=text /><br/>
-                                                <input type=submit value="Recherche par mot-clé" />
+                                                <form th:action="@{/recherches/fctSearch}" method="get">
+                                                    <label for=motCle>Mot-clé : </label>
+                                                    <input id=rechercheMot type=text name="motCle" th:value="${motCle}"/><br/>
+                                                    <input class="btn-rechercher" type=submit value="Recherche par mot-clé" />
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="emplacementRecherche card-text col-12 col-md-6"> 
@@ -67,6 +71,36 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <!--ICI-->
+                    <div id="resultats" class="row">
+                        <!-- Lieu dédié à l'affichage de résultats.-->
+                        <!--Les recherches par mot clé (si le boolean est vrai, les éléments HTML sont appliqués)-->
+                        <div th:if="${recherche_par_mot_cle}">
+                            <h3 th:if="${!isValide}">Veuillez saisir un mot clé</h3>
+                            <div th:if="${trouves} and ${motCle != ''}">
+                                <h3>Résultats pour "[[${motCle}]]" :</h3><br/>
+                                <table>
+                                        <tr>
+                                            <th>ID</th><th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
+                                        </tr>
+                                        <tr th:each="r:${results}">
+                                            <td th:text="${r.id}"></td>
+                                            <td th:text="${r.nomEvenement}"></td>
+                                            <!--<td th:text="${e.description}"></td>-->
+                                            <td th:text="${r.lieu}"></td>
+                                            <td th:text="${#temporals.format(r.dateDebut, 'dd/MM/yyyy')}"></td>
+                                            <td th:text="${#temporals.format(r.dateFin, 'dd/MM/yyyy')}"></td>
+                                        </tr>
+                                </table>
+                            </div>
+                            <div th:if="${!trouves} and ${motCle != ''} and ${isValide}">
+                                <h3>Aucun résultats trouvés pour "[[${motCle}]]"</h3>
+                            </div>
+                            
+                                
+                            
                         </div>
                     </div>
                 </div>
