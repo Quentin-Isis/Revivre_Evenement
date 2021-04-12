@@ -2,8 +2,8 @@
 package revivreEvenement.controller;
 
 
-import java.util.List;
-import java.util.Random;
+import java.time.LocalDate;
+import java.util.*;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -63,8 +63,22 @@ public class IndexController{
         return "search";
     }
     
+    @GetMapping("/")
+    public String showListEventPage(Model model){
+        /**
+         * Affiche la liste des évènements dans le template "liste_evenements.html"
+         * 10 évènements par pages
+         * paramètre page: indice de la page que l'on affiche
+         */
+        
+        List<Evenement> pageEvenements = evenementRepository.findAll(); // On récupère tous les evenements dans le dao (on en récupère 10)
+        
+        ArrayList<Integer> listeDatesDebut = new ArrayList<>();
+        for (Evenement e : pageEvenements) {
+            listeDatesDebut.add(e.getDateDebut().getYear());
+        }
+        model.addAttribute("dates", listeDatesDebut); //On ajoute la liste au modèle qui permet l'affichage
+        return "index";
+    }
     
 }
-    
-    
-
