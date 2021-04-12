@@ -47,17 +47,19 @@
                                     </h5>
                                     <table>
                                         <tr>
-                                            <th>ID</th><th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
+                                            <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th><th id="blank"></th>
                                         </tr>
                                         <tr th:each="e:${listEvenements}">
-                                            <td th:text="${e.id}"></td>
                                             <td th:text="${e.nomEvenement}"></td>
-                                            <td th:text="${e.description}"></td>
+                                            <td class="description" th:text="${e.description}"></td>
                                             <td th:text="${e.lieu}"></td>
                                             <td th:text="${#temporals.format(e.dateDebut, 'dd/MM/yyyy')}"></td>
                                             <td th:text="${#temporals.format(e.dateFin, 'dd/MM/yyyy')}"></td>
+                                            <td id="boutons"><input class="ajout" type="button" value="Ajouter"/>
+                                            <br/>
+                                            <input class="suppression" type="button" value="Supprimer"/></td>
                                         </tr>
-                                    </table>
+                                 </table>
                                     <ul>
                                         <!-- Pour la pagination (10 évènements par pages (LE CSS N'EST PAS FAIT) -->
                                         <li th:each="page,status:${pages}">

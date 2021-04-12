@@ -27,17 +27,36 @@ div a {
     margin-bottom: 25px;
 }
 
-table{
-    border: solid 5px black;
-    border-collapse: collapse;
+table, td, th {
+      padding: 10px;
+      border: solid 5px rgb(52,58,64);
+      -moz-border-radius:10px;
+      -webkit-border-radius:10px;
+      border-radius:10px;
+      text-align: center;
+      }
+
+.description{
+    text-align: justify;
+      }
+      
+th{
+    border: solid 1px rgb(52,58,64);
 }
 
-th{
-    border: solid 1px black;
+#blank{
+    border-bottom: none;
 }
 
 td{
-    border: solid 1px black;
+    border: solid 1px rgb(52,58,64);
+}
+
+#boutons{
+    border:none;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 li{
