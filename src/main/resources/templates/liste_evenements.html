@@ -61,7 +61,7 @@
                                     <ul>
                                         <!-- Pour la pagination (10 évènements par pages (LE CSS N'EST PAS FAIT) -->
                                         <li th:each="page,status:${pages}">
-                                            <a th:href="@{/evenement/liste_evenements(page=${status.index})}" th:text="${status.index}"></a>
+                                            <a th:href="@{/wiki/liste_evenements(page=${status.index})}" th:text="${status.index}"></a>
                                         </li>
                                     </ul>
                                 </div>
