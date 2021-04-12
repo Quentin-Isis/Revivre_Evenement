@@ -28,9 +28,9 @@ and open the template in the editor.
                                 <div class="col-12">   
                                     <ul class="navbar-nav mr-auto justify-content-around">
                                         <li class="nav-item active "><a id="Accueil" class="nav-link " th:href="@{/index}" href="#">Accueil</a></li>
-                                        <li class="nav-item active "><a id="Contribuer" class="nav-link" href="index/contribuer">Contribuer</a></li>
-                                        <li class="nav-item active "><a id="Hasard" class="nav-link" href="index/eventRandom">Évènement au hasard</a></li>
-                                        <li class="nav-item active "><a href="index/search" id="recherche" class="nav-link text-light text-decoration-none">Rechercher un évènement</a></li>
+                                        <li class="nav-item active "><a id="Contribuer" class="nav-link" th:href="@{/contribuer}" href="index/contribuer">Contribuer</a></li>
+                                        <li class="nav-item active "><a id="Hasard" class="nav-link" th:href="@{/eventRandom}" href="index/eventRandom">Évènement au hasard</a></li>
+                                        <li class="nav-item active "><a th:href="@{/search}" href="index/search" id="recherche" class="nav-link text-light text-decoration-none">Rechercher un évènement</a></li>
                                     </ul>
                                 </div>    
                             </div>
