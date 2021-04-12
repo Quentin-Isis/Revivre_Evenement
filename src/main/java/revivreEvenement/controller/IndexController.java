@@ -25,11 +25,16 @@ import revivreEvenement.entity.Evenement;
  */
 
 @Controller
-@RequestMapping(path="/index")
+@RequestMapping(path="/")
 public class IndexController{
     
     @Autowired
     private EvenementRepository evenementRepository;
+    
+    @GetMapping("index")
+    public String showIndexPage(Model model){
+        return "index";
+    }
     
     @GetMapping("eventRandom")
     public String showEvenementRandom(Model model){
@@ -63,7 +68,7 @@ public class IndexController{
         return "search";
     }
     
-    @GetMapping("/")
+/*    @GetMapping("/")
     public String showListEventPage(Model model){
         /**
          * Affiche la liste des évènements dans le template "liste_evenements.html"
@@ -71,7 +76,7 @@ public class IndexController{
          * paramètre page: indice de la page que l'on affiche
          */
         
-        List<Evenement> pageEvenements = evenementRepository.findAll(); // On récupère tous les evenements dans le dao (on en récupère 10)
+ /*       List<Evenement> pageEvenements = evenementRepository.findAll(); // On récupère tous les evenements dans le dao (on en récupère 10)
         
         ArrayList<Integer> listeDatesDebut = new ArrayList<>();
         for (Evenement e : pageEvenements) {
@@ -80,5 +85,5 @@ public class IndexController{
         model.addAttribute("dates", listeDatesDebut); //On ajoute la liste au modèle qui permet l'affichage
         return "index";
     }
-    
+ */   
 }
