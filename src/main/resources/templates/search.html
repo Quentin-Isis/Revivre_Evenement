@@ -106,25 +106,36 @@
                             <div class=card-body>
                                 <h5 class=card-title> Rechercher un évènement par sa date</h5>
                                 <div class=emplacementRecherche card-text > 
-                                        <form id=formulaire >
-                                            <label for=annee>Année : </label><input id=rechercheAnnée type=number min="2000" max="2021"/><br/>
-                                            <label for=mois>Mois : </label><select name="mois" id="mois">
-                                            <option value="">--Choissiez un mois--</option>
-                                            <option value="01"> Janvier </option>
-                                            <option value="02"> Février </option>
-                                            <option value="03"> Mars </option>
-                                            <option value="04"> Avril</option>
-                                            <option value="05"> Mai </option>
-                                            <option value="06"> Juin </option>
-                                            <option value="07"> Juillet </option>
-                                            <option value="08"> Août </option>
-                                            <option value="09"> Septembre </option>
-                                            <option value="10"> Octobre </option>
-                                            <option value="11"> Novembre </option>
-                                            <option value="12"> Décembre </option></select><br/>
-                                            <label for=jour>Jour : </label><input id=rechercheJour type=number min="1" max="31"/><br/>
-                                             <input class="btn-rechercher" type=submit value=Recherche />
-                                        </form>
+                                    <form id=formulaire_dates th:action="@{/recherches/fctSearchByDate}" method="get">
+                                        <span>
+                                            <label for="day">Jour :</label>
+                                            <select id="day" name="day">
+                                            </select>
+                                            </span>
+                                        <span>
+                                            <label for="month">Mois :</label>
+                                            <select id="month" name="month">
+                                                <option selected>Janvier</option>
+                                                <option>Février</option>
+                                                <option>Mars</option>
+                                                <option>Avril</option>
+                                                <option>Mai</option>
+                                                <option>Juin</option>
+                                                <option>Juillet</option>
+                                                <option>Août</option>
+                                                <option>Septembre</option>
+                                                <option>Octobre</option>
+                                                <option>Novembre</option>
+                                                <option>Décembre</option>
+                                            </select>
+                                            </span>
+                                            <span>
+                                                <label for="year">Année :</label>
+                                                <select id="year" name="year">
+                                                </select>
+                                            </span>
+                                         <input class="btn-rechercher" type=submit value=Recherche />
+                                    </form>
                                 </div>
                             </div>
                         </div>

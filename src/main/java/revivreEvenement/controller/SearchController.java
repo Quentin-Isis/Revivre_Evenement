@@ -86,5 +86,18 @@ public class SearchController {
         return motCleIsValide;
     }
     
+    //FONCTIONS POUR RECHERCHER PAR DATE
+    
+    private String fctSearchByDate(Model model, 
+            @RequestParam(name="month_nb", defaultValue = "") int month_nb, 
+            @RequestParam(name="year", defaultValue = "") int year, 
+            @RequestParam(name="day_nb", defaultValue = "") int day_nb){
+        
+        
+        
+        model.addAttribute("year", year);
+        
+        return "search";
+    }
     
 }
