@@ -59,6 +59,14 @@ public class SearchController {
         return "search";
     }
     
+    @GetMapping("eventWikiPage")
+    private String showEventWikiPage(Model model, @RequestParam("id") Evenement event){
+        
+        model.addAttribute("evenement", event);
+        
+        return "wiki";
+    }
+    
     private boolean motCleIsValide(String motCle){
         boolean motCleIsValide = false;
         
@@ -77,4 +85,6 @@ public class SearchController {
         
         return motCleIsValide;
     }
+    
+    
 }

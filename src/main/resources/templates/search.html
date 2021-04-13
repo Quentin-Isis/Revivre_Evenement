@@ -84,12 +84,12 @@
                                     <h3>Résultats pour "[[${motCle}]]" :</h3><br/>
                                     <table>
                                             <tr>
-                                                <th>ID</th><th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
+                                                <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
                                             </tr>
                                             <tr th:each="r:${results}">
-                                                <td th:text="${r.nomEve nement}"></td>
+                                                <td ><a th:text="${r.nomEvenement}" th:href="@{/recherches/eventWikiPage(id=${r.id})}"></a></td>
                                                 <!--<td th:text="${e.description}"></td>-->
-                                                <td th:text="${r.lieu}"></td>
+                                                <td><a th:text="${r.lieu}"></a></td>
                                                 <td th:text="${#temporals.format(r.dateDebut, 'dd/MM/yyyy')}"></td>
                                                 <td th:text="${#temporals.format(r.dateFin, 'dd/MM/yyyy')}"></td>
                                             </tr>
