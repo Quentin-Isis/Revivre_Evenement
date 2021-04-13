@@ -53,6 +53,7 @@
                 <div class="container">
                     <div>
                         <h1 th:text="${evenement.nomEvenement}"></h1> <!-- NOM DE L'EVENT choisi aléatoirement -->
+                        <h5 id="adresse" th:value="${evenement.lieu}" th:text="${evenement.lieu}"></h5>
                     </div>
                     <div class="row">
                         <div class="col" id="timeline">
@@ -82,7 +83,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="carte" class="col-md-8 col-12" >
+                        <div id="map" class="col-md-8 col-12" >
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"> Carte
@@ -128,6 +129,8 @@
             </div>
         </footer>
 
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=goToPlace" async ></script>
+        
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
