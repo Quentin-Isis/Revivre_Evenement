@@ -62,9 +62,22 @@ function afficheRechercheDate(event){
                                 "</h5>\n\
                                 <div class=emplacementRecherche card-text > "+
                                         "<form id=formulaire >"+
-                                            "<label for=annee>Année : </label><input id=rechercheAnnée type=text /><br/>"+
-                                            "<label for=mois>Mois : </label><input id=rechercheMois type=text /><br/>"+
-                                            "<label for=jour>Jour : </label><input id=rechercheJour type=text /><br/>\n\
+                                            "<label for=annee>Année : </label><input id=rechercheAnnée type=number min=\"2000\" max=\"2021\"/><br/>"+
+                                            "<label for=mois>Mois : </label><select name=\"mois\" id=\"mois\">"+
+                                            "<option value=\"\">--Choissiez un mois</option>"+
+                                            "<option value=\"01\"> Janvier </option>"+
+                                            "<option value=\"02\"> Février </option>"+
+                                            "<option value=\"03\"> Mars </option>"+
+                                            "<option value=\"04\"> Avril</option>"+
+                                            "<option value=\"05\"> Mai </option>"+
+                                            "<option value=\"06\"> Juin </option>"+
+                                            "<option value=\"07\"> Juillet </option>"+
+                                            "<option value=\"08\"> Août </option>"+
+                                            "<option value=\"09\"> Septembre </option>"+
+                                            "<option value=\"10\"> Octobre </option>"+
+                                            "<option value=\"11\"> Novembre </option>"+
+                                            "<option value=\"12\"> Décembre </option></select><br/>"+
+                                            "<label for=jour>Jour : </label><input id=rechercheJour type=number min=\"1\" max=\"31\"/><br/>\n\
                                              <input class=\"btn-rechercher\" type=submit value=Recherche /> \n\
                                         </form> \n\
                                 </div> \n\
@@ -95,7 +108,7 @@ function retour(event){
                                             "<h5 class=\"card-title \"> Rechercher un évènement"+
                                             "</h5>"+
                                             "<div >"+
-                                                "<form th:action=\"search\" method=\"get\">"+
+                                                "<form th:action=\"@{/recherches/fctSearch}\" method=\"get\">"+
                                                     "<label for=motCle>Mot-clé : </label>"+
                                                     "<input id=rechercheMot type=text name=\"motCle\" th:value=\"${motCle}\"/><br/>"+
                                                     "<input class=\"btn-rechercher\" type=submit value=\"Recherche par mot-clé\" />"+
