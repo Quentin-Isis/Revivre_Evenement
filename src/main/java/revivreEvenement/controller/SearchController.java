@@ -89,12 +89,12 @@ public class SearchController {
     //FONCTIONS POUR RECHERCHER PAR DATE
     
     private String fctSearchByDate(Model model, 
-            @RequestParam(name="month_nb", defaultValue = "") int month_nb, 
-            @RequestParam(name="year", defaultValue = "") int year, 
-            @RequestParam(name="day_nb", defaultValue = "") int day_nb){
+            @RequestParam(name="month", defaultValue = "") String month, 
+            @RequestParam(name="year", defaultValue = "") String year, 
+            @RequestParam(name="day", defaultValue = "") String day){
         
-        
-        
+        boolean recherche_par_date = true;
+        model.addAttribute("recherche_par_date", recherche_par_date);
         model.addAttribute("year", year);
         
         return "search";

@@ -187,9 +187,15 @@ function populateDays(month) {
   // on ajoute le bon nombre de jours dans autant
   // d'éléments <option> pour l'élément <select>
   // pour la journée
+  let no_choice_day = document.createElement('option');
+  no_choice_day.textContent = "-- Jour --";
+  no_choice_day.value = "";
+  daySelect.appendChild(no_choice_day);
+  
   for(i = 1; i <= dayNum; i++) {
     var option = document.createElement('option');
     option.textContent = i;
+    option.name="day"
     daySelect.appendChild(option);
   }
 
@@ -227,6 +233,7 @@ function populateYears() {
   for(var i = 0; i <= 100; i++) {
     var option = document.createElement('option');
     option.textContent = year-i;
+    option.name="year"
     yearSelect.appendChild(option);
   }
 }

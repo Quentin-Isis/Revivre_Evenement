@@ -106,35 +106,36 @@
                             <div class=card-body>
                                 <h5 class=card-title> Rechercher un évènement par sa date</h5>
                                 <div class=emplacementRecherche card-text > 
-                                    <form id=formulaire_dates th:action="@{/recherches/fctSearchByDate}" method="get">
+                                    <form th:action="@{/recherches/fctSearchByDate}" method="get">
                                         <span>
                                             <label for="day">Jour :</label>
-                                            <select id="day" name="day">
+                                            <select type="text" id="day" name="day">
                                             </select>
-                                            </span>
+                                            </span><br/>
                                         <span>
                                             <label for="month">Mois :</label>
-                                            <select id="month" name="month">
-                                                <option selected>Janvier</option>
-                                                <option>Février</option>
-                                                <option>Mars</option>
-                                                <option>Avril</option>
-                                                <option>Mai</option>
-                                                <option>Juin</option>
-                                                <option>Juillet</option>
-                                                <option>Août</option>
-                                                <option>Septembre</option>
-                                                <option>Octobre</option>
-                                                <option>Novembre</option>
-                                                <option>Décembre</option>
+                                            <select type="text" id="month" name="month">
+                                                <option name="month" value="" selected>-- Mois -- </option>
+                                                <option name="month" value="01">Janvier</option>
+                                                <option name="month" value="02">Février</option>
+                                                <option name="month" value="03">Mars</option>
+                                                <option name="month" value="04">Avril</option>
+                                                <option name="month" value="05">Mai</option>
+                                                <option name="month" value="06">Juin</option>
+                                                <option name="month" value="07">Juillet</option>
+                                                <option name="month" value="08">Août</option>
+                                                <option name="month" value="09">Septembre</option>
+                                                <option name="month" value="10">Octobre</option>
+                                                <option name="month" value="11">Novembre</option>
+                                                <option name="month" value="12">Décembre</option>
                                             </select>
-                                            </span>
+                                            </span><br/>
                                             <span>
-                                                <label for="year">Année :</label>
+                                                <label type="text" for="year">Année :</label>
                                                 <select id="year" name="year">
                                                 </select>
-                                            </span>
-                                         <input class="btn-rechercher" type=submit value=Recherche />
+                                            </span><br/>
+                                        <input class="btn-rechercher" type=submit value=Recherche />
                                     </form>
                                 </div>
                             </div>
@@ -168,6 +169,9 @@
                                     <h3>Aucun résultats trouvés pour "[[${motCle}]]"</h3>
                                 </div>
                             </div>
+                        </div>
+                        <div th:if="${recherche_par_date}">
+                            <h3 th:text="${year}"></h3>
                         </div>
                     </div>
                 </div>
