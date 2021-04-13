@@ -52,16 +52,9 @@ public class SearchController {
             if (!listEvenementSearched.isEmpty()){
                 resultats_trouves = true;
             }
-
-            if (motCle == ""){
-                resultats_trouves = false;
-            }
-
-
-            
-            model.addAttribute("trouves", resultats_trouves);
             model.addAttribute("results", listEvenementSearched);
         }
+        model.addAttribute("trouves", resultats_trouves);
         
         return "search";
     }
