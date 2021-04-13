@@ -4,6 +4,7 @@
 
 document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
 document.getElementById("date").addEventListener("click", afficheRechercheDate);
+document.getElementById("btn-retour").addEventListener("click", retour);
 /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
 
 for(let i = 0; i < bouttons_rechercher.length; i++) {
@@ -12,7 +13,7 @@ for(let i = 0; i < bouttons_rechercher.length; i++) {
 */
 
 function afficheRechercheLieu(event){
-    let texteHTML = "<div id=espace class=col-md-6 col-12 >"+
+    /**let texteHTML = "<div id=espace class=col-md-6 col-12 >"+
                         "<div class=card>"+
                             "<div class=card-body>"+
                                 "<h5 class=card-title> Rechercher un évènement par son lieu"+
@@ -43,19 +44,24 @@ function afficheRechercheLieu(event){
                             </div> \n\
                         </div> \n\
                     </div>"+
-                    "<button id=\"btn-retour\" >Retour</button>";          
-    document.getElementById("rechercher").innerHTML = texteHTML;
-    document.getElementById("btn-retour").addEventListener("click", retour);
+                    "<button id=\"btn-retour\" >Retour</button>";   */       
+    
+    //document.getElementById("rechercher").innerHTML = texteHTML;
+    
     /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
 
     for(let i = 0; i < bouttons_rechercher.length; i++) {
       bouttons_rechercher[i].addEventListener("click", affichageResultats)
     }*/
-
+    
+    document.getElementById("espace_mot_cle").style.display = "none";
+    document.getElementById("espace_lieu_1").style.display = "block";
+    document.getElementById("espace_lieu_2").style.display = "block";
+    document.getElementById("btn-retour").style.display = "block";
 }
 
 function afficheRechercheDate(event){
-    let texteHTML = "<div id=espace class=col-12 >"+
+    /**let texteHTML = "<div id=espace class=col-12 >"+
                         "<div class=card>"+
                             "<div class=card-body>"+
                                 "<h5 class=card-title> Rechercher un évènement par sa date"+
@@ -85,14 +91,17 @@ function afficheRechercheDate(event){
                         </div> \n\
                     </div>"+
                     "<button id=\"btn-retour\">Retour</button>";          
-    document.getElementById("rechercher").innerHTML = texteHTML;
-    document.getElementById("btn-retour").addEventListener("click", retour);
+    document.getElementById("rechercher").innerHTML = texteHTML;*/
+    //document.getElementById("btn-retour").addEventListener("click", retour);
     /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
 
     for(let i = 0; i < bouttons_rechercher.length; i++) {
       bouttons_rechercher[i].addEventListener("click", affichageResultats)
     }
 */
+    document.getElementById("espace_mot_cle").style.display = "none";
+    document.getElementById("espace_date").style.display = "block";
+    document.getElementById("btn-retour").style.display = "block";
 }
 
 
@@ -100,6 +109,7 @@ function afficheRechercheDate(event){
 
 function retour(event){
     console.log("click me")
+    /**
     let textHTML = "<div id=\"espace\" class=\"col\">"+
                             "<div class=\"card\">"+
                                 "<div class=\"card-body\">"+
@@ -129,14 +139,15 @@ function retour(event){
                                 "</div>"+
                             "</div>"+
                         "</div>";
-    document.getElementById("rechercher").innerHTML = textHTML;
-    document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
-    document.getElementById("date").addEventListener("click", afficheRechercheDate);
-    /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
+    document.getElementById("rechercher").innerHTML = textHTML;*/
+    
+    document.getElementById("espace_mot_cle").style.display = "block";
+    document.getElementById("espace_lieu_1").style.display = "none";
+    document.getElementById("espace_lieu_2").style.display = "none";
+    document.getElementById("espace_date").style.display = "none";
+    document.getElementById("btn-retour").style.display = "none";
+    
 
-    for(let i = 0; i < bouttons_rechercher.length; i++) {
-      bouttons_rechercher[i].addEventListener("click", affichageResultats)
-    }*/
 }
 
 // AFFICHAGE DES Résultats

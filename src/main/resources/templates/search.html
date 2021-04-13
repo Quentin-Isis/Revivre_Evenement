@@ -43,7 +43,7 @@
                 <div class="container">
                     <div id="rechercher"class="row">
                         <!-- SI MODIF, PENSER A MODIFIER LE FICHIER JS -->
-                        <div id="espace" class="col">
+                        <div id="espace_mot_cle" class="col">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row " >
@@ -72,6 +72,64 @@
                                 </div>
                             </div>
                         </div>
+                        <div id=espace_lieu_1 class=col-md-6 col-12> <!--Caché-->
+                        <div class=card>
+                            <div class=card-body>
+                                <h5 class=card-title> Rechercher un évènement par son lieu</h5>
+                                <div class=emplacementRecherche card-text >
+                                        <form id=formulaire >
+                                            <label for=pays>Pays : </label><input id=recherchePays type=text /><br/>
+                                            <label for=ville>Ville : </label><input id=rechercheVille type=text /><br/>
+                                            <label for=adresse>Adresse : </label><input id=rechercheAdresse type=text /><br/>
+                                            <input class="btn-rechercher" type=submit value=Recherche />
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id=espace_lieu_2 class=col-md-6 col-12 > <!--Caché-->
+                        <div class=card>
+                            <div class=card-body>
+                                <h5 class=card-title> Rechercher un évènement par ses coordonnées</h5>
+                                <div class=emplacementRecherche card-text >
+                                    <form id=formulaire>
+                                        <label for=latitude>Latitude : </label><input id=rechercheLatitude type=text /><br/>
+                                        <label for=longitude>Longitude : </label><input id=rechercheLongitude type=text /><br/>
+                                        <input class="btn-rechercher" type=submit value=Recherche />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id=espace_date class=col-12 > <!--Caché-->
+                        <div class=card>
+                            <div class=card-body>
+                                <h5 class=card-title> Rechercher un évènement par sa date</h5>
+                                <div class=emplacementRecherche card-text > 
+                                        <form id=formulaire >
+                                            <label for=annee>Année : </label><input id=rechercheAnnée type=number min="2000" max="2021"/><br/>
+                                            <label for=mois>Mois : </label><select name="mois" id="mois">
+                                            <option value="">--Choissiez un mois--</option>
+                                            <option value="01"> Janvier </option>
+                                            <option value="02"> Février </option>
+                                            <option value="03"> Mars </option>
+                                            <option value="04"> Avril</option>
+                                            <option value="05"> Mai </option>
+                                            <option value="06"> Juin </option>
+                                            <option value="07"> Juillet </option>
+                                            <option value="08"> Août </option>
+                                            <option value="09"> Septembre </option>
+                                            <option value="10"> Octobre </option>
+                                            <option value="11"> Novembre </option>
+                                            <option value="12"> Décembre </option></select><br/>
+                                            <label for=jour>Jour : </label><input id=rechercheJour type=number min="1" max="31"/><br/>
+                                             <input class="btn-rechercher" type=submit value=Recherche />
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-retour">Retour</button> <!--Caché-->
                     </div>
                     <!--ICI-->
                     <div id="resultats" class="row">
