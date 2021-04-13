@@ -52,18 +52,19 @@ public class SearchController {
             if (!listEvenementSearched.isEmpty()){
                 resultats_trouves = true;
             }
-
-            if (motCle == ""){
-                resultats_trouves = false;
-            }
-
-
-            
-            model.addAttribute("trouves", resultats_trouves);
             model.addAttribute("results", listEvenementSearched);
         }
+        model.addAttribute("trouves", resultats_trouves);
         
         return "search";
+    }
+    
+    @GetMapping("eventWikiPage")
+    private String showEventWikiPage(Model model, @RequestParam("id") Evenement event){
+        
+        model.addAttribute("evenement", event);
+        
+        return "wiki";
     }
     
     private boolean motCleIsValide(String motCle){
@@ -84,4 +85,19 @@ public class SearchController {
         
         return motCleIsValide;
     }
+    
+    //FONCTIONS POUR RECHERCHER PAR DATE
+    
+    private String fctSearchByDate(Model model, 
+            @RequestParam(name="month", defaultValue = "") String month, 
+            @RequestParam(name="year", defaultValue = "") String year, 
+            @RequestParam(name="day", defaultValue = "") String day){
+        
+        boolean recherche_par_date = true;
+        model.addAttribute("recherche_par_date", recherche_par_date);
+        model.addAttribute("year", year);
+        
+        return "search";
+    }
+    
 }

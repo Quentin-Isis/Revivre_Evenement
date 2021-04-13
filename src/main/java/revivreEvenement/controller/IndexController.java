@@ -31,7 +31,7 @@ public class IndexController{
     @Autowired
     private EvenementRepository evenementRepository;
     
-    @GetMapping("index")
+    @GetMapping("/")
     public String showIndexPage(Model model){
         return "index";
     }

@@ -38,6 +38,7 @@ public class Evenement {
     private String nomEvenement;
     
     @NonNull
+    @Column(length=2048)
     private String description;
     
     @NonNull

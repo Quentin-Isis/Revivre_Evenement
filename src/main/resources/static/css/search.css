@@ -22,11 +22,27 @@ div a {
     font-size: 20px;
 }
 
-#espace{
+#espace_date{
+    margin-top: 25px;
+    display:none;
+}
+
+#espace_mot_cle{
     margin-top: 25px;
 }
-#espace1{
+
+#espace_lieu_1{
     margin-top: 25px;
+    display:none;
+}
+
+#espace_lieu_2{
+    margin-top: 25px;
+    display:none;
+}
+
+#btn-retour{
+    display:none;
 }
 
 #rechercher{

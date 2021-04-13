@@ -25,9 +25,9 @@
                                 <div class="col-12">   
                                     <ul class="navbar-nav mr-auto justify-content-around">
                                         <li class="nav-item active "><a id="Accueil" class="nav-link " th:href="@{/}" href="#">Accueil</a></li>
-                                        <li class="nav-item active "><a id="Contribuer" class="nav-link" href="contribuer">Contribuer</a></li>
-                                        <li class="nav-item active "><a id="Hasard" class="nav-link" href="eventRandom">Évènement au hasard</a></li>
-                                        <li class="nav-item active "><a href="search" id="recherche" class="nav-link text-light text-decoration-none">Rechercher un évènement</a></li>
+                                        <li class="nav-item active "><a id="Contribuer" class="nav-link" th:href="@{/contribuer}">Contribuer</a></li>
+                                        <li class="nav-item active "><a id="Hasard" class="nav-link" th:href="@{/eventRandom}">Évènement au hasard</a></li>
+                                        <li class="nav-item active "><a th:href="@{/search}" id="recherche" class="nav-link text-light text-decoration-none">Rechercher un évènement</a></li>
                                     </ul>
                                 </div>    
                             </div>
@@ -43,7 +43,7 @@
                 <div class="container">
                     <div id="rechercher"class="row">
                         <!-- SI MODIF, PENSER A MODIFIER LE FICHIER JS -->
-                        <div id="espace" class="col">
+                        <div id="espace_mot_cle" class="col">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row " >
@@ -72,6 +72,76 @@
                                 </div>
                             </div>
                         </div>
+                        <div id=espace_lieu_1 class=col-md-6 col-12> <!--Caché-->
+                        <div class=card>
+                            <div class=card-body>
+                                <h5 class=card-title> Rechercher un évènement par son lieu</h5>
+                                <div class=emplacementRecherche card-text >
+                                        <form id=formulaire >
+                                            <label for=pays>Pays : </label><input id=recherchePays type=text /><br/>
+                                            <label for=ville>Ville : </label><input id=rechercheVille type=text /><br/>
+                                            <label for=adresse>Adresse : </label><input id=rechercheAdresse type=text /><br/>
+                                            <input class="btn-rechercher" type=submit value=Recherche />
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id=espace_lieu_2 class=col-md-6 col-12 > <!--Caché-->
+                        <div class=card>
+                            <div class=card-body>
+                                <h5 class=card-title> Rechercher un évènement par ses coordonnées</h5>
+                                <div class=emplacementRecherche card-text >
+                                    <form id=formulaire>
+                                        <label for=latitude>Latitude : </label><input id=rechercheLatitude type=text /><br/>
+                                        <label for=longitude>Longitude : </label><input id=rechercheLongitude type=text /><br/>
+                                        <input class="btn-rechercher" type=submit value=Recherche />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id=espace_date class=col-12 > <!--Caché-->
+                        <div class=card>
+                            <div class=card-body>
+                                <h5 class=card-title> Rechercher un évènement par sa date</h5>
+                                <div class=emplacementRecherche card-text > 
+                                    <form th:action="@{/recherches/fctSearchByDate}" method="get">
+                                        <span>
+                                            <label for="day">Jour :</label>
+                                            <select type="text" id="day" name="day">
+                                            </select>
+                                            </span><br/>
+                                        <span>
+                                            <label for="month">Mois :</label>
+                                            <select type="text" id="month" name="month">
+                                                <option name="month" value="" selected>-- Mois -- </option>
+                                                <option name="month" value="01">Janvier</option>
+                                                <option name="month" value="02">Février</option>
+                                                <option name="month" value="03">Mars</option>
+                                                <option name="month" value="04">Avril</option>
+                                                <option name="month" value="05">Mai</option>
+                                                <option name="month" value="06">Juin</option>
+                                                <option name="month" value="07">Juillet</option>
+                                                <option name="month" value="08">Août</option>
+                                                <option name="month" value="09">Septembre</option>
+                                                <option name="month" value="10">Octobre</option>
+                                                <option name="month" value="11">Novembre</option>
+                                                <option name="month" value="12">Décembre</option>
+                                            </select>
+                                            </span><br/>
+                                            <span>
+                                                <label type="text" for="year">Année :</label>
+                                                <select id="year" name="year">
+                                                </select>
+                                            </span><br/>
+                                        <input class="btn-rechercher" type=submit value=Recherche />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-retour">Retour</button> <!--Caché-->
                     </div>
                     <!--ICI-->
                     <div id="resultats" class="row">
@@ -79,28 +149,29 @@
                         <!--Les recherches par mot clé (si le boolean est vrai, les éléments HTML sont appliqués)-->
                         <div th:if="${recherche_par_mot_cle}">
                             <h3 th:if="${!isValide}">Veuillez saisir un mot clé</h3>
-                            <div th:if="${trouves} and ${motCle != ''}">
-                                <h3>Résultats pour "[[${motCle}]]" :</h3><br/>
-                                <table>
-                                        <tr>
-                                            <th>ID</th><th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
-                                        </tr>
-                                        <tr th:each="r:${results}">
-                                            <td th:text="${r.id}"></td>
-                                            <td th:text="${r.nomEvenement}"></td>
-                                            <!--<td th:text="${e.description}"></td>-->
-                                            <td th:text="${r.lieu}"></td>
-                                            <td th:text="${#temporals.format(r.dateDebut, 'dd/MM/yyyy')}"></td>
-                                            <td th:text="${#temporals.format(r.dateFin, 'dd/MM/yyyy')}"></td>
-                                        </tr>
-                                </table>
+                            <div th:unless="${!isValide}">
+                                <div th:if="${trouves}">
+                                    <h3>Résultats pour "[[${motCle}]]" :</h3><br/>
+                                    <table>
+                                            <tr>
+                                                <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
+                                            </tr>
+                                            <tr th:each="r:${results}">
+                                                <td ><a th:text="${r.nomEvenement}" th:href="@{/recherches/eventWikiPage(id=${r.id})}"></a></td>
+                                                <!--<td th:text="${e.description}"></td>-->
+                                                <td><a th:text="${r.lieu}"></a></td>
+                                                <td th:text="${#temporals.format(r.dateDebut, 'dd/MM/yyyy')}"></td>
+                                                <td th:text="${#temporals.format(r.dateFin, 'dd/MM/yyyy')}"></td>
+                                            </tr>
+                                    </table>
+                                </div>
+                                <div th:unless="${trouves}">
+                                    <h3>Aucun résultats trouvés pour "[[${motCle}]]"</h3>
+                                </div>
                             </div>
-                            <div th:if="${!trouves} and ${motCle != ''} and ${isValide}">
-                                <h3>Aucun résultats trouvés pour "[[${motCle}]]"</h3>
-                            </div>
-                            
-                                
-                            
+                        </div>
+                        <div th:if="${recherche_par_date}">
+                            <h3 th:text="${year}"></h3>
                         </div>
                     </div>
                 </div>
