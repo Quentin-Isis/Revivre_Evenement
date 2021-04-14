@@ -8,9 +8,8 @@
  * Created: 8 févr. 2021
  */
 
-INSERT INTO Evenement(id, nom_evenement, description, lieu,  date_debut, date_fin) VALUES
-    (1, 'Coupe du monde', 'La Coupe du monde de football 2018 est la 21e édition de la Coupe du monde de football, une compétition organisée par la FIFA et qui réunit les trente-deux sélections nationales masculines issues de la phase qualificative. Elle se déroule en Russie du 14 juin au 15 juillet 20181 et est remportée par l équipe de France...', 'Russie', TO_DATE('2018/06/14', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'));
-INSERT INTO Evenement(id, nom_evenement, description, lieu,  date_debut, date_fin,evenement_principal_id) VALUES    
+INSERT INTO Evenement(id, nom_evenement, description, lieu,  date_debut, date_fin,evenement_principal_id) VALUES
+    (1, 'Coupe du monde', 'La Coupe du monde de football 2018 est la 21e édition de la Coupe du monde de football, une compétition organisée par la FIFA et qui réunit les trente-deux sélections nationales masculines issues de la phase qualificative. Elle se déroule en Russie du 14 juin au 15 juillet 20181 et est remportée par l équipe de France...', 'Russie', TO_DATE('2018/06/14', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),1),    
     (2, '8ème de finale Coupe du monde', 'Dans ce premier huitième de finale, la France affronte l Argentine qui est sortie in extremis de son groupe grâce à une victoire face au Nigeria obtenue dans les derniers instants...', 'Russie', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'),1),
     (3, 'quart de finale Coupe du monde', 'La France se qualifie pour la sixième fois de son histoire pour les demi-finales de la Coupe du monde...', 'Russie', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'),1),
     (4, 'demi finale Coupe du monde', 'La rencontre est très attendue par l ensemble des observateurs : la Belgique a produit jusque-là un niveau de jeu extrêmement séduisant, tourné vers l attaque (14 buts depuis le début de la compétition) et a réussi le tour de force d éliminer le Brésil, l un des grands favoris de la compétition...', 'Russie', TO_DATE('2018/07/10', 'yyyy/mm/dd'), TO_DATE('2018/07/11', 'yyyy/mm/dd'),1),

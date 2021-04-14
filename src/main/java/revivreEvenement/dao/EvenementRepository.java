@@ -20,4 +20,6 @@ public interface EvenementRepository extends JpaRepository<Evenement, Integer>{
     // Return un liste d'évènement. Si on se rend compte qu'il y a trop d'évènement affichés, on pourra faire un système de pagination
     public List<Evenement> findByNomEvenementContains(String motCle);
     public List<Evenement> findByLieuContains(String motCle);
+    
+    
 }

@@ -25,6 +25,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 /**
  *
  * @author QUENTIN
@@ -62,6 +63,7 @@ public class Evenement {
     
     @OneToMany (mappedBy = "evenementPrincipal")
     List <Evenement> listeSousEvenements = new ArrayList<>();
+    
 }
 
 
