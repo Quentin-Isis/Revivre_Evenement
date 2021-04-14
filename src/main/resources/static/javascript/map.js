@@ -17,21 +17,9 @@ function initMap() {
   });
 }
 
-/*function goToPlace(){
-    //if (latitude == 0 && longitude == 0){
-        adresse= document.getElementById("adresse");
-        map = new google.maps.Map(document.getElementById("map"))
-        var geocoder = new google.maps.ClientGeocoder();
-        geocoder.getLatLng(adresse, function (coord) {
-            // Et centrage de la map sur les coordonnées renvoyées par Google :
-            map.setCenter(coord, 15);
-        });
-    //}
-}
-*/
 function goToPlace()
 {
-    // initialisation de la marque
+    // initialisation de la map
     map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 43.624227611324216,  lng: 2.268580304110914 },
     zoom: 15,

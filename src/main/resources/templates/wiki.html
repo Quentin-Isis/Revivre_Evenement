@@ -75,9 +75,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title"> Évènement
                                     </h5>
-                                    <ul id="emplacementEvenement" class="card-text" >
-                                        <li>ss-event1</li>
-                                        <li>ss-event2</li>
+                                    <ul id="emplacementEvenement" class="card-text" th:each="SsEvent:${evenement.listeSousEvenement}">
+                                        <li><a th:href="@{/recherches/eventWikiPage?id=${SsEvent.id}}" th:text="${SsEvent.nomEvenement}"></a></li>
                                     </ul>
                                     <!--texte qui va changer-->                                
                                 </div>
@@ -129,7 +128,7 @@
             </div>
         </footer>
 
-       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=goToPlace" async ></script>
+       <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=goToPlace" async ></script>-->
         
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
