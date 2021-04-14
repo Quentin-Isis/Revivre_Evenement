@@ -45,7 +45,7 @@ public class Item {
     @ManyToOne 
     private Evenement evenement;
     
-    @OneToMany (mappedBy = "item")
-    List <Position> position = new LinkedList<>();
+    @OneToOne (mappedBy = "item")
+    private Position position;
     
 }

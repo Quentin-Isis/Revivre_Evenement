@@ -23,7 +23,7 @@ import lombok.ToString;
  *
  * @author QUENTIN
  */
-@Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
+@Getter @Setter @NoArgsConstructor @ToString
 @Entity
 public class Position {
     
@@ -31,17 +31,15 @@ public class Position {
     private Integer id;
     
    // @Column(unique=true)
-    @NonNull
-    private int longitude;
+    private double longitude;
     
    // @Column(unique=true)
-    @NonNull
-    private int latitude;
+    private double latitude;
     
    // @Column(unique=true)
-    private String orientation;
+    private double orientation;
     
-    @ManyToOne
+    @OneToOne 
     private Item item;
     
 }
