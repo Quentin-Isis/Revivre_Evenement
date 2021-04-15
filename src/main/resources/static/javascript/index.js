@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-document.getElementById("test").addEventListener('click', () => {
-    if (getComputedStyle(document.getElementById("2010")).display != "none") {
-        document.getElementById("2010").style.display = "none";
+document.getElementById("date").addEventListener('click', () => {
+    if (getComputedStyle(document.getElementById("liste-evenement")).display != "none") {
+        document.getElementById("liste-evenement").style.display = "none";
     } else {
-      document.getElementById("2010").style.display = "block";
+      document.getElementById("liste-evenement").style.display = "block";
     }
 })

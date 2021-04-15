@@ -61,19 +61,24 @@ and open the template in the editor.
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row justify-content-around">                                      
-                                        <div class="annee">
-                                            <div  class="timeline-date-button rounded-circle">
-                                              <!--  <a id="test" th:text="${dates.listeDatesDebut}" href="#"></a>-->
+                                        <div class="annee" th:each="d:${dates}">
+                                            <div class="timeline-date-button rounded-circle" >
+                                                <a id="date" th:text="${d}" href="#"></a>
                                             </div>
-                                            <div id="2010" class="border border-primary rounded">
-                                                <ul>
-                                                    <li>aaaaaaaaaa</li>
-                                                    <li>aaaaaaaaaa</li>
-                                                    <li>aaaaaaaaaa</li>
-                                                </ul>
+                                            <div id="liste-evenement" th:each="Map1:${da}">
+                                                <div th:each="Map2:${Map1}"  th:classappend="${Map2.key == d} ? d-inline : d-none">
+                                                    <div class="border border-primary rounded" th:if="${Map2.key == d}">
+                                                        <div th:each="value:${Map2.value}" >
+                                                            <div th:each="evenement:${evenements}">
+                                                                <div th:if="${evenement.nomEvenement == value}">
+                                                                    <a th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
