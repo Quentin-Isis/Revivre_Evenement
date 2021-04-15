@@ -60,30 +60,27 @@
                                                 <input id="dateDebut" name="dateDebut" type="date" th:field="*{dateDebut}" required="true" /><br/>
                                                 <label for="dateFin">Date de fin: </label>
                                                 <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/> 
+                                                <form method="POST" enctype="multipart/form-data" action="/upload">
+                                                    <table>
+                                                        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr> 
+                                                        <tr><td></td><td><input type="submit" value="Upload" /><input type="reset" value="Réinitialiser" /></td></tr>   
+                                                    </table>
+                                                    <ul>
+                                                        <li th:each="file : ${files}">
+                                                            <a th:href="${file}" th:text="${file}" />
+                                                        </li>
+                                                    </ul>    
+                                                </form>
+                                                
+                                                <!--<tr><td></td><td><input type = "submit"></input> --> 
                                                 <!--<label for="PJ">Pièce jointe : </label><input id="PJ" type="file" /><br/>  -->          
                                                 <!--<input id="evenementPrincipal" type="text" th:value="evenementPrincipal" th:fields="*{evenementPrincipal}"/><br/>-->
-                                                <input type = "submit"></input><input type="reset" value="Réinitialiser" /><br/>
+                                                
                                             </div>
+                                           
                                             <div th:if="${message}">
                                                 <h2 th:text="${message}">Message de succès ou d'erreur</h2>
                                             </div>
-
-                                            <!--<div>
-                                                <form method="POST" enctype="multipart/form-data" action="/upload">
-                                                    <table>
-                                                        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-                                                        <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
-                                                    </table>
-                                                </form>
-                                            </div>
-
-                                            <div>
-                                                <ul>
-                                                    <li th:each="file : ${files}">
-                                                        <a th:href="${file}" th:text="${file}" />
-                                                    </li>
-                                                </ul>
-                                            </div>-->
                                         </form>
                                 </div>
                             </div>
