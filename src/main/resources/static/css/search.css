@@ -27,9 +27,6 @@ div a {
     display:none;
 }
 
-#espace_mot_cle{
-    margin-top: 25px;
-}
 
 #espace_lieu_1{
     margin-top: 25px;
@@ -54,9 +51,9 @@ div a {
     margin-bottom: 25px;
 }
 
-#resultats{
-    display:none;
-}
+/*#resultats{
+    display: none;    
+}*/
 
 footer{
     position:fixed;

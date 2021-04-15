@@ -260,17 +260,16 @@ daySelect.onchange = function() {
 }
 
 function afficheResultats(event){
-    event.preventDefault();
     let affichageResultat=false;
-    if (affichageResultat === false){
-        document.getElementById("resultats").style.display = "block";
-        document.getElementByTagName("footer").style = "none";
-        affichagResultat=true;
-    }
-    else{
-        document.getElementById("resultats").style.display = "none";
-        document.getElementByTagName("footer").style = "none";
-        affichagResultat=false;
-        
+    let footer =document.getElementsByTagName("footer");
+    while(affichageResultat === false){
+        document.getElementById("resultats").style.display="block"     
+        for (let ft of footer){
+            ft.style.position = "relative";
+            ft.style.bottom = "0px";
+            ft.style.alignItems = "center";
+        }
+        wait(5000);
+        affichageResultat=true;
     }
 }
