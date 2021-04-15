@@ -154,23 +154,26 @@
                                 <div class="card-body">
                                     <div class="row " >
                                         <div class="col-12">
+                                            <h1>Résultats:</h1>
                                             <div th:if="${recherche_par_mot_cle}">
                                                 <h3 th:if="${!isValide}">Veuillez saisir un mot clé</h3>
                                                 <div th:unless="${!isValide}">
                                                     <div th:if="${trouves}">
-                                                        <h3>Résultats pour "[[${motCle}]]" :</h3><br/>
-                                                        <table>
-                                                                <tr>
-                                                                    <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th>
-                                                                </tr>
-                                                                <tr th:each="r:${results}">
-                                                                    <td ><a th:text="${r.nomEvenement}" th:href="@{/recherches/eventWikiPage(id=${r.id})}"></a></td>
-                                                                    <!--<td th:text="${e.description}"></td>-->
-                                                                    <td><a th:text="${r.lieu}"></a></td>
-                                                                    <td th:text="${#temporals.format(r.dateDebut, 'dd/MM/yyyy')}"></td>
-                                                                    <td th:text="${#temporals.format(r.dateFin, 'dd/MM/yyyy')}"></td>
-                                                                </tr>
-                                                        </table>
+                                                        <h3>Pour la recherche de "[[${motCle}]]" :</h3>
+                                                        <div class="row">
+                                                            <table class="col-12">
+                                                                    <tr class="row">
+                                                                            <th class="col-3 col-md-6">Nom de l'évènement</th><th class="col-3 col-md-2">Lieu</th><th class="col-3 col-md-2">Date de début</th><th class="col-3 col-md-2">Date de fin</th>
+                                                                    </tr>
+                                                                    <tr class="row" th:each="r:${results}">
+                                                                        <td class="col-3 col-md-6" ><a th:text="${r.nomEvenement}" th:href="@{/recherches/eventWikiPage(id=${r.id})}"></a></td>
+                                                                        <!--<td th:text="${e.description}"></td>-->
+                                                                        <td class="col-3 col-md-2" ><a th:text="${r.lieu}"></a></td>
+                                                                        <td class="col-3 col-md-2" th:text="${#temporals.format(r.dateDebut, 'dd/MM/yyyy')}"></td>
+                                                                        <td class="col-3 col-md-2" th:text="${#temporals.format(r.dateFin, 'dd/MM/yyyy')}"></td>
+                                                                    </tr>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                     <div th:unless="${trouves}">
                                                         <h3>Aucun résultats trouvés pour "[[${motCle}]]"</h3>

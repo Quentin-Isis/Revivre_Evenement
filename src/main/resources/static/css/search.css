@@ -51,12 +51,17 @@ div a {
     margin-bottom: 25px;
 }
 
-/*#resultats{
-    display: none;    
-}*/
+#carteResultats{
+    margin-bottom: 25px;
+}
+
+table{
+    margin-top: 15px;
+    margin-left: 15px;
+}
 
 footer{
-    position:fixed;
-    bottom: 0px;
-    width: 100%;
+    position:relative;
+    bottom:0px;
+    align-items: center;
 }
