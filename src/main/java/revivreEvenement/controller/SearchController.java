@@ -62,6 +62,16 @@ public class SearchController {
     @GetMapping("eventWikiPage")
     private String showEventWikiPage(Model model, @RequestParam("id") Evenement event){
         
+        
+        fillSsEventListOf(event);
+        // Vérifiaction de la possibilité d'afficher la liste de sous évènement
+        boolean hasSsEvent = false;
+        if (!event.getListeSousEvenements().isEmpty()){
+            hasSsEvent = true;
+        }
+        model.addAttribute("hasSsEvent", hasSsEvent);
+        
+        
         model.addAttribute("evenement", event);
         
         return "wiki";
@@ -98,6 +108,21 @@ public class SearchController {
         model.addAttribute("year", year);
         
         return "search";
+    }
+    
+    public void fillSsEventListOf(Evenement event){
+        /**
+         * Pour un évènement donné, remplit la liste de sous-évènements
+         */
+        List<Evenement> listeEvenement = evenementRepository.findAll();
+        
+        for (Evenement e:listeEvenement){
+            if (e.getEvenementPrincipal().getId() == event.getId() && !(e.getId()==event.getId())){
+                if (!event.getListeSousEvenements().contains(e)){
+                    event.getListeSousEvenements().add(e);
+                } 
+            }
+        }
     }
     
 }

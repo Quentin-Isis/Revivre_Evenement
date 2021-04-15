@@ -4,6 +4,7 @@
 
 document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
 document.getElementById("date").addEventListener("click", afficheRechercheDate);
+document.getElementById("rechercheMotCle").addEventListener("click",afficheResultats);
 document.getElementById("btn-retour").addEventListener("click", retour);
 /**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
 
@@ -256,4 +257,20 @@ var previousDay;
 // est utilisée cette valeur)
 daySelect.onchange = function() {
   previousDay = daySelect.value;
+}
+
+function afficheResultats(event){
+    event.preventDefault();
+    let affichageResultat=false;
+    if (affichageResultat === false){
+        document.getElementById("resultats").style.display = "block";
+        document.getElementByTagName("footer").style = "none";
+        affichagResultat=true;
+    }
+    else{
+        document.getElementById("resultats").style.display = "none";
+        document.getElementByTagName("footer").style = "none";
+        affichagResultat=false;
+        
+    }
 }

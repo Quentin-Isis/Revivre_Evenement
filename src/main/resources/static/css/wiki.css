@@ -22,9 +22,6 @@ div a {
     font-size: 20px;
 }
 
-#emplacementEvenement{
-    height: 400px;
-}
 
 #emplacementDescription{
     height: 400px;
@@ -36,6 +33,10 @@ div a {
 
 #evenement{
     margin-bottom: 25px;
+}
+
+#tailleCarteSsEvent{
+    height:478px;
 }
 
 #description{

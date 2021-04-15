@@ -5,6 +5,7 @@
  */
 package revivreEvenement.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -34,6 +35,21 @@ public class WikiController {
         return "liste_ressources_event";
     }
     
+    @GetMapping("showSsEventWikiPage")
+    public String showSsEventWikiPage(Model model, @RequestParam(name="id") Evenement ssEvent){
+        
+        fillSsEventListOf(ssEvent);
+        boolean hasSsEvent = false;
+        if (!ssEvent.getListeSousEvenements().isEmpty()){
+            hasSsEvent = true;
+        }
+        
+        model.addAttribute("hasSsEvent", hasSsEvent);
+        model.addAttribute("evenement", ssEvent);
+        
+        return "wiki";
+    }
+    
     @GetMapping("show")
     public String showMap(Model model){
         return "map";
@@ -53,5 +69,20 @@ public class WikiController {
         model.addAttribute("pages", new int[pageEvenements.getTotalPages()]); // Pour crée la pagination
         model.addAttribute("currentPage", page); // La page courrante (POUR LE CSS)
         return "liste_evenements";
+    }
+    
+    public void fillSsEventListOf(Evenement event){
+        /**
+         * Pour un évènement donné, remplit la liste de sous-évènements
+         */
+        List<Evenement> listeEvenement = evenementRepository.findAll();
+        
+        for (Evenement e:listeEvenement){
+            if (e.getEvenementPrincipal().getId() == event.getId() && (e.getEvenementPrincipal().getId()!=event.getId())){
+                if (!event.getListeSousEvenements().contains(e)){
+                    event.getListeSousEvenements().add(e);
+                } 
+            }
+        }
     }
 }
