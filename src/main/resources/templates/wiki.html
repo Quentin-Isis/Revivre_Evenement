@@ -79,10 +79,11 @@
                                     <ul id="emplacementEvenement" class="card-text" th:each="SsEvent:${evenement.listeSousEvenements}" th:if="${SsEvent.id != evenement.id}">
                                         <li ><a th:href="@{/wiki/showSsEventWikiPage(id=${SsEvent.id})}" th:text="${SsEvent.nomEvenement}" ></a></li>
                                     </ul>
-                                    <!--texte qui va changer-->                                
+                                    <button>Ajouter un sous évènement</button>                             
                                 </div>
                                 <div class="card-body" th:unless="${hasSsEvent}">
                                     <h5>Cet évènement n'a pas de sous-évènements</h5>
+                                    <button>Ajouter un sous évènement</button> 
                                 </div>
                             </div>
                         </div>

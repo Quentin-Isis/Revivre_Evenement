@@ -32,11 +32,12 @@ public class IndexController{
     @Autowired
     private EvenementRepository evenementRepository;
     
- /*   @GetMapping("/")
+    /**
+    @GetMapping("/")
     public String showIndexPage(Model model){
         return "index";
-    }
-   */ 
+    }*/
+   
     @GetMapping("eventRandom")
     public String showEvenementRandom(Model model){
         /**
@@ -49,15 +50,15 @@ public class IndexController{
         int indexRandom = random.nextInt(listEvenements.size());
         Evenement evenementRandom = listEvenements.get(indexRandom);
         
-       // fillSsEventListOf(evenementRandom);
+       fillSsEventListOf(evenementRandom);
         
-      /*  // Vérifiaction de la possibilité d'afficher la liste de sous évènement
+        // Vérifiaction de la possibilité d'afficher la liste de sous évènement
         boolean hasSsEvent = false;
         if (!evenementRandom.getListeSousEvenements().isEmpty()){
             hasSsEvent = true;
         }
         model.addAttribute("hasSsEvent", hasSsEvent);
-        */model.addAttribute("evenement", evenementRandom);
+        model.addAttribute("evenement", evenementRandom);
      
         return "wiki";
     }
@@ -80,9 +81,10 @@ public class IndexController{
     @GetMapping("/")
     public String showListEventPage(Model model){
         /**
-         * Affiche la liste des évènements dans le template "liste_evenements.html"
-         * 10 évènements par pages
-         * paramètre page: indice de la page que l'on affiche
+         * Author: léa
+         * conception de la frise
+         * 
+         * 
          */
         
         List<Evenement> events = evenementRepository.findAll(Sort.by(Sort.Direction.ASC, "dateDebut"));
@@ -121,11 +123,11 @@ public class IndexController{
         return "index";
     }
     
-  /*  public void fillSsEventListOf(Evenement event){
+  public void fillSsEventListOf(Evenement event){
         /**
          * Pour un évènement donné, remplit la liste de sous-évènements
          */
-  /*      List<Evenement> listeEvenement = evenementRepository.findAll();
+    List<Evenement> listeEvenement = evenementRepository.findAll();
 
         for (Evenement e:listeEvenement){
             if (e.getEvenementPrincipal().getId() == event.getId() && !(e.getId()==event.getId())){
@@ -134,5 +136,5 @@ public class IndexController{
                 } 
             }
         }
-    }*/
+    }
 }
