@@ -34,7 +34,7 @@ public class WikiController {
         // Accessible depuis 
         return "liste_ressources_event";
     }
-    
+    /**
     @GetMapping("showSsEventWikiPage")
     public String showSsEventWikiPage(Model model, @RequestParam(name="id") Evenement ssEvent){
         
@@ -48,11 +48,18 @@ public class WikiController {
         model.addAttribute("evenement", ssEvent);
         
         return "wiki";
-    }
+    }*/
     
     @GetMapping("show")
     public String showMap(Model model){
         return "map";
+    }
+    
+    @GetMapping("ajoutSsEvent")
+    public String showContribuerAddSsEventTo(Model model, @RequestParam(name="id") Evenement evenement){
+        
+        model.addAttribute("evenementPrincipal", evenement);
+        return "contribuer";
     }
     
     @GetMapping("liste_evenements")

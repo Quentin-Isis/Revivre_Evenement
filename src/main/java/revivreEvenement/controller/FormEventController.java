@@ -37,16 +37,16 @@ public class FormEventController {
             // cf. https://www.baeldung.com/spring-data-crud-repository-save
             evenementRepository.save(evenement);
             // Le code de la catégorie a été initialisé par la BD au moment de l'insertion
-            message = "L'évènement '" + evenement.getNomEvenement() + "' a été correctement enregistrée";
+            message = "L'évènement '" + evenement.getNomEvenement() + "' a été correctement enregistré.";
         } catch (DataIntegrityViolationException e) {
             // Les noms sont définis comme 'UNIQUE' 
             // En cas de doublon, JPA lève une exception de violation de contrainte d'intégrité
-            message = "Erreur : Le tableau '" + evenement.getNomEvenement() + "' existe déjà";
+            message = "Erreur : L'évènement '" + evenement.getNomEvenement() + "' existe déjà";
         }
         // RedirectAttributes permet de transmettre des informations lors d'une redirection,
         // Ici on transmet un message de succès ou d'erreur
         // Ce message est accessible et affiché dans la vue 'contribuer.html'
         redirectInfo.addFlashAttribute("message", message);
-        return "redirect:/index/contribuer";
+        return "redirect:/contribuer";
     }
 }
