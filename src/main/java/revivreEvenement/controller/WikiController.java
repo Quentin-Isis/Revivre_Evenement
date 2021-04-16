@@ -34,7 +34,7 @@ public class WikiController {
         // Accessible depuis 
         return "liste_ressources_event";
     }
-    /**
+    
     @GetMapping("showSsEventWikiPage")
     public String showSsEventWikiPage(Model model, @RequestParam(name="id") Evenement ssEvent){
         
@@ -48,7 +48,7 @@ public class WikiController {
         model.addAttribute("evenement", ssEvent);
         
         return "wiki";
-    }*/
+    }
     
     @GetMapping("show")
     public String showMap(Model model){
@@ -85,10 +85,12 @@ public class WikiController {
         List<Evenement> listeEvenement = evenementRepository.findAll();
         
         for (Evenement e:listeEvenement){
-            if (e.getEvenementPrincipal().getId() == event.getId() && (e.getEvenementPrincipal().getId()!=event.getId())){
-                if (!event.getListeSousEvenements().contains(e)){
-                    event.getListeSousEvenements().add(e);
-                } 
+            if ((event.getEvenementPrincipal() != null) && (e.getEvenementPrincipal() != null)) {
+                if ((e.getEvenementPrincipal().getId() == event.getId()) && (e.getId()!=event.getId())){
+                    if (!event.getListeSousEvenements().contains(e)){
+                        event.getListeSousEvenements().add(e);
+                    }
+                }
             }
         }
     }

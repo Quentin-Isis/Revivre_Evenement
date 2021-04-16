@@ -130,10 +130,12 @@ public class IndexController{
     List<Evenement> listeEvenement = evenementRepository.findAll();
 
         for (Evenement e:listeEvenement){
-            if (e.getEvenementPrincipal().getId() == event.getId() && !(e.getId()==event.getId())){
-                if (!event.getListeSousEvenements().contains(e)){
-                    event.getListeSousEvenements().add(e);
-                } 
+            if ((event.getEvenementPrincipal() != null) && (e.getEvenementPrincipal() != null)) {
+                if ((e.getEvenementPrincipal().getId() == event.getId()) && (e.getId()!=event.getId())){
+                    if (!event.getListeSousEvenements().contains(e)){
+                        event.getListeSousEvenements().add(e);
+                    }
+                }
             }
         }
     }

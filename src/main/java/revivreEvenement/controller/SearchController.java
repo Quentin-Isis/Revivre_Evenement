@@ -116,13 +116,16 @@ public class SearchController {
          */
         List<Evenement> listeEvenement = evenementRepository.findAll();
         
+        //continuer à réfléchir là-dessus
+        
         for (Evenement e:listeEvenement){
-            if (e.getEvenementPrincipal().getId() == event.getId() && !(e.getId()==event.getId())){
-                if (!event.getListeSousEvenements().contains(e)){
-                    event.getListeSousEvenements().add(e);
-                } 
+            if ((event.getEvenementPrincipal() != null) && (e.getEvenementPrincipal() != null)) {
+                if ((e.getEvenementPrincipal().getId() == event.getId()) && (e.getId()!=event.getId())){
+                    if (!event.getListeSousEvenements().contains(e)){
+                        event.getListeSousEvenements().add(e);
+                    }
+                }
             }
         }
-    }
-    
+    } 
 }
