@@ -50,14 +50,21 @@
                                         <tr>
                                             <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th><th id="blank"></th>
                                         </tr>
-                                        <tr th:each="e:${listEvenements}">
-                                            <td th:text="${e.nomEvenement}"></td>
-                                            <td class="description" th:text="${e.description}"></td>
-                                            <td th:text="${e.lieu}"></td>
-                                            <td th:text="${#temporals.format(e.dateDebut, 'dd/MM/yyyy')}"></td>
-                                            <td th:text="${#temporals.format(e.dateFin, 'dd/MM/yyyy')}"></td>
+                                        <tr class="events_row" th:each="e:${listEvenements}">
+                                            <td class="nomEvenementCells" th:id="${e.id}" th:text="${e.nomEvenement}"></td>
+                                            <td class="descriptionCells" th:text="${e.description}"></td>
+                                            <td class="lieuCells" th:text="${e.lieu}"></td>
+                                            <td class="dateDebutCells" th:text="${#temporals.format(e.dateDebut, 'dd/MM/yyyy')}"></td>
+                                            <td class="dateFinCells" th:text="${#temporals.format(e.dateFin, 'dd/MM/yyyy')}"></td>
                                             <td id="boutons">
-                                                <!--<a th:href="@{/liste_events/delete(id=${e.id})}">Modifier l'évènement</a><br/>-->
+                                                <button class="btn_modif" value="modifier">Modifier</button>
+                                                <button class="btn_retour" value="retour">Retour</button>
+                                                <button class="btn_save" value="save">Sauvegarder</button>
+                                                <div class="espace_de_modification">
+                                                    <h5>Salut</h5>
+                                                    <!--<a th:href="@{/liste_events/delete(id=${e.id})}">Modifier l'évènement</a><br/>-->
+                                                </div>
+                                                
                                                 <a th:href="@{/liste_events/delete(id=${e.id})}">Supprimer l'évènement</a>
                                             </td>
                                                 
@@ -97,6 +104,6 @@
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
-   
+        <script src="../javascript/liste_events.js"></script>
     </body>
 </html>

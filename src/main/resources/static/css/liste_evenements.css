@@ -62,3 +62,19 @@ td{
 li{
     list-style-type: none;
 }
+
+.espace_de_modification{
+    display:none;
+}
+
+.btn_retour{
+    display:none;
+}
+
+.btn_modif{
+    display:block;
+}
+
+.btn_save{
+    display:none;
+}
