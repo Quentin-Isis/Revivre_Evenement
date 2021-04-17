@@ -12,7 +12,6 @@ and open the template in the editor.
 
 /** HEADER */
 
-
 #logo{
     width: 150px;
     height: 150px;
@@ -23,7 +22,13 @@ div a {
 }
 
 #date {
-    border : 2px solid black;
+    border : 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    position:relative;
+    bottom: 25px;
+    color:rgba(0,0,0,0.4);
+    background-color: white;
 }
 
 .timeline-date-button {
@@ -56,4 +61,77 @@ div a {
 
 #lieu{
     text-decoration: none;    
+}
+
+.evenements{
+    text-decoration: none;
+    color:black;
+}
+.border,.border-black,.rounded{
+    position:relative;
+    top: 20px;
+}
+
+.evenements:hover{
+    text-decoration: none;
+    color:black;
+}
+
+#timeline{
+    height:500px;
+}
+
+/*Timeline*/
+
+.hori-timeline .events {
+    border-top: 40px solid rgba(0,0,0,0.4);
+}
+
+#triangle{
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 40px solid rgba(0,0,0,0.4);
+    right:15px;
+}
+
+.hori-timeline .events .event-list {
+    display: block;
+    position: relative;
+    text-align: center;
+    padding-top: 70px;
+    margin-right: 0;
+}
+.hori-timeline .events .event-list:before {
+    content: "";
+    position: absolute;
+    height: 36px;
+    border-right: 2px dashed #dee2e6;
+    top: 0;
+}
+.hori-timeline .events .event-list .event-date {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+@media (min-width: 1140px) {
+    .hori-timeline .events .event-list {
+        display: inline-block;
+        width: 24%;
+        padding-top: 45px;
+    }
+    .hori-timeline .events .event-list .event-date {
+        top: -12px;
+    }
+}
+
+.card {
+    border: none;
+    margin-bottom: 24px;
+    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
 }

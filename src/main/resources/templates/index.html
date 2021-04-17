@@ -10,8 +10,8 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="../css/index.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
         <link rel="icon" href="images/logo_icon.ico"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
         <script src="javascript/map.js"></script>
     </head>
     <body>
@@ -34,8 +34,8 @@ and open the template in the editor.
                                     </ul>
                                 </div>    
                             </div>
-                                                  
-                           <!-- <button id="affichage" ><img id="mode" src="../images/header/mini_mode_jour.jpg" alt="mode jour/nuit"/></button>-->
+
+                            <!-- <button id="affichage" ><img id="mode" src="../images/header/mini_mode_jour.jpg" alt="mode jour/nuit"/></button>-->
                         </nav>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ and open the template in the editor.
         </header>
         <main>
             <div class="bg-light">
-            <br/>
+                <br/>
                 <div class="container">            
                     <div class="row">
                         <div class="col">
@@ -57,54 +57,51 @@ and open the template in the editor.
             <div class="bg-light">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12" id="timeline">
+                        <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-body">
-                                    <div class="row justify-content-around">                                      
-                                        <div class="annee" th:each="d:${dates}">
-                                            <div class="timeline-date-button rounded-circle" >
-                                                <a id="date" th:text="${d}" href="#"></a>
-                                            </div>
-                                            <div id="liste-evenement" th:each="Map1:${da}">
-                                                <div th:each="Map2:${Map1}"  th:classappend="${Map2.key == d} ? d-inline : d-none">
-                                                    <div class="border border-primary rounded" th:if="${Map2.key == d}">
-                                                        <div th:each="value:${Map2.value}" >
-                                                            <div th:each="evenement:${evenements}">
-                                                                <div th:if="${evenement.nomEvenement == value}">
-                                                                    <a th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                <div class="card-body" id="timeline">
+                                    <h4 class="card-title mb-5">Horizontal Timeline</h4>
+                                    <div class="row">
+                                    <div class="hori-timeline col-11" dir="ltr">
+                                        <ul class="list-inline events">
+                                            <li class="list-inline-item event-list" th:each="d:${dates}">
+                                                <div class="px-4">
+                                                    <div class="event-date bg-soft-success text-success">
+                                                        <div class="annee" >
+                                                            <a id="date" th:text="${d}" href="#"></a>
+                                                            <div id="liste-evenement" th:each="Map1:${da}">
+                                                                <div th:each="Map2:${Map1}"  th:classappend="${Map2.key == d} ? d-inline : d-none">
+                                                                    <div class="border border-black rounded" th:if="${Map2.key == d}">
+                                                                        <div th:each="value:${Map2.value}" >
+                                                                            <div th:each="evenement:${evenements}">
+                                                                                <div th:if="${evenement.nomEvenement == value}">
+                                                                                    <a class="evenements" th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>  
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>  
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
+                                        <div class="col-1" id="triangle"></div>
+                                </div>
                                 </div>
                             </div>
-                                
-                            
-                            <!--
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"> FRISE </h5>
-                                    <p id="emplacementFrise" class="card-text"> Vous aurez bientôt accès à la frise chronologique dans une prochaine mise à jour !
-                                    texte qui va changer
-                                    </p>
-                                </div>
-                            </div>
-                            -->
-                            
                         </div>
-                    </div>
+                    </div>                  
                     <br/>
                     <div class="row">
                         <div id= "description" class="col-md-4 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"> Description
+                                    <h5 class="card-title"> Bienvenue dans notre projet: Revivre l'évènement.
                                     </h5>
-                                    <div id="emplacementDescription" class="card-text"> Vous obtiendrez ici toutes les informations que vous souhaitez concernant l'évènement qui vous intéresse !
+                                    <div id="emplacementDescription" class="card-text"> Notre projet consiste à mettre en place un wiki collaboratif permettant aux utilisateurs de voir les évènements qui les intéressent et de leur donner une immersion maximale grâce à la récupération d'items (photos, vidéos, tweets, ...) auprès des contributeurs. 
                                     <!--texte qui va changer-->
                                     </div>
                                 </div>
