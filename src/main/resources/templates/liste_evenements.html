@@ -45,6 +45,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"> Liste
                                     </h5>
+                                    <h3 th:text="${message}">Message de succès ou d'erreur</h3>
                                     <table>
                                         <tr>
                                             <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th><th id="blank"></th>
@@ -55,9 +56,11 @@
                                             <td th:text="${e.lieu}"></td>
                                             <td th:text="${#temporals.format(e.dateDebut, 'dd/MM/yyyy')}"></td>
                                             <td th:text="${#temporals.format(e.dateFin, 'dd/MM/yyyy')}"></td>
-                                            <td id="boutons"><input class="ajout" type="button" value="Ajouter"/>
-                                            <br/>
-                                            <input class="suppression" type="button" value="Supprimer"/></td>
+                                            <td id="boutons">
+                                                <!--<a th:href="@{/liste_events/delete(id=${e.id})}">Modifier l'évènement</a><br/>-->
+                                                <a th:href="@{/liste_events/delete(id=${e.id})}">Supprimer l'évènement</a>
+                                            </td>
+                                                
                                         </tr>
                                  </table>
                                     <ul>

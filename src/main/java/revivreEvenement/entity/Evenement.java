@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -55,13 +56,13 @@ public class Evenement {
     @NonNull
     private LocalDate dateFin;
     
-    @OneToMany (mappedBy = "evenement")
+    @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, orphanRemoval = true)
     List <Item> items = new LinkedList<>();
     
     @ManyToOne 
     private Evenement evenementPrincipal;
     
-    @OneToMany (mappedBy = "evenementPrincipal")
+    @OneToMany (mappedBy = "evenementPrincipal", cascade = CascadeType.ALL, orphanRemoval = true)
     List <Evenement> listeSousEvenements = new ArrayList<>();
     
 }

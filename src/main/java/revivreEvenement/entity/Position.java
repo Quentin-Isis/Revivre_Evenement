@@ -5,6 +5,7 @@
  */
 package revivreEvenement.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,7 +40,7 @@ public class Position {
    // @Column(unique=true)
     private double orientation;
     
-    @OneToOne 
+    @OneToOne(mappedBy = "position")
     private Item item;
     
 }
