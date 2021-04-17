@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="card-body" th:unless="${hasSsEvent}">
                                     <h5>Cet évènement n'a pas de sous-évènements</h5>
-                                    <!--<button th:href="@{/wiki/showSsEventWikiPage(id=${evenement.id})}">Ajouter un sous évènement</button> -->
+                                    <a th:href="@{/wiki/ajoutSsEvent(id=${evenement.id})}">Ajouter un sous évènement</a>
                                 </div>
                             </div>
                         </div>

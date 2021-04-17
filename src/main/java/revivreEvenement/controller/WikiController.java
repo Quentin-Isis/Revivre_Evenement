@@ -58,6 +58,8 @@ public class WikiController {
     @GetMapping("ajoutSsEvent")
     public String showContribuerAddSsEventTo(Model model, @RequestParam(name="id") Evenement evenement){
         
+        boolean fromWiki = true;
+        model.addAttribute("fromWiki", fromWiki);
         model.addAttribute("evenementPrincipal", evenement);
         return "contribuer";
     }

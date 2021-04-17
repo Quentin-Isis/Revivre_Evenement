@@ -68,6 +68,8 @@ public class IndexController{
         /**
          * Montre la page pour ajouter un évènement
          */
+        boolean fromWiki = false;
+        model.addAttribute("fromWiki", fromWiki);
         model.addAttribute("evenement", new Evenement());
         
         return "contribuer";
