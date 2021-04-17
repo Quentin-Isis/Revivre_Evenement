@@ -45,6 +45,9 @@
                                 <div class="card-body">
                                     <h5 class="card-title"> Contribuer
                                     </h5>
+                                    <div th:if="${message}">
+                                                <h2 th:text="${message}">Message de succès ou d'erreur</h2>
+                                            </div>
                                         <form id="formulaire" th:object="${evenement}" th:action="@{/formulaireEvenement/save}" method="POST">
                                             <div>
                                                 <label for="nomEvenement">Nom de l'évènement : </label>
@@ -78,9 +81,7 @@
                                                 
                                             </div>
                                            
-                                            <div th:if="${message}">
-                                                <h2 th:text="${message}">Message de succès ou d'erreur</h2>
-                                            </div>
+                                            
                                         </form>
                                 </div>
                             </div>
