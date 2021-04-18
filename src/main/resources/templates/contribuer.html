@@ -64,27 +64,19 @@
                                                 <label for="dateFin">Date de fin: </label>
                                                 <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/>
                                                 <label for="SsEvent">Evenement principal: </label>
-                                                <input th:if="${fromWiki == true}" name="SsEvent" th:value="${evenementPrincipal.nomEvenement}" th:fields="*{evenementPrincipal}"></input>
-                                                <form method="POST" enctype="multipart/form-data" action="/upload">
-                                                    <table>
-                                                        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr> 
-                                                        <tr><td></td><td><input type="submit" value="Upload" /><input type="reset" value="Réinitialiser" /></td></tr>   
-                                                    </table>
-                                                    <ul>
+                                                <input th:if="${fromWiki == true}" name="SsEvent" th:value="${evenementPrincipal.nomEvenement}" th:fields="*{evenementPrincipal}"></input><br/>
+                                                <input type="submit" /><input type="reset" value="Réinitialiser" />
+                                            </div>     
+                                        </form>
+                                                <!--<ul>
                                                         <li th:each="file : ${files}">
                                                             <a th:href="${file}" th:text="${file}" />
                                                         </li>
-                                                    </ul>    
-                                                </form>
-                                                
+                                                    </ul>
                                                 <!--<tr><td></td><td><input type = "submit"></input> --> 
                                                 <!--<label for="PJ">Pièce jointe : </label><input id="PJ" type="file" /><br/>  -->          
                                                 <!--<input id="evenementPrincipal" type="text" th:value="evenementPrincipal" th:fields="*{evenementPrincipal}"/><br/>-->
-                                                
-                                            </div>
-                                           
-                                            
-                                        </form>
+                                      
                                 </div>
                             </div>
                         </div>

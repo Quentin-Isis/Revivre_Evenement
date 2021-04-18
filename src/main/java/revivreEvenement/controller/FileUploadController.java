@@ -6,12 +6,12 @@
 package revivreEvenement.controller;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.stream.Collectors;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -26,20 +26,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import revivreEvenement.dao.ItemRepository;
+import revivreEvenement.entity.Item;
 
 import revivreEvenement.storageservice.StorageFileNotFoundException;
 import revivreEvenement.storageservice.StorageService;
 @Slf4j
 @Controller
+@RequestMapping(path="/formulaireItem")
 public class FileUploadController {
 
 	private final StorageService storageService;
+        @Autowired
+        private ItemRepository itemRepository;
 
 	@Autowired
 	public FileUploadController(StorageService storageService) {
 		this.storageService = storageService;
 	}
-	@GetMapping("/upload")
+        
+        @GetMapping("upload1")
 	public String listUploadedFiles(Model model) throws IOException {
 
 		model.addAttribute("files", storageService.loadAll().map(
@@ -47,7 +53,7 @@ public class FileUploadController {
 						"serveFile", path.getFileName().toString()).build().toUri().toString())
 				.collect(Collectors.toList()));
 
-		return "uploadForm";
+		return "contribuer";
 	}
 
 	@GetMapping("/files/{filename:.+}")
@@ -59,15 +65,31 @@ public class FileUploadController {
 				"attachment; filename=\"" + file.getFilename() + "\"").body(file);
 	}
 
-	@PostMapping("/upload")
+	@PostMapping("upload2")
 	public String handleFileUpload(@RequestParam("file") MultipartFile file,
-			RedirectAttributes redirectAttributes) {
-		log.info("Téléchargement du fichier {}", file.getOriginalFilename());
+			RedirectAttributes redirectAttributes, RedirectAttributes redirectInfo) {
+		
+                log.info("Téléchargement du fichier {}", file.getOriginalFilename());
 		storageService.store(file);
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "!");
-		return "redirect:/upload";
+                
+                Item newFile = new Item();
+                newFile.nomItem = file.getOriginalFilename();
+                newFile.typeItem = file.getContentType();
+            
+            String message;
+            try {
+                itemRepository.save(newFile);
+            } catch (DataIntegrityViolationException e) {
+                message = "Erreur : L'évènement '" + newFile.nomItem + "' existe déjà";
+            }
+            redirectInfo.addFlashAttribute("message", "You successfully created " + newFile.nomItem);
+            
+            return "redirect:/wiki";
 	}
+	
+        
 
 	@ExceptionHandler(StorageFileNotFoundException.class)
 	public ResponseEntity<?> handleStorageFileNotFound(StorageFileNotFoundException exc) {

@@ -35,9 +35,12 @@ public class Item {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
     
+    @NonNull
+    public String nomItem;
+    
   //  @Column(unique=true)
     @NonNull
-    private String typeItem;
+    public String typeItem;
     
   //  @Column(unique=true)
     @NonNull

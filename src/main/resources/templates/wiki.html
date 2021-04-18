@@ -109,6 +109,12 @@
                                         <div class="row justify-content-around">
                                             <a th:href="@{/wiki/liste_evenements}">Liste des évènements</a>
                                             <a th:href="@{/wiki/listeRessourcesEvent}">Liste des ressources</a>
+                                             <form method="POST" enctype="multipart/form-data" action="/upload"  th:object="${item}" th:action="@{/formulaireItem/upload2}">
+                                                <table>
+                                                    <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+                                                </table>
+                                                <input type="submit" value="Upload"/><input type="reset" value="Réinitialiser" />
+                                            </form>
                                         <!--texte qui va changer-->
                                         </div>
                                 </div>
