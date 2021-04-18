@@ -64,7 +64,7 @@
                                                 <label for="dateFin">Date de fin: </label>
                                                 <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/>
                                                 <label for="SsEvent">Evenement principal: </label>
-                                                <input th:if="${fromWiki == true}" name="SsEvent" th:value="evenementPrincipal" th:fields="*{evenementPrincipal}"></input>
+                                                <input th:if="${fromWiki == true}" name="SsEvent" th:value="${evenementPrincipal.nomEvenement}" th:fields="*{evenementPrincipal}"></input>
                                                 <form method="POST" enctype="multipart/form-data" action="/upload">
                                                     <table>
                                                         <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr> 

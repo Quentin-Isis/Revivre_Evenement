@@ -61,6 +61,7 @@ public class WikiController {
         boolean fromWiki = true;
         model.addAttribute("fromWiki", fromWiki);
         model.addAttribute("evenement", new Evenement());
+        model.addAttribute("evenementPrincipal", evenement);
         return "contribuer";
     }
     
