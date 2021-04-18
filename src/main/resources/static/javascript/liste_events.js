@@ -126,14 +126,14 @@ function afficher_modificateur(event){
       }).done(function () {
           console.log('SUCCESS');
           window.alert("L'évènement a été modifié!");
-          window.reload();
+          window.location.reload();
       }).fail(function (msg) {
           console.log('FAIL');
       }).always(function (msg) {
           console.log('ALWAYS');
       });
     }
-    
+
 }
 
 function searchIndexOf(btnCible){
