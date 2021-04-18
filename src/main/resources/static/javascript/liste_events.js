@@ -1,5 +1,6 @@
 // @Author: mathieu
-const url = "http://localhost:8080/api/evenements";// A chager après le déploiement
+//const url = "http://localhost:8080/api/evenements";// A chager après le déploiement
+const url = "https://revivreevenement.herokuapp.com/api/evenements"
 console.log(url);
 //document.addEventListener("DOMContentLoaded", generation_button_ID)
 
