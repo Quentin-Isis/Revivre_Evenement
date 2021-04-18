@@ -45,18 +45,24 @@
                         <div id= "liste" class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"> Liste
+                                    <h4 th:text="${evenement.nomEvenement}"></h4>
+                                    <h5 class="card-title"> Liste des items
                                     </h5>
-                                    <table>
-                                        <tr>
-                                            <th>Nom de l'item</th><th>Type</th><th>Date</th><th id="blank"></th>
-                                        </tr>
-                                        <tr class="items_row"  th:each="i:${liste_item_of_event}">
-                                            <td th:text="${i.nomItem}"></td>
-                                            <td th:text="${i.typeItem}"></td>
-                                            <td th:text="${i.dateItem}"></td>
-                                        </tr> 
-                                    </table>                          
+                                    <div th:if="${hasItems}">
+                                        <table>
+                                            <tr>
+                                                <th>Nom de l'item</th><th>Type</th><th>Date</th><th id="blank"></th>
+                                            </tr>
+                                            <tr class="items_row"  th:each="i:${liste_item_of_event}">
+                                                <td th:text="${i.nomItem}"></td>
+                                                <td th:text="${i.typeItem}"></td>
+                                                <td th:text="${i.dateItem}"></td>
+                                            </tr> 
+                                        </table> 
+                                    </div>
+                                    <div th:unless="${hasItems}">
+                                        <h3>Cet évènement n'a pas d'item</h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
