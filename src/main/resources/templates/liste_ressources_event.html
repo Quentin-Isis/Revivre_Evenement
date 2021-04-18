@@ -51,14 +51,21 @@
                                     <div th:if="${hasItems}">
                                         <table>
                                             <tr>
-                                                <th>Nom de l'item</th><th>Type</th><th>Date</th><th id="blank"></th>
+                                                <th>Nom de l'item</th><th>Type</th><th>Date</th><th>Lien</th>
                                             </tr>
                                             <tr class="items_row"  th:each="i:${liste_item_of_event}">
                                                 <td th:text="${i.nomItem}"></td>
                                                 <td th:text="${i.typeItem}"></td>
                                                 <td th:text="${i.dateItem}"></td>
+                                                <td ><a th:text="${i.nomItem}"></a></td>
                                             </tr> 
-                                        </table> 
+                                        </table>
+                                        <ul>
+                                        <!-- Pour la pagination (10 évènements par pages (LE CSS N'EST PAS FAIT) -->
+                                            <li th:each="page,status:${pages}">
+                                                <a th:href="@{/wiki/liste_ressources_event(page=${status.index})}" th:text="${status.index}"></a>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div th:unless="${hasItems}">
                                         <h3>Cet évènement n'a pas d'item</h3>
