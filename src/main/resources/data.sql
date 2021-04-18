@@ -75,27 +75,27 @@ INSERT INTO Position(id, longitude, latitude, orientation) VALUES
     (38, 42, 120, 66);
     
 
-INSERT INTO Item(id, type_item, date_item, evenement_id, position_id) VALUES
-    (1, 'image', TO_DATE('2018/06/14', 'yyyy/mm/dd'), 1, 1),
-    (2, 'vidéo', TO_DATE('2018/06/15', 'yyyy/mm/dd'), 1,2),
-    (3, 'image', TO_DATE('2018/06/25', 'yyyy/mm/dd'), 1,3),
-    (4, 'tweet', TO_DATE('2018/06/26', 'yyyy/mm/dd'), 1,4),
-    (5, 'image', TO_DATE('2018/06/30', 'yyyy/mm/dd'), 12,5),
-    (6, 'vidéo', TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12,6),
-    (7, 'tweet', TO_DATE('2018/07/03', 'yyyy/mm/dd'), 12,7),
-    (8, 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13,8),
-    (9, 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13,9),
-    (10, 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13,10),
-    (11, 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13,11),
-    (12, 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,12),
-    (13, 'vidéo', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,13),
-    (14, 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,14),
-    (15, 'tweet', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,15),
-    (16, 'image', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,16),
-    (17, 'vidéo', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,17),
-    (18, 'image', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,18),
-    (19, 'tweet', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,19),
-    (20, 'vidéo', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,20);
+INSERT INTO Item(id, nom_item, type_item, date_item, evenement_id, position_id) VALUES
+    (1, 'item1', 'image', TO_DATE('2018/06/14', 'yyyy/mm/dd'), 1, 1),
+    (2, 'item2', 'vidéo', TO_DATE('2018/06/15', 'yyyy/mm/dd'), 1,2),
+    (3, 'item3', 'image', TO_DATE('2018/06/25', 'yyyy/mm/dd'), 1,3),
+    (4, 'item4', 'tweet', TO_DATE('2018/06/26', 'yyyy/mm/dd'), 1,4),
+    (5, 'item5', 'image', TO_DATE('2018/06/30', 'yyyy/mm/dd'), 12,5),
+    (6, 'item6', 'vidéo', TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12,6),
+    (7, 'item7', 'tweet', TO_DATE('2018/07/03', 'yyyy/mm/dd'), 12,7),
+    (8, 'item8', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13,8),
+    (9, 'item9', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13,9),
+    (10, 'item10', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13,10),
+    (11, 'item11', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13,11),
+    (12, 'item12', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,12),
+    (13, 'item13', 'vidéo', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,13),
+    (14, 'item14', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,14),
+    (15, 'item15', 'tweet', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,15),
+    (16, 'item16', 'image', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,16),
+    (17, 'item17', 'vidéo', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,17),
+    (18, 'item18', 'image', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,18),
+    (19, 'item19', 'tweet', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,19),
+    (20, 'item20', 'vidéo', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,20);
 
 
 
