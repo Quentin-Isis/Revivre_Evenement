@@ -34,3 +34,23 @@ li{
 #emplacementEvenement{
     height:400px;
 }
+
+table{
+    width:100%;
+    overflow:scroll;
+}
+
+table, td, th {
+      padding: 10px;
+      border: solid 5px rgb(52,58,64);
+      border-radius:10px;
+      text-align: center;
+      }
+th{
+    border: solid 1px rgb(52,58,64);
+}
+
+td{
+    border: solid 1px rgb(52,58,64);
+}
+
