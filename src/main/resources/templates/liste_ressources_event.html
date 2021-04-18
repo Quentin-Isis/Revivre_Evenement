@@ -47,11 +47,16 @@
                                 <div class="card-body">
                                     <h5 class="card-title"> Liste
                                     </h5>
-                                        <ul id="emplacementEvenement" class="card-text" >
-                                            <li>event1</li>
-                                            <li>event2</li>
-                                        </ul>
-                                    <!--texte qui va changer-->                                
+                                    <table>
+                                        <tr>
+                                            <th>Nom de l'item</th><th>Type</th><th>Date</th><th id="blank"></th>
+                                        </tr>
+                                        <tr class="items_row"  th:each="i:${liste_item_of_event}">
+                                            <td th:text="${i.nomItem}"></td>
+                                            <td th:text="${i.typeItem}"></td>
+                                            <td th:text="${i.dateItem}"></td>
+                                        </tr> 
+                                    </table>                          
                                 </div>
                             </div>
                         </div>

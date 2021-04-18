@@ -5,6 +5,7 @@
  */
 package revivreEvenement.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import revivreEvenement.dao.EvenementRepository;
+import revivreEvenement.dao.ItemRepository;
 import revivreEvenement.entity.Evenement;
+import revivreEvenement.entity.Item;
 
 /**
  *
@@ -27,6 +30,9 @@ public class WikiController {
     
     @Autowired
     private EvenementRepository evenementRepository;
+    
+    @Autowired
+    private ItemRepository itemRepository;
     
     
     @GetMapping("listeRessourcesEvent")
@@ -96,5 +102,36 @@ public class WikiController {
                 }
             }
         }
+    }
+    
+    public void fillItemListOf(Evenement evenement){
+        /**
+         * Pour un évènement donné, rempli sa liste d'item
+         */
+        
+        List<Item> liste_item = itemRepository.findAll();
+        
+        for (Item i: liste_item){
+            if(i.getEvenement()==evenement){
+                evenement.getItems().add(i);
+            }
+        }
+    }
+    
+    @GetMapping("liste_item")
+    public String showListItemOf(Model model, @RequestParam(name="id") Evenement evenement){
+        
+        fillItemListOf(evenement);
+        List<Item> liste_item_of_event = evenement.getItems();
+        boolean hasItems = false;
+        if (!liste_item_of_event.isEmpty()){
+            hasItems = true;
+        }
+        
+        model.addAttribute("hasItems", hasItems);
+        model.addAttribute("evenement", evenement);
+        model.addAttribute("liste_item_of_event", liste_item_of_event);
+        
+        return "liste_ressources_event";
     }
 }
