@@ -48,7 +48,7 @@
                                     <h3 th:text="${message}">Message de succès ou d'erreur</h3>
                                     <table>
                                         <tr>
-                                            <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th><th id="blank"></th>
+                                            <th>Nom de l'évènement</th><th>Description</th><th>Lieu</th><th>Date de début</th><th>Date de fin</th><th id="blank"></th><th>Page wiki</th>
                                         </tr>
                                         <tr class="events_row" th:each="e:${listEvenements}">
                                             <td class="nomEvenementCells" th:id="${e.id}" th:text="${e.nomEvenement}"></td>
@@ -63,6 +63,9 @@
                                                 <div class="espace_de_modification">
                                                 </div>                                                
                                                 <a th:href="@{/liste_events/delete(id=${e.id})}">Supprimer l'évènement</a>
+                                            </td>
+                                            <td>
+                                                <a th:href="@{/liste_events/showWikiPage(id=${e.id})}">Wiki</a>
                                             </td>
                                                 
                                         </tr>

@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,5 +62,40 @@ public class ListEventController {
         
         
         return "redirect:/wiki/liste_evenements"; // on se redirige vers l'affichage de la liste
-    }      
+    }     
+    
+    @GetMapping(path = "showWikiPage")
+    public String showEventWikiPage(Model model, @RequestParam(name="id") Evenement evenement){
+        
+        fillSsEventListOf(evenement);
+        // Vérifiaction de la possibilité d'afficher la liste de sous évènement
+        boolean hasSsEvent = false;
+        if (!evenement.getListeSousEvenements().isEmpty()){
+            hasSsEvent = true;
+        }
+        model.addAttribute("hasSsEvent", hasSsEvent);   
+        
+        model.addAttribute("evenement", evenement);
+        
+        return "wiki";
+    }
+    
+    public void fillSsEventListOf(Evenement event){
+        /**
+         * Pour un évènement donné, remplit la liste de sous-évènements
+         */
+        List<Evenement> listeEvenement = evenementRepository.findAll();
+        
+        //continuer à réfléchir là-dessus
+        
+        for (Evenement e:listeEvenement){
+            if ((event.getEvenementPrincipal() != null) && (e.getEvenementPrincipal() != null)) {
+                if ((e.getEvenementPrincipal().getId() == event.getId()) && (e.getId()!=event.getId())){
+                    if (!event.getListeSousEvenements().contains(e)){
+                        event.getListeSousEvenements().add(e);
+                    }
+                }
+            }
+        }
+    }
 }
