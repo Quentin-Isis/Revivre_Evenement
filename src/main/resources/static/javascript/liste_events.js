@@ -1,5 +1,6 @@
 // @Author: mathieu
-
+const url = "http://localhost:8080/api/evenements";// A chager après le déploiement
+console.log(url);
 //document.addEventListener("DOMContentLoaded", generation_button_ID)
 
 var btns_modif = document.getElementsByClassName("btn_modif");
@@ -109,16 +110,30 @@ function afficher_modificateur(event){
         liste_dateFin[index_btn] = liste_dateFinCells[index_btn].firstChild.value;
         
         let evenement = {
+            id: liste_id[index_btn],
             nomEvenement: liste_nomEvenements[index_btn],
-            lieu: liste_lieux[index_btn],
             description: liste_descriptions[index_btn],
+            lieu: liste_lieux[index_btn],            
             dateDebut: liste_dateDebut[index_btn],
             dateFin: liste_dateFin[index_btn]
         }
-        
-        modifierEvenement(evenement);        
-        window.reload();
+        console.log(evenement);
+        $.ajax({
+          type: 'PUT',
+          url: url+ "/"+evenement.id,
+          contentType: 'application/json',
+          data: JSON.stringify(evenement), // access in body
+      }).done(function () {
+          console.log('SUCCESS');
+          window.alert("L'évènement a été modifié!");
+          window.reload();
+      }).fail(function (msg) {
+          console.log('FAIL');
+      }).always(function (msg) {
+          console.log('ALWAYS');
+      });
     }
+    
 }
 
 function searchIndexOf(btnCible){
@@ -193,7 +208,7 @@ function textAreaToDescription(descriptionCell, description){
 
 function dateDebutToInput(dateDebutCell, dateDebut){
     dateDebutCell.textContent=""
-    dateDebutCell.innerHTML = "<input type=\"date\">"+dateDebut+"</input>";
+    dateDebutCell.innerHTML = "<input type=\"date\" required>"+dateDebut+"</input>";
 }
 
 function inputToDateDebut(dateDebutCell, dateDebut){
@@ -203,7 +218,7 @@ function inputToDateDebut(dateDebutCell, dateDebut){
 
 function dateFinToInput(dateFinCell, dateFin){
     dateFinCell.textContent="";
-    dateFinCell.innerHTML = "<input type=\"date\">"+dateFin+"</input>";
+    dateFinCell.innerHTML = "<input type=\"date\" required>"+dateFin+"</input>";
 }
 
 function inputToDateFin(dateFinCell, dateFin){
@@ -250,30 +265,6 @@ function findDateFinFromBtn(btnCible){
     
 
 
-const url = "http://localhost:8080/api/evenements";// A chager après le déploiement
 
 
-function modifierEvenement(evenement) {
-  const headers = {
-      "Content-Type": "application/json"
-    };
-    
 
-  const fetchOptions = {
-      method: "PUT",
-      headers: headers,
-      body: JSON.stringify(evenement)
-    };
-      // executer la req AJAX
-      fetch(url, fetchOptions)
-      .then((response) => {
-        return response.json();
-      })
-    .then((dataJSON) => {
-        //on dit si c'est bon
-        window.reload();
-      })
-    .catch((error) => { // gestion des erreurs
-          console.log(error)
-        })
-    }
