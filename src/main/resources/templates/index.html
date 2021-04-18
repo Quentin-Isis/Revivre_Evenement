@@ -68,10 +68,10 @@ and open the template in the editor.
                                                 <div class="px-4">
                                                     <div class="event-date bg-soft-success text-success">
                                                         <div class="annee" >
-                                                            <a id="date" th:text="${d}" href="#"></a>
-                                                            <div id="liste-evenement" th:each="Map1:${da}">
-                                                                <div th:each="Map2:${Map1}"  th:classappend="${Map2.key == d} ? d-inline : d-none">
-                                                                    <div class="border border-black rounded" th:if="${Map2.key == d}">
+                                                            <a class="date" th:text="${d}" href="#"></a>
+                                                            <div th:each="Map1:${da}">
+                                                                <div class="liste-evenement" th:each="Map2:${Map1}" th:if="${Map2.key == d}">
+                                                                    <div class="border border-black rounded" >
                                                                         <div th:each="value:${Map2.value}" >
                                                                             <div th:each="evenement:${evenements}">
                                                                                 <div th:if="${evenement.nomEvenement == value}">

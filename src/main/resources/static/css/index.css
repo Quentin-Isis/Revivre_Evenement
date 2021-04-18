@@ -21,7 +21,7 @@ div a {
     font-size: 20px;
 }
 
-#date {
+.date {
     border : 2px solid white;
     border-radius: 5px;
     text-decoration: none;
