@@ -80,9 +80,25 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="bg-light">
-		<div class="container">
+        <div th:if="${hasItems}">
+            <footer>
+                <div class="bg-light">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <ul class="list-inline text-center">
+                                    <li class="list-inline-item text-primary">A propos</li>
+                                    <li class="list-inline-item text-primary">© Revivre l'évènement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div th:unless="${hasItems}" class="bg-light" style="position:fixed;bottom:0px;width:100%;justify-content:center;">
+            <footer>
+                <div class="container">
                     <div class="row">
                         <div class="col">
                             <ul class="list-inline text-center">
@@ -91,9 +107,9 @@
                             </ul>
                         </div>
                     </div>
-		</div>
-            </div>
-        </footer>
+                </div>
+            </footer>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
