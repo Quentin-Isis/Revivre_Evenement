@@ -61,8 +61,9 @@
                                                 <button class="btn_retour" value="retour">Retour</button>
                                                 <button class="btn_save" value="save">Sauvegarder</button>
                                                 <div class="espace_de_modification">
-                                                </div>                                                
-                                                <a th:href="@{/liste_events/delete(id=${e.id})}">Supprimer l'évènement</a>
+                                                </div>  
+                                                <button class="btn-suppr">Supprimer l'évènement</button>
+                                                <a class="suppr" th:href="@{/liste_events/delete(id=${e.id})}">Supprimer l'évènement</a>
                                             </td>
                                             <td>
                                                 <a th:href="@{/liste_events/showWikiPage(id=${e.id})}">Wiki</a>
