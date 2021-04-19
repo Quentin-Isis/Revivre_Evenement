@@ -75,10 +75,12 @@
                                 <div class="card-body" th:if="${hasSsEvent}">
                                     <h5 class="card-title"> Sous-évènements: 
                                     </h5>
-                                    
+                                    <a th:href="@{/wiki/ajoutSsEvent(id=${evenement.id})}">Ajouter un sous évènement</a>
                                     <ul id="emplacementEvenement" class="card-text" th:each="SsEvent:${evenement.listeSousEvenements}" th:if="${SsEvent.id != evenement.id}">
                                         <li ><a th:href="@{/wiki/showSsEventWikiPage(id=${SsEvent.id})}" th:text="${SsEvent.nomEvenement}" ></a></li>
+                                         
                                     </ul>
+                                    
                                     <!--<button th:href="@{/wiki/showSsEventWikiPage(id=${evenement.id})}">Ajouter un sous évènement</button>-->                          
                                 </div>
                                 <div class="card-body" th:unless="${hasSsEvent}">
