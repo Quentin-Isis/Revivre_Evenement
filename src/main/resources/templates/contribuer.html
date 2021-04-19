@@ -63,7 +63,7 @@
                                                 <input id="dateDebut" name="dateDebut" type="date" th:field="*{dateDebut}" required="true" /><br/>
                                                 <label for="dateFin">Date de fin: </label>
                                                 <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/>
-                                                <label for="SsEvent">Evenement principal: </label>
+                                                <label th:if="${fromWiki == true}"  for="SsEvent">Evenement principal: </label>
                                                 <input th:if="${fromWiki == true}" name="SsEvent" th:value="${evenementPrincipal.nomEvenement}" th:fields="*{evenementPrincipal}"></input><br/>
                                                 <input type="submit" /><input type="reset" value="Réinitialiser" />
                                             </div>     
