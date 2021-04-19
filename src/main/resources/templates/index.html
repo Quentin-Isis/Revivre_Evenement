@@ -62,9 +62,9 @@ and open the template in the editor.
                                 <div class="card-body" id="timeline">
                                     <h4 class="card-title mb-5">Horizontal Timeline</h4>
                                     <div class="row">
-                                    <div class="hori-timeline col-11" dir="ltr">
-                                        <ul class="list-inline events">
-                                            <li class="list-inline-item event-list" th:each="d:${dates}">
+                                        <div class="hori-timeline col-11" dir="ltr">
+                                            <ul class="list-inline events">
+                                                <li class="list-inline-item event-list" th:each="d:${dates}">
                                                 <div class="px-4">
                                                     <div class="event-date bg-soft-success text-success">
                                                         <div class="annee" >
@@ -85,11 +85,11 @@ and open the template in the editor.
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                         <div class="col-1" id="triangle"></div>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,6 @@ and open the template in the editor.
                                     <h5 class="card-title"> Carte
                                     </h5>
                                     <div id="emplacementCarte" class="card-text"> On affichera la carte en dessous
-                                        <a id="test" href="#">test</a>
                                     </div>
                                 </div>
                             </div>
@@ -138,11 +137,10 @@ and open the template in the editor.
         <script src="../javascript/index.js"></script>
         
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="../javascript/map.js"></script>
+        
        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=initMap" async >
         </script>-->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-
+        
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
