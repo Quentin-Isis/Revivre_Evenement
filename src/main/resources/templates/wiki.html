@@ -111,7 +111,7 @@
                                         <div class="row justify-content-around">
                                             <a th:href="@{/wiki/liste_evenements}">Liste des évènements</a>
                                             <a th:href="@{/wiki/liste_item(id=${evenement.id})}">Liste des ressources</a>
-                                             <form method="POST" enctype="multipart/form-data" action="/upload"  th:object="${item}" th:action="@{/formulaireItem/upload2}">
+                                             <form method="POST" enctype="multipart/form-data"  th:object="${item}" th:action="@{/formulaireItem/upload2(id=${evenement.id})}">
                                                 <table>
                                                     <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
                                                 </table>
