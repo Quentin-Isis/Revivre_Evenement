@@ -75,10 +75,12 @@
                                 <div class="card-body" th:if="${hasSsEvent}">
                                     <h5 class="card-title"> Sous-évènements: 
                                     </h5>
-                                    
+                                    <a th:href="@{/wiki/ajoutSsEvent(id=${evenement.id})}">Ajouter un sous évènement</a>
                                     <ul id="emplacementEvenement" class="card-text" th:each="SsEvent:${evenement.listeSousEvenements}" th:if="${SsEvent.id != evenement.id}">
                                         <li ><a th:href="@{/wiki/showSsEventWikiPage(id=${SsEvent.id})}" th:text="${SsEvent.nomEvenement}" ></a></li>
+                                         
                                     </ul>
+                                    
                                     <!--<button th:href="@{/wiki/showSsEventWikiPage(id=${evenement.id})}">Ajouter un sous évènement</button>-->                          
                                 </div>
                                 <div class="card-body" th:unless="${hasSsEvent}">
@@ -108,8 +110,8 @@
                                         </div>
                                         <div class="row justify-content-around">
                                             <a th:href="@{/wiki/liste_evenements}">Liste des évènements</a>
-                                            <a th:href="@{/wiki/liste_item(id=${evenement.id})}">Liste des ressources</a>
-                                             <form method="POST" enctype="multipart/form-data" action="/upload"  th:object="${item}" th:action="@{/formulaireItem/upload2}">
+                                            <a th:href="@{/ressources/liste_item(id=${evenement.id})}">Liste des ressources</a>
+                                             <form method="POST" enctype="multipart/form-data"  th:object="${item}" th:action="@{/formulaireItem/upload2(id=${evenement.id})}">
                                                 <table>
                                                     <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
                                                 </table>

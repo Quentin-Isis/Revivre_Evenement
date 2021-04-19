@@ -35,7 +35,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 public class Evenement {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer id;
+    public Integer id;
 
     @Column(unique=true)
     @NonNull

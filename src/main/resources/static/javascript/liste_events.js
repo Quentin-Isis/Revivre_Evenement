@@ -168,7 +168,17 @@ function searchIndexOf(btnCible){
                 index+=1;
             }
         }
-    }    
+    } 
+    else if (btnCible.className == "btn-suppr"){
+        for (let i=0; i<btns_save.length;i++){
+            if (btnCible == btns_suppr[i]){
+                return index;
+            }
+            else{
+                index+=1;
+            }
+        }
+    }
 }
 /// MODIFICATION EVENEMENT
 
@@ -264,7 +274,26 @@ function findDateFinFromBtn(btnCible){
     return liste_dateFin[index];
 }
     
+//Confirmation suppression
+var btns_suppr = document.getElementsByClassName("btn-suppr");
 
+var liste_suppr = document.getElementsByClassName("suppr");
+
+for(let i=0; i<btns_suppr.length; i++){
+  btns_suppr[i].addEventListener("click", confirmation_suppr);
+  }
+  
+
+
+
+function confirmation_suppr(event){
+    console.log(liste_suppr);
+    let index_btn = searchIndexOf(event.target);
+    event.target.style.display = "none";
+    console.log(index_btn);
+    window.alert("Veuillez cliquer une deuxième fois!");
+    liste_suppr[index_btn].style.display = "block";
+}
 
 
 

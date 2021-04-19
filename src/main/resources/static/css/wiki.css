@@ -37,6 +37,7 @@ div a {
 
 #tailleCarteSsEvent{
     height:478px;
+    overflow:scroll-y;
 }
 
 #description{

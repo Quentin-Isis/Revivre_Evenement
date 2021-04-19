@@ -50,8 +50,7 @@ public class ListEventController {
          * 
          * 
          */
-        
-        
+       
         evenementRepository.delete(evenement);
         String message = "L'évènement " + evenement.getNomEvenement() + "' a bien été supprimé";
         

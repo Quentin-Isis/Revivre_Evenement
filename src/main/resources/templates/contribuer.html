@@ -54,7 +54,7 @@
                                                 <input id="nomEvenement" type="text" name="nomEvenement" th:field="*{nomEvenement}" required="true"/><br/>
                                                 <span th:errors="${evenement.nomEvenement}"></span>
                                                 <label for="description">Description : </label><br/>
-                                                <textarea id="description" name="description" rows ="9" cols="100"  th:field="*{description}" required="true"></textarea><br/>
+                                                <textarea id="description" name="description" th:field="*{description}" required="true"></textarea><br/>
                                                 <span th:errors="${evenement.description}"></span>
                                                 <label for="lieu">Lieu de l'évènement : </label>
                                                 <input id="lieu" type="text" name="lieu" th:field="*{lieu}" required="true" /><br/>
@@ -63,8 +63,8 @@
                                                 <input id="dateDebut" name="dateDebut" type="date" th:field="*{dateDebut}" required="true" /><br/>
                                                 <label for="dateFin">Date de fin: </label>
                                                 <input id="dateFin" name="dateFin" type="date" th:field="*{dateFin}" /><br/>
-                                                <label for="SsEvent">Evenement principal: </label>
-                                                <input th:if="${fromWiki == true}" name="SsEvent" th:value="${evenementPrincipal.nomEvenement}" th:fields="*{evenementPrincipal}"></input><br/>
+                                                <label th:if="${fromWiki == true}"  for="SsEvent">Evenement principal: </label>
+                                                <input th:if="${fromWiki == true}" name="SsEvent" th:value="${evenementPrincipal.nomEvenement}" th:fields="*{evenementPrincipal}" disabled="true"></input><br/>
                                                 <input type="submit" /><input type="reset" value="Réinitialiser" />
                                             </div>     
                                         </form>
