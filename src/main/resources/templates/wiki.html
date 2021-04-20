@@ -59,11 +59,36 @@
                         <div class="col" id="timeline">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"> FRISE
-                                    </h5>
-                                    <p id="emplacementFrise" class="card-text"> Vous aurez bientôt accès à la frise chronologique dans une prochaine mise à jour !
-                                        <!--texte qui va changer-->
-                                    </p>
+                                   <!-- <h4 class="card-title mb-5">Horizontal Timeline</h4>-->
+                                    <div class="row">
+                                        <div class="hori-timeline col-11" dir="ltr">
+                                            <ul class="list-inline events">
+                                                <li class="list-inline-item event-list" th:each="d:${days}">
+                                                <div class="px-4">
+                                                    <div class="event-date bg-soft-success text-success">
+                                                        <div class="annee" >
+                                                            <a class="date" th:text="${d}" href="#"></a>
+                                                            <div th:each="Map1:${sortedDays}">
+                                                                <div class="liste-evenement" th:each="Map2:${Map1}" th:if="${Map2.key == d}">
+                                                                    <div class="border border-black rounded" >
+                                                                        <div th:each="value:${Map2.value}" >
+                                                                            <div th:each="evenement:${evenements}">
+                                                                                <div th:if="${evenement.nomEvenement == value}">
+                                                                                    <a class="evenements" th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-1" id="triangle"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -141,10 +166,8 @@
             </div>
         </footer>
 
-       <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=goToPlace" async ></script>-->
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=goToPlace" async ></script>
         
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
