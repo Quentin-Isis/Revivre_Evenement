@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import revivreEvenement.BoiteATools;
 import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.dao.ItemRepository;
 import revivreEvenement.dao.PositionRepository;
@@ -46,7 +45,6 @@ public class ListEventController {
     @Autowired
     PositionRepository positionRepository;
      
-     BoiteATools outil = new BoiteATools();
      
     @GetMapping(path = "delete")
     public String supprimeUnEvenementPuisMontreLaListe(@RequestParam("id") Evenement evenement, RedirectAttributes redirectInfo) {

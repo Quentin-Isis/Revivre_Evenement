@@ -5,18 +5,12 @@ package revivreEvenement.controller;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.entity.Evenement;
 
@@ -32,12 +26,6 @@ public class IndexController{
     
     @Autowired
     private EvenementRepository evenementRepository;
-    
-    /**
-    @GetMapping("/")
-    public String showIndexPage(Model model){
-        return "index";
-    }*/
    
     @GetMapping("eventRandom")
     public String showEvenementRandom(Model model){
@@ -206,7 +194,6 @@ public class IndexController{
         model.addAttribute("evenements", evenementRepository.findAll());
         model.addAttribute("dates", listeDatesDebutAnnee); //On ajoute la liste au modèle qui permet l'affichage
         model.addAttribute("da",sortedMap);
-      //  model.addAttribute("eventForDates",eventForD);
         return "index";
     }
     
