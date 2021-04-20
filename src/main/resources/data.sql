@@ -93,8 +93,14 @@ INSERT INTO Evenement(id, nom_evenement, description, lieu,  date_debut, date_fi
 INSERT INTO Position(id, longitude, latitude, orientation) VALUES 
     
     (1, 105.319, 61.524, 0), /*Position de la Russie*/
+    (11, 105.319, 61.524, 0), /*Position de la Russie*/
+    (111, 105.319, 61.524, 0), /*Position de la Russie*/
+    (1111, 105.319, 61.524, 0), /*Position de la Russie*/
     (2, 40.095, 43.545, 0), /*Position Sochi, Fisht Olympic Stadium*/
+    (22, 40.095, 43.545, 0), /*Position Sochi, Fisht Olympic Stadium*/
     (3, 55.333, 51, 0), /*Position Kazan, Ak Bars Arena*/
+    (33, 55.333, 51, 0), /*Position Kazan, Ak Bars Arena*/
+
     (4, 36.783, 52.117, 0), /*Position Samara, Solidarnost Arena*/
     (5, 44.002, 56.329, 0), /*Position Nizhny Novgorod, Nizhny Novgorod Stadium*/
     (6, 39.711, 47.221, 0), /*Position Rostov-on-Don, Rostov Arena*/
@@ -103,7 +109,12 @@ INSERT INTO Position(id, longitude, latitude, orientation) VALUES
     (72, 30.220, 59.973, 80.54),/*Position Saint Petersburg, Krestovsky Stadium, orientation 2*/
     (8, 39.494, 57.727, 0), /*Position Moscow, Otkritie Arena*/
     (9, 37.555, 55.716, 0), /*Position Moscow, Luzhniki Stadium*/
+    (99, 37.555, 55.716, 0), /*Position Moscow, Luzhniki Stadium*/
+    (999, 37.555, 55.716, 0), /*Position Moscow, Luzhniki Stadium*/
+
     (91, 37.555, 55.716, 32.01), /*Position Moscow, Luzhniki Stadium, orientation 1*/
+    (9191, 37.555, 55.716, 32.01), /*Position Moscow, Luzhniki Stadium, orientation 1*/
+
     (92, 37.555, 55.716, 74.63); /*Position Moscow, Luzhniki Stadium, orientation 2*/
  
     
@@ -111,22 +122,22 @@ INSERT INTO Position(id, longitude, latitude, orientation) VALUES
 INSERT INTO Item(id, nom_item, type_item, date_item, evenement_id, position_id) VALUES
     
     (1, 'item1', 'image', TO_DATE('2018/06/14', 'yyyy/mm/dd'), 1, 1),
-    (2, 'item2', 'vidéo', TO_DATE('2018/06/15', 'yyyy/mm/dd'), 1,1),
-    (3, 'item3', 'image', TO_DATE('2018/06/25', 'yyyy/mm/dd'), 1,1),
-    (4, 'item4', 'tweet', TO_DATE('2018/06/26', 'yyyy/mm/dd'), 1,1),
+    (2, 'item2', 'vidéo', TO_DATE('2018/06/15', 'yyyy/mm/dd'), 1,11),
+    (3, 'item3', 'image', TO_DATE('2018/06/25', 'yyyy/mm/dd'), 1,111),
+    (4, 'item4', 'tweet', TO_DATE('2018/06/26', 'yyyy/mm/dd'), 1,1111),
     (5, 'item5', 'image', TO_DATE('2018/06/30', 'yyyy/mm/dd'), 121,2),
     (6, 'item6', 'vidéo', TO_DATE('2018/07/02', 'yyyy/mm/dd'), 122,3),
     (7, 'item7', 'tweet', TO_DATE('2018/07/03', 'yyyy/mm/dd'), 126,6),
     (8, 'item8', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 131,5),
-    (9, 'item9', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 132,3),
-    (10, 'item10', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133,2),
+    (9, 'item9', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 132,33),
+    (10, 'item10', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133,22),
     (11, 'item11', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 134,4),
     (12, 'item12', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141,7),
     (13, 'item13', 'vidéo', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141,71),
     (14, 'item14', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141,72),
     (15, 'item15', 'tweet', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,9),
     (16, 'item16', 'image', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,91),
-    (17, 'item17', 'vidéo', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,91),
-    (18, 'item18', 'image', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,9),
-    (19, 'item19', 'tweet', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 156,9),
+    (17, 'item17', 'vidéo', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,9191),
+    (18, 'item18', 'image', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,99),
+    (19, 'item19', 'tweet', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 156,999),
     (20, 'item20', 'vidéo', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 155,92);
