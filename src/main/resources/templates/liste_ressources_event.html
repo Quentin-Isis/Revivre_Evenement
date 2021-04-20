@@ -73,12 +73,6 @@
                                                 <td ><a th:text="${i.nomItem}"></a></td>
                                             </tr> 
                                         </table>
-                                        <ul>
-                                        <!-- Pour la pagination (10 évènements par pages (LE CSS N'EST PAS FAIT) -->
-                                            <li th:each="page,status:${pages}">
-                                                <a th:href="@{/wiki/liste_ressources_event(page=${status.index})}" th:text="${status.index}"></a>
-                                            </li>
-                                        </ul>
                                     </div>
                                     <div th:unless="${hasItems}">
                                         <h3>Cet évènement n'a pas d'item</h3>

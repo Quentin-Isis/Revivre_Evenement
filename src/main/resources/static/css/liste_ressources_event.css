@@ -59,3 +59,12 @@ td{
     border: solid 1px rgb(52,58,64);
 }
 
+.card-body{
+    overflow:scroll;
+}
+/**C'est pas ceentré*/
+img, video, audio{
+    justify-content: center;
+    width:500;
+    
+}
