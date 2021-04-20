@@ -86,23 +86,23 @@ INSERT INTO Evenement(id, nom_evenement, description, lieu,  date_debut, date_fi
     (154, 'But de Pogba en finale Coupe du monde', 'But Pogba à 59 min de jeu : Mbappé est bien lancé sur la droite et centre en retrait vers Griezmann qui temporise avant de trouver Pogba à l entrée de la surface. Le Mancunien s y prend à deux fois pour tromper Subasic d une frappe sèche sur la droite du gardien.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
     (155, 'But de Mbappé en finale Coupe du monde', 'But Mbappé à 65 min de jeu : Hernandez résiste à deux défenseurs en les fixant côté gauche et trouve Mbappé dans l axe des 25 mètres. Le joueur parisien contrôle et décoche alors une frappe magnifique du pied droit qui vient se loger dans le petit filet droit de Subasic.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
     (156, 'But de Mandzukic en finale Coupe du monde', 'But Mandzukic à 69 min de jeu : Lloris est à la relance au pied et se manque complètement sous la pression de Mandzukic qui en profite pour marquer dans le but vide.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15);
-
+/*
     (2, 'Manifestation Gilet Jaune','Au début de l’année 2018, des mouvements protestataires spontanés en France s opposent à la réduction à 80 km/h de la vitesse sur une grande partie du réseau routier et s opposent au coût de la vie. Certains manifestants portent des gilets de haute visibilité de couleur jaune, sans que cet accessoire ne soit encore un signe de ralliement. La plupart des membres de ce mouvement, baptisé « Colère », se retrouvent ensuite au sein des Gilets jaunes...','France',TO_DATE('2018/11/09', 'yyyy/mm/dd'), TO_DATE('2020/10/09', 'yyyy/mm/dd'),2),
     (21,'Acte 1','Le samedi 17 novembre 2018, le mouvement commence tôt à Paris, notamment avec le blocage du périphérique, après un rassemblement organisé à la Porte Maillot. L après-midi, plusieurs dizaines de manifestants défilent sur l avenue des Champs-Élysées, au niveau de la place Charles-de-Gaulle, puis se dirigent vers le palais de l Élysée, avant de se retrouver bloqués sur la place de la Concorde.','Paris', TO_DATE('2018/11/17', 'yyyy/mm/dd'), TO_DATE('2018/11/17', 'yyyy/mm/dd'),2);
-
+*/
 INSERT INTO Position(id, longitude, latitude, orientation) VALUES 
     
-    (1, 105.319, 61.524, null), /*Position de la Russie*/
-    (2, 40.095, 43.545, null), /*Position Sochi, Fisht Olympic Stadium*/
-    (3, 55.333, 51, null), /*Position Kazan, Ak Bars Arena*/
-    (4, 36.783, 52.117, null), /*Position Samara, Solidarnost Arena*/
-    (5, 44.002, 56.329, null), /*Position Nizhny Novgorod, Nizhny Novgorod Stadium*/
-    (6, 39.711, 47.221, null), /*Position Rostov-on-Don, Rostov Arena*/
-    (7, 30.220, 59.973, null), /*Position Saint Petersburg, Krestovsky Stadium*/
+    (1, 105.319, 61.524, 0), /*Position de la Russie*/
+    (2, 40.095, 43.545, 0), /*Position Sochi, Fisht Olympic Stadium*/
+    (3, 55.333, 51, 0), /*Position Kazan, Ak Bars Arena*/
+    (4, 36.783, 52.117, 0), /*Position Samara, Solidarnost Arena*/
+    (5, 44.002, 56.329, 0), /*Position Nizhny Novgorod, Nizhny Novgorod Stadium*/
+    (6, 39.711, 47.221, 0), /*Position Rostov-on-Don, Rostov Arena*/
+    (7, 30.220, 59.973, 0), /*Position Saint Petersburg, Krestovsky Stadium*/
     (71, 30.220, 59.973, 42.35),/*Position Saint Petersburg, Krestovsky Stadium, orientation 1*/
     (72, 30.220, 59.973, 80.54),/*Position Saint Petersburg, Krestovsky Stadium, orientation 2*/
-    (8, 39.494, 57.727, null), /*Position Moscow, Otkritie Arena*/
-    (9, 37.555, 55.716, null), /*Position Moscow, Luzhniki Stadium*/
+    (8, 39.494, 57.727, 0), /*Position Moscow, Otkritie Arena*/
+    (9, 37.555, 55.716, 0), /*Position Moscow, Luzhniki Stadium*/
     (91, 37.555, 55.716, 32.01), /*Position Moscow, Luzhniki Stadium, orientation 1*/
     (92, 37.555, 55.716, 74.63); /*Position Moscow, Luzhniki Stadium, orientation 2*/
  
