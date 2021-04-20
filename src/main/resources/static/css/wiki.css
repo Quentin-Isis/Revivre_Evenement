@@ -108,7 +108,7 @@ div a {
 
     .hori-timeline .events .event-list {
         display: inline-block;
-        width: 24%;
+        width: 15%;
         padding-top: 45px;
     }
     .hori-timeline .events .event-list .event-date {
@@ -124,7 +124,7 @@ div a {
 
 .liste-evenement{
     height:150px;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 @media (max-width:991px){
