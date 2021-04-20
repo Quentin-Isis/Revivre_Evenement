@@ -56,7 +56,7 @@
                         <h1 th:text="${evenement.nomEvenement}"></h1> <!-- NOM DE L'EVENT -->
                         <h5 id="adresse" th:value="${evenement.lieu}" th:text="${evenement.lieu}"></h5>
                     </div>
-                    <div class="row">
+                    <div class="row" th:if="${hasSsEvent}">
                         <div class="col" >
                             <div class="card" id="timeline">
                                 <div class="card-body" >
