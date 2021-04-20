@@ -34,9 +34,7 @@ public class SearchController {
     @Autowired
     private EvenementRepository evenementRepository;
     
-    @GetMapping("fctSearch")
-    private String fctSearchByMotCle(Model model, @RequestParam(name="motCle", defaultValue ="") String motCle){
-        /**
+         /**
          * chemin -> th:href="@{/recherches/fctSearch}"
          * 
          * Cette méthode, utilisée sur la page search.html, prend en argument un mot clé et recherche un évènement dans le dao qui contient ce mot clé
@@ -50,6 +48,8 @@ public class SearchController {
          * 
          * @return le template search.html avec l'affichage des résultats en utilisant thymeleaf et le script javascript search.js
          */
+    @GetMapping("fctSearch")
+    private String fctSearchByMotCle(Model model, @RequestParam(name="motCle", defaultValue ="") String motCle){
         
         boolean recherche_en_cours = true;  // Pour indiquer à thymeleaf d'afficher la div des résultats dans le template
         boolean recherche_par_mot_cle = true; // Pour indiquer à thymeleaf d'afficher la div des résultats d'une recherche par mot clé
@@ -60,8 +60,7 @@ public class SearchController {
         model.addAttribute("recherche_en_cours", recherche_en_cours);
         model.addAttribute("recherche_par_mot_cle", recherche_par_mot_cle);
         model.addAttribute("isValide", motCleIsValide);
-        model.addAttribute("motCle", motCle);
-        
+        model.addAttribute("motCle", motCle);        
         
         if (motCleIsValide){
             // cf. EvenementRepository.java Ce sont deux méthodes du dao
@@ -91,10 +90,7 @@ public class SearchController {
         return "search";
     }
     
-    @GetMapping("eventWikiPage")
-    private String showEventWikiPage(Model model, @RequestParam("id") Evenement event){
-        
-        /**
+         /**
          * Méthode qui permet, lorsqu'on clique sur un résultat, d'accèder à la page wiki de cet évènement
          * 
          * @param model le model utilisé par thymeleaf
@@ -102,11 +98,15 @@ public class SearchController {
          * 
          * @return wiki.html, avec les bonnes infos dans le model
          */
-        
+    @GetMapping("eventWikiPage")
+    private String showEventWikiPage(Model model, @RequestParam("id") Evenement event){ 
+
         // On remplit la liste de sous evenement de l'evenement. Cf fillSsEventListOf()
         fillSsEventListOf(event);
+        
         // Vérifiaction de la possibilité d'afficher la liste de sous évènement. bollean utilisé par thymeleaf
         boolean hasSsEvent = false;
+        
         if (!event.getListeSousEvenements().isEmpty()){
             hasSsEvent = true;
              
@@ -203,14 +203,15 @@ public class SearchController {
         return "wiki";
     }
     
+     /**
+     * Vérifie si un mot cle est valide. Un mot clé est valide s'il contient AU MOINS un caractère de l'alphabet latin
+     * 
+     * @param motCle Le mot clé à vérifier
+     * 
+     * @return motCleIsValide, boolean true si le mot cle est valide, false sinon
+     */
     private boolean motCleIsValide(String motCle){
-        /**
-         * Vérifie si un mot cle est valide. Un mot clé est valide s'il contient AU MOINS un caractère de l'alphabet latin
-         * 
-         * @param motCle Le mot clé à vérifier
-         * 
-         * @return motCleIsValide, boolean true si le mot cle est valide, false sinon
-         */
+
         // On l'initialise à false
         boolean motCleIsValide = false;
         
@@ -230,24 +231,20 @@ public class SearchController {
                     motCleIsValide = true;      
                 }
             }  
-        }
-        
+        }        
         return motCleIsValide;
-    }
+    }    
     
-    //FONCTIONS POUR RECHERCHER PAR DATE
-    
+     /**
+     * Methode pour la recherche par date
+     * 
+     * TODO
+     */
     private String fctSearchByDate(Model model, 
             @RequestParam(name="month", defaultValue = "") String month, 
             @RequestParam(name="year", defaultValue = "") String year, 
-            @RequestParam(name="day", defaultValue = "") String day){
-        
-        /**
-         * Methode pour la recherche par date
-         * 
-         * TODO
-         */
-        
+            @RequestParam(name="day", defaultValue = "") String day){      
+
         boolean recherche_par_date = true;
         model.addAttribute("recherche_par_date", recherche_par_date);
         model.addAttribute("year", year);
@@ -255,17 +252,16 @@ public class SearchController {
         return "search";
     }
     
+     /**
+     * Pour un évènement donné, remplit la liste de sous-évènements
+     * 
+     * @param event l'evenement pour lequel on veut remplir la liste de sous evenements
+     * 
+     */
     public void fillSsEventListOf(Evenement event){
-        /**
-         * Pour un évènement donné, remplit la liste de sous-évènements
-         * 
-         * @param event l'evenement pour lequel on veut remplir la liste de sous evenements
-         * 
-         */
+
         // Constitution d'une liste avec tous les evenements. On va tous les vérifier
         List<Evenement> listeEvenement = evenementRepository.findAll();
-        
-        //continuer à réfléchir là-dessus
         
         // On parcourt la liste de tous les evenements
         for (Evenement e:listeEvenement){
