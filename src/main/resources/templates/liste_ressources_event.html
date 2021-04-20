@@ -49,12 +49,15 @@
                                     <h5 class="card-title"> Liste des items
                                     </h5>
                                     <div th:if="${hasItems}">
+                                        <div th:each="f:${files}" >
+                                            <img th:if="${#strings.endsWith(f,'png') or #strings.endsWith(f,'jpeg') or #strings.endsWith(f,'jpg')}" th:src="${f}"/>
+                                        </div>
                                         <table>
                                             <tr>
                                                 <th>Nom de l'item</th><th>Type</th><th>Date</th><th>Lien</th>
                                             </tr>
                                             <tr class="items_row"  th:each="i:${liste_item_of_event}">
-                                                <td th:text="${i.nomItem}"></td>
+                                                <td class="itemNameCell" th:text="${i.nomItem}"></td>
                                                 <td th:text="${i.typeItem}"></td>
                                                 <td th:text="${i.dateItem}"></td>
                                                 <td ><a th:text="${i.nomItem}"></a></td>
@@ -77,9 +80,25 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="bg-light">
-		<div class="container">
+        <div th:if="${hasItems}">
+            <footer>
+                <div class="bg-light">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <ul class="list-inline text-center">
+                                    <li class="list-inline-item text-primary">A propos</li>
+                                    <li class="list-inline-item text-primary">© Revivre l'évènement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div th:unless="${hasItems}" class="bg-light" style="position:fixed;bottom:0px;width:100%;justify-content:center;">
+            <footer>
+                <div class="container">
                     <div class="row">
                         <div class="col">
                             <ul class="list-inline text-center">
@@ -88,9 +107,9 @@
                             </ul>
                         </div>
                     </div>
-		</div>
-            </div>
-        </footer>
+                </div>
+            </footer>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
