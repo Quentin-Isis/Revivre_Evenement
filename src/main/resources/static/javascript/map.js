@@ -2,7 +2,8 @@
  * Integration de la carte sur la page
  */
 
-var url = "http://localhost:8080/api";
+//var url = "http://localhost:8080/api";
+var url = "https://lit-plains-26980.herokuapp.com/api"
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -43,7 +44,6 @@ function goToPlace() {
                   content: "<p>"+dataJson.content[i].nomItem+"</p>"
                 });
                 marker.addListener("click", () => {
-                    //window.location.href="http://localhost:8080/wiki/showSsEventWikiPage?id="+dataJson.content[i].id;
                   infowindow.open(map, marker);
                 });
             });
