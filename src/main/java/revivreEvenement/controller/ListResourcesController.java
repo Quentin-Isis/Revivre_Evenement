@@ -48,7 +48,9 @@ public class ListResourcesController {
         
         for (Item i: liste_item){
             if(i.getEvenement()==evenement){
-                evenement.getItems().add(i);
+                if(!evenement.getItems().contains(i)){
+                    evenement.getItems().add(i);
+                }
             }
         }
     }

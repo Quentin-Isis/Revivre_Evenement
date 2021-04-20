@@ -58,19 +58,14 @@
                                                 <source th:src="${f}" type="audio/mp3"></source>
                                             </audio>
                                         </div>
-                                        <!--<blockquote class="twitter-tweet">
-                                            <a href="https://twitter.com/ActuFoot_/status/1384410457008746496?ref_src=twsrc%5Etfw"></a>
-                                        </blockquote> 
-                                        <script async='true' src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
                                         <table>
                                             <tr>
-                                                <th>Nom de l'item</th><th>Type</th><th>Date</th><th>Lien</th>
+                                                <th>Nom de l'item</th><th>Type</th><th>Date</th>
                                             </tr>
                                             <tr class="items_row"  th:each="i:${liste_item_of_event}">
                                                 <td class="itemNameCell" th:text="${i.nomItem}"></td>
                                                 <td th:text="${i.typeItem}"></td>
                                                 <td th:text="${i.dateItem}"></td>
-                                                <td ><a th:text="${i.nomItem}"></a></td>
                                             </tr> 
                                         </table>
                                     </div>
