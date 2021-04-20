@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import org.springframework.beans.factory.annotation.Value;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+    @Value("${spring.servlet.multipart.max-file-size}")
     private String maxSize;
 
     //StandardServletMultipartResolver
