@@ -144,6 +144,7 @@ public class IndexController{
         boolean fromWiki = false;
         model.addAttribute("fromWiki", fromWiki);
         model.addAttribute("evenement", new Evenement());
+        //model.addAttribute("evenementPrincipal", new Evenement()); ESSAI 2 et 3
         
         return "contribuer";
     }

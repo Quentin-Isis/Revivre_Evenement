@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import revivreEvenement.dao.EvenementRepository;
@@ -37,18 +38,16 @@ public class FormEventController {
     @Autowired
     private EvenementRepository evenementRepository;
     
+    
+     /**
+     * Appelé par 'contribuer.html', méthode POST
+     * @param evenement Un evenement initialisé avec les valeurs saisies dans le formulaire
+     * @param model
+     * @param redirectInfo pour transmettre des paramètres lors de la redirection
+     * @return une redirection vers contribuer.html
+     */
     @PostMapping("save")
-    public String enregistrerNouvelEvenement(Evenement evenement, Model model, RedirectAttributes redirectInfo){
-        /**
-         * Enregistre un nouvel evenement dans le repository et affiche un message de succès ou d'échec.
-         * Les attributs sont donnés par l'utilisateur         * 
-         * 
-         * @param evenement le nouvel evenement créé dans le formulaire de contribuer.html à partir des données de l'utilisateur
-         * @param model le model, utilisé dans les templates avec thymeleaf
-         * @param redirectInfo les infos de redirection
-         * 
-         * @return actualise la page contribuer.html et affiche le message de succès ou d'échec
-         */
+    public String enregistrerNouvelEvenement(Evenement evenement, Model model, RedirectAttributes redirectInfo /* ESSAI 2 et 3 ,@RequestParam(name="id") Evenement evenementPrincipal*/){
        String message;
         try {
             // cf. https://www.baeldung.com/spring-data-crud-repository-save
@@ -60,11 +59,17 @@ public class FormEventController {
             // En cas de doublon, JPA lève une exception de violation de contrainte d'intégrité
             message = "Erreur : L'évènement '" + evenement.getNomEvenement() + "' existe déjà";
         }
+        
+        //evenement.getEvenementPrincipal().getListeSousEvenements().add(evenement); // ESSAI 1: Cannot invoke "revivreEvenement.entity.Evenement.getListeSousEvenements()" because the return value of "revivreEvenement.entity.Evenement.getEvenementPrincipal()" is null
+        //evenement.setEvenementPrincipal(evenementPrincipal); //ESSAI 2:  java.lang.StackOverflowError: null
+        //evenementPrincipal.getListeSousEvenements().add(evenement); ESSAI 3: Cette ligne de rnvoie pas d'erreur. Seulement, il n'y a plus aucun evenement dans le dao (????????)
+        
+        //System.out.println("Liste de ss-event de l'event principal: "+ evenement.getEvenementPrincipal().getListeSousEvenements());
         // RedirectAttributes permet de transmettre des informations lors d'une redirection,
         // Ici on transmet un message de succès ou d'erreur
         // Ce message est accessible et affiché dans la vue 'contribuer.html'
         redirectInfo.addFlashAttribute("message", message);
         
-        return "redirect:/contribuer";
+        return "redirect:/contribuer"; // On renvoie à  contribuer POUR ESSAI 3, remplacer par "redirect:/"
     }
 }
