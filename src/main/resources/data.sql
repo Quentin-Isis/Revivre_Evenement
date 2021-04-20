@@ -1,102 +1,132 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  Mathieu
- * Created: 8 févr. 2021
- */
-
 INSERT INTO Evenement(id, nom_evenement, description, lieu,  date_debut, date_fin,evenement_principal_id) VALUES
     (1, 'Coupe du monde', 'La Coupe du monde de football 2018 est la 21e édition de la Coupe du monde de football, une compétition organisée par la FIFA et qui réunit les trente-deux sélections nationales masculines issues de la phase qualificative. Elle se déroule en Russie du 14 juin au 15 juillet 20181 et est remportée par l équipe de France...', 'Russie', TO_DATE('2018/06/14', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),1),    
     
     (12, 'Huitième de finale Coupe du monde', 'Après être sorti des phases de poules, les 8 équipes restantes s', 'Russie', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'),1),
+    
     (121, 'Huitième de finale de la Coupe du monde 1', 'Uruguay-Portugal: 2-1', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 12),
-    (122, 'Huitième de finale de la Coupe du monde 2', 'France-Argentine: 2-1', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 12),
-    (123, 'Huitième de finale de la Coupe du monde 3', 'Brésil-Mexique: 2-0', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12),
-    (124, 'Huitième de finale de la Coupe du monde 4', 'Belgique-Japon: 3-2', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12),
-    (125, 'Huitième de finale de la Coupe du monde 5', 'Espagne-Russie: 1-1 (3-4)', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 12),
-    (126, 'Huitième de finale de la Coupe du monde 6', 'Croatie-Danemark: 1-1 (3-2)', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 12),
+    (1211, 'But de Cavani en huitième de finale de la Coupe du monde 1', 'But E.Cavani à 07 min de jeu : La Celeste concrétise. Edinson Cavani, côté droit, renverse vers Luis Suarez, côté opposé. Celui-ci centre du pied droit pour trouver... Cavani auteur d un coup de tête rageur au second poteau. Rui Patricio est transpercé sur sa gauche.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 121),
+    (1212, 'But de Pepe en huitième de finale de la Coupe du monde 1', 'But Pepe à 55 min de jeu : Sur le corner joué à deux, côté gauche, Raphaël Guerreiro, malgré l angle fermé, réussit un bon centre. Oublié au marquage dans la surface, Pepe, libre, égalise avec une tête puissante. Fernando Muslera est impuissant sur sa droite.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 121),
+    (1213, 'But de Cavani (doublé) en huitième de finale de la Coupe du monde 1', 'But E.Cavani à 62 min de jeu : La Celeste reprend l avantage au bout d un mouvement lancé par son gardien. La défense portugaise hésite et Bentancur décale sur sa gauche vers Cavani. Dans la surface, le Parisien frappe sans contrôle du droit. Rui Patricio se détend, pris sur sa gauche.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 121),
+    
+    (122, 'Huitième de finale de la Coupe du monde 2', 'France-Argentine: 4-3', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 12),
+    (1221, 'But de Griezmann en huitième de finale de la Coupe du monde 2', 'But A. Griezmann à 13 min de jeu : Sur pénalty, le Français frappe sur la gauche et prend Armani à contre-pied', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+    (1222, 'But de Di Maria en huitième de finale de la Coupe du monde 2', 'But A. DI Maria à 41 min de jeu : Suite à une touche côté gauche, Di Maria hérite du ballon à 25 mètres dans l axe. Il décoche une énorme frappe du gauche qui ne laisse aucune chance à Lloris', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+    (1223, 'But  de Mercado en huitième de finale de la Coupe du monde 2', 'Bu G. Mercado à 48 min de jeu : Sur le coup franc, Messi récupère le ballon dans la surface. Il tente un tir en pivot qui est dévié par Mercado. Lloris est pris à contre-pied.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+    (1224, 'But de Pavard en huitième de finale de la Coupe du monde 2', 'But B. Pavard à 57 min de jeu : Hernandez déborde côté gauche et adresse un centre. Le ballon ne trouve pas preneur dans la surface et c est Pavard qui place une demi-volée du droit en pleine lucarne opposée depuis l extérieur de la surface.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+    (1225, 'But de Mbappe en huitième de finale de la Coupe du monde 2', 'But K. Mbappé à 64 min de jeu : Nouveau centre de Hernandez côté gauche. Suite à un cafouillage, Mbappé récupère le ballon et prend la défense argentine de vitesse dans un petit périmètre. Il croise bien sa frappe à ras de terre qui passe sous la main d Armani.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+    (1226, 'But de Mbappe (doublé) en huitième de finale de la Coupe du monde 2', 'But K. Mbappé à 68 min de jeu : Sur une contre-attaque partie de Lloris, Matuidi lance Giroud face à la défense à trente mètres. L attaquant décale Mbappé sur sa droite qui n a plus qu à tromper Armani d une frappe croisée du droit', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+    (1227, 'But d Aguero en huitième de finale de la Coupe du monde 2', 'But S. Agüero à 3 min de temps additionnel : Messi adresse un long centre depuis la droite. La défense française est lobée et Agüero ajuste Lloris de la tête.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/06/30', 'yyyy/mm/dd'), TO_DATE('2018/06/30', 'yyyy/mm/dd'), 122),
+   
+    (123, 'Huitième de finale de la Coupe du monde 5', 'Espagne-Russie: 1-1 (3-4)', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 12),
+    (1231, 'But d Ignachevitch en huitième de finale de la Coupe du monde 5', 'But CSC Ignachevitch à 11 min de jeu : Asensio tire le coup franc. Au deuxième poteau, Ignachevitch et Ramos sont au duel. Dans leur chute, le défenseur sur dévie le ballon du mollet dans son propre but !', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 123),
+    (1232, 'But de Dziouba en huitième de finale de la Coupe du monde 5', 'But sur penalty de Dziouba à 41 min de jeu : L attaquant russe frappe en force sur la droite et prend De Gea à contre-pied !', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 123),
+    (1233, 'Tirs au but en huitième de finale de la Coupe du monde 5', 'Séance de tirs au but (3-4): La Russie se qualifie au bout du suspense face aux Espagnols. La Roja a été dominatrice dans le jeu mais a cruellement manqué d efficacité. Les Russes ont parfaitement réussi à résister aux assauts ibériques et à convertir une de leurs seules occasions dans le match.', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 123),
+    
+    (124, 'Huitième de finale de la Coupe du monde 6', 'Croatie-Danemark: 1-1 (3-2)', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 12),
+    (1241, 'But de Jörgensen en huitième de finale de la Coupe du monde 6', ' But Jörgensen à 1 min de jeu : Après une longue touche venue de la droite, Delaney tente de se mettre en position dans la surface. Son contrôle profite finalement à Jörgensen, dont le tir du gauche trompe Subasic. Le ballon a touché la jambe de Subasic et le poteau avant d entrer', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 124),
+    (1242, 'But de Mandzukic en huitième de finale de la Coupe du monde 6', 'But Mandzukic à 4 min de jeu : But de Mandzukic ! Côté droit, Rebic déboule et dédouble avec Rakitic, dont le centre puissant est dégagé par Dalsgaard directement sur Christensen. Le ballon revient directement sur Mandzukic qui conclut du gauche devant les six mètres.', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 124),
+    (1243, 'Tirs au but en huitième de finale de la Coupe du monde 6', 'Séance de tirs au but (3-2) : Au bout du suspense et pour la première fois depuis 1998, la Croatie arrache sa qualification pour les quarts de finale du Mondial et retrouvera la Russie. Luka Modric avait pourtant manqué un penalty en prolongation, et Schmeichel a détourné deux tirs au but. Mais Subasic en a arrêté trois !', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/01', 'yyyy/mm/dd'), TO_DATE('2018/07/01', 'yyyy/mm/dd'), 124),
+    
+    (125, 'Huitième de finale de la Coupe du monde 3', 'Brésil-Mexique: 2-0', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12),
+    (1251, 'But de Neymar en huitième de finale de la Coupe du monde 3', 'But Neymar à 51 min de jeu : Neymar effectue une talonnade devant la surface pour Willian. Le joueur de Chelsea percute côté gauche et centre fort à ras de terre. Neymar qui a suivi, tacle le ballon au fond des filets au deuxième poteau.', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 125),
+    (1252, 'But de Firmino en huitième de finale de la Coupe du monde 3', 'But Firmino à 88 min de jeu : Neymar est bien lancé dans la profondeur par Fernandinho. Il se présente face à Ochoa côté gauche et tente de glisser le ballon sous le portier. Le ballon est déviée par le Mexicain mais Firmino a bien suivi et fini le travail seul face au but vide.', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 125),
+
+    (126, 'Huitième de finale de la Coupe du monde 4', 'Belgique-Japon: 3-2', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12),
+    (1261, 'But d Haraguchi en huitième de finale de la Coupe du monde 4', 'But G. Haraguchi à 48 min de jeu : Parti à la limite du hors-jeu, sur la droite de Vertonghen, Genki Haraguchi file jusqu à l entrée de la surface, fixe le dernier défenseur et frappe en force du droit. C est croisé, dans le petit filet, Courtois est battu !', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 126),
+    (1262, 'But d Inui en huitième de finale de la Coupe du monde 4', 'But T. Inui à 52 min de jeu : Après une mauvaise relance de Kompany, plein axe, Kagawa décale tout en finesse Takeshi Inui à l entrée de la surface. Le milieu offensif frappe du droit en puissance et trompe Courtois sur sa gauche ! L albatros est trop court ! ', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 126),
+    (1263, 'But en huitième de finale de la Coupe du monde 4', 'But J. Vertonghen à 69 min de jeu : Sur un ballon anodin, qui part en chandelle après un corner, Jan Vertonghen, sur la gauche, tout proche de la ligne de sortie de but, remise le ballon dans l axe de la tête. La remise est finalement cadrée et lobe Kawashima pour terminer dans la lucarne !', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 126),
+    (1264, 'But de Fellaini en huitième de finale de la Coupe du monde 4', 'But M. Fellaini à 78 min de jeu: Eden Hazard est sur le côté gauche. Il fait la différence avec un crochet court pour finalement adresser un excellent centre enroulé du pied gauche. Plus haut et plus puissant que Hasebe, Fellaini, à six mètres, marque d une tête smashée autoritaire !', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 126),
+    (1265, 'But de Chadli en huitième de finale de la Coupe du monde 4', 'But N. Chadli à 4 min de temps additionnel : Après une contre-attaque initiée par De Bruyne, Meunier est servi sur le côté droit aux abords de la surface pour un centre fort à ras de terre. Lukaku laisse intelligemment passer le ballon pour Chadli, qui marque du gauche dans le but vide !', 'Russie, Rostov-on-Don, Rostov Arena', TO_DATE('2018/07/02', 'yyyy/mm/dd'), TO_DATE('2018/07/02', 'yyyy/mm/dd'), 126),
+   
     (127, 'Huitième de finale de la Coupe du monde 7', 'Suède-Suisse: 1-0', 'Russie, Saint Petersburg, Krestovsky Stadium', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 12),
-    (129, 'Huitième de finale de la Coupe du monde 8', 'Colombie-Angleterre: 1-1 (3-4)', 'Russie, Moscow, Otkritie Arena', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 12),
+    (1271, 'But de Forsberg en huitième de finale de la Coupe du monde 7', 'But Forsberg à 66 min de jeu : Bien servi par Toivonen, Forsberg n est pas attaqué et tente une frappe du droit à 20 mètres dans l axe. Akanji dévie le ballon et prend Sommer à contre-pied.', 'Russie, Saint Petersburg, Krestovsky Stadium', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 127),
+    
+    (128, 'Huitième de finale de la Coupe du monde 8', 'Colombie-Angleterre: 1-1 (3-4)', 'Russie, Moscow, Otkritie Arena', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 12),
+    (1281, 'But de Kane en huitième de finale de la Coupe du monde 8', 'But H. Kane à 57 min de jeu : Le capitaine des Three Lions ne tremble pas et ajuste David Ospina avec une frappe du pied droit au centre du but colombien.', 'Russie, Moscow, Otkritie Arena', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 128),
+    (1282, 'But de Mina en huitième de finale de la Coupe du monde 8', 'But  Mina à 4 min de temps additionnel : La Colombie recolle. Sur le corner frappé à droite par Cuadrado, Yerry Mina décolle vers le point de penalty et place une tête piquée et rageuse. Sur sa ligne, Kieran Trippier ne peut que dévier de la tête. Jordan Pickford est pris sur sa droite.', 'Russie, Moscow, Otkritie Arena', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 128),
+    (1283, 'Tirs au but en huitième de finale de la Coupe du monde 8', 'Sénace de tirs au but (3-4) : Au terme d un match à haute tension marqué par des duels et du combat, l Angleterre, malgré l égalisation de Mina au bout du temps additionnel, a trouvé les ressources pour se qualifier en quarts à l issue de la séance des tirs au but. Les Three Lions joueront contre la Suède, le 7 juillet', 'Russie, Moscow, Otkritie Arena', TO_DATE('2018/07/03', 'yyyy/mm/dd'), TO_DATE('2018/07/03', 'yyyy/mm/dd'), 128),
 
 
     (13, 'Quarts de finale de la Coupe du monde', 'La France se qualifie pour la sixième fois de son histoire pour les demi-finales de la Coupe du monde...', 'Russie', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'),1),
+    
     (131, 'Quart de finale 1' , ' Uruguay-France: 0-2', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13),
-    (132, 'Quart de finale 2',' Brésil-Belgique: 1-2', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13), 
+    (1311, 'But de Varane en quart de finale 1' , ' But Raphaël Varane à 40 min de jeu : Sur un coup franc tiré par le pied gauche de Griezmann côté droit, Varane surgit au point de penalty. Il devance Stuani et place un coup de tête croisé qui trompe Muslera sur sa droite.', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 131),
+    (1312, 'But de Griezmann en quart de finale 1' , ' But Antoin Griezmann à 61 min de jeu : Servi par Tolisso sur la gauche, Griezmann, aux 25 mètres, décoche une frappe flottante du pied gauche. Muslera semble sur la trajectoire du ballon mais commet une grossière faute de main. Le ballon finit au fond des filets !', 'Russie, Nizhny Novgorod, Nizhny Novgorod Stadium', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 131),
+    
+    (132, 'Quart de finale 2',' Brésil-Belgique: 1-2', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13),
+    (1321, 'But CSC de Fernandinho en quart de finale 2',' But CSC Fernandinho à 13 min de jeu : Sur le corner frappé à gauche par Nacer Chadli, Vincent Kompany effleure le ballon de la tête au premier poteau et surprend Fernandinho, qui trompe son gardien de près avec l épaule droite.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 132),
+    (1322, 'But de De Bruyne en quart de finale 2',' But Kevin De Bruyne à 31 min de jeu : La Belgique se détache au terme d une attaque rapide lancée par le puissant Romelu Lukaku qui élimine Fernandinho et sollicite De Bruyne. Malgré Marcelo, le Belge déclenche un tir précis du pied droit aux vingt mètres. Dans le petit filet droit d Alisson.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 132),
+    (1323, 'But d Augusto en quart de finale 2',' But Renato Augusto à 76 min de jeu : Le Brésil se donne des raisons d y croire. Sur le côté gauche, Philippe Coutinho réussit un centre splendide. Dans le dos de Vincent Kompany, Renato Augusto termine rageusement de la tête. Thibaut Courtois est pris sur sa gauche.', 'Russie, Kazan, Ak Bars Arena', TO_DATE('2018/07/06', 'yyyy/mm/dd'), TO_DATE('2018/07/06', 'yyyy/mm/dd'), 132),
+
     (133, 'Quart de finale 3',' Russie-Croatie: 2-2 (3-4)', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13),
+    (1331, 'But de Cherichev en quart de finale 3',' But Cherichev à 31 min de jeu : But de Cherichev ! Alors que la Croatie recule sur ses bases, Rakitic laisse échapper Cherichev qui combine pour un long une-deux avec Samedov. Cherichev évite ensuite le tacle de Modric et enroule sa frappe du gauche aux vingt mètres en pleine lucarne !', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133),
+    (1332, 'But de Kramaric en quart de finale 3',' But Kramaric à 39 min de jeu : La Croatie réplique ! Servi en première intention par Perisic à l aile gauche, Mandzukic gagne du terrain, entre dans la surface et délivre un centre court. La défense russe se disloque et Kramaric conclut d un coup de tête piqué aux six mètres.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133),
+    (1333, 'But de Vida en quart de finale 3',' But Vida à 101 min de jeu : La Croatie reprend la main ! Sur le corner droit tiré par Modric, Domagoj Vida signe une reprise piquée de la tête qui finit sa course en flirtant avec l intérieur du poteau droit ! Smolov n a rien pu faire sur la trajectoire et Akinfeïev est en retard.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133),
+    (1334, 'But de Fernandes en quart de finale 3',' But Fernandes à 115 min de jeu : Sensation à Sotchi, la Russie égalise ! Au coup franc à l angle droit de la surface croate, Dzagoïev délivre un centre ciselé qui est repris par la tête décroisée de Fernandes, libre de marquer dans le petit filet grâce au marquage laxiste de Mandzukic.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133),
+    (1335, 'Tirs au but en quart de finale 3',' Séance de tirs au but (3-4) : Au bout du suspense, la Croatie se qualifie pour les demi-finales en battant une valeureuse Russie aux tirs au but et défiera l Angleterre mercredi prochain. L épopée russe s achève à Sotchi, malgré le but égalisateur de Mario Fernandes en prolongation qui a ravivé les espoirs du pays hôte.', 'Russie, Sochi, Fisht Olympic Stadium', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133),
+    
     (134, 'Quart de finale 4', 'Suède-Angleterre: 0-2', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13),
+    (1341, 'But de Maguire en quart de finale 4', 'But Maguire à 30 min de jeu : L Angleterre prend l ascendant sur un coup de pied arrêté. Sur le corner frappé à gauche par Ashley Young, Harry Maguire s impose en costaud vers le point de penalty face à Emil Forsberg et place une tête puissante. Robin Olsen est pris sur sa droite.', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 134),
+    (1342, 'But de Dele Alli en quart de finale 4', 'But Dele Alli à 59 min de jeu : L Angleterre réussit le break à Samara. Sur la droite, Kieran Trippier s appuie sur Jesse Lingard, qui renverse le jeu et sollicite Dele Alli au second poteau. Oublié par Emil Krafth, ce dernier place une tête puissante. Entre les bras de Robin Olsen.', 'Russie, Samara, Solidarnost Arena', TO_DATE('2018/07/07', 'yyyy/mm/dd'), TO_DATE('2018/07/07', 'yyyy/mm/dd'), 134),
     
     (14, 'Demi-finales de la Coupe du monde', 'La rencontre est très attendue par l ensemble des observateurs : la Belgique a produit jusque-là un niveau de jeu extrêmement séduisant, tourné vers l attaque (14 buts depuis le début de la compétition) et a réussi le tour de force d éliminer le Brésil, l un des grands favoris de la compétition...', 'Russie', TO_DATE('2018/07/10', 'yyyy/mm/dd'), TO_DATE('2018/07/11', 'yyyy/mm/dd'),1),
+    
     (141, 'Demi-finale 1', 'France-Belgique: 1-0', 'Russie, Saint Petersburg, Krestovsky Stadium', TO_DATE('2018/07/10', 'yyyy/mm/dd'), TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14),
+    (1411, 'But d Umtiti en demi-finale 1', 'But S. Umtiti : La France ouvre le score ! Grâce à une bonne frappe en pivot de Giroud contrée de justesse par Kompany, les Bleus obtiennent un corner droit. Umtiti surgit au premier poteau pour devancer Fellaini et marquer de la tête sur le centre de Griezmann !', 'Russie, Saint Petersburg, Krestovsky Stadium', TO_DATE('2018/07/10', 'yyyy/mm/dd'), TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141),
+    
     (142, 'Demi-finale 2', 'Croatie-Angleterre: 2-1', 'Russie, Moscow, Luzhniki Stadium', TO_DATE('2018/07/11', 'yyyy/mm/dd'), TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14),
+    (1421, 'But de Trippier en demi-finale 2', 'But Kieran Trippier à 5 min de jeu : Une fois de plus dans ce Mondial, l Angleterre concrétise sur un coup de pied arrêté. Sur le coup franc direct, Kieran Trippier contourne le mur avec une frappe du pied droit et trouve la lucarne gauche de Danijel Subasic, transpercé.', 'Russie, Moscow, Luzhniki Stadium', TO_DATE('2018/07/11', 'yyyy/mm/dd'), TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142),
+    (1422, 'But de Perisic en demi-finale 2', 'But Perisic à 68 min de jeu : La Croatie recolle. Sur le long centre délivré à droite par Sime Vrsaljko, Ivan Perisic décolle dans la surface, domine Kyle Walker et termine avec une reprise acrobatique du pied gauche. Jordan Pickford est impuissant.', 'Russie, Moscow, Luzhniki Stadium', TO_DATE('2018/07/11', 'yyyy/mm/dd'), TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142),
+    (1423, 'But de Mandzukic en demi-finale 2', 'But Mario Mandzukic à 109 min de jeu : La Croatie se détache à l énergie grâce à son buteur Mario Mandzukic, oublié dans la surface par la défense anglaise et John Stones. Sur une remise rageuse de la tête de Perisic, le Croate finit avec une demi-volée du gauche, à gauche de la surface.', 'Russie, Moscow, Luzhniki Stadium', TO_DATE('2018/07/11', 'yyyy/mm/dd'), TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142),
     
-    (15, 'Finale Coupe du monde', '« Mangés au milieu, transparents dans les duels, pauvres techniquement, incapables de se faire cinq passes », les Bleus souffrent en première période, face à des Croates à plus de 68 % de possession qui dictent le jeu, mais les joueurs de Didier Deschamps parviennent toutefois à atteindre la pause en menant 2-1...', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),1);
-    
+    (15, 'Finale Coupe du monde', '« Mangés au milieu, transparents dans les duels, pauvres techniquement, incapables de se faire cinq passes », les Bleus souffrent en première période, face à des Croates à plus de 68 % de possession qui dictent le jeu, mais les joueurs de Didier Deschamps parviennent toutefois à atteindre la pause en menant 2-1...', 'Russie, Moscow, Luzhniki Stadium', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),1),
+    (151, 'But CSC de Mandzukic en finale Coupe du monde', 'But CSC de Mandzukic à 18 min de jeu : Sur le coup franc parfaitement frappé par Griezmann, le ballon arrive au point de penalty et Mandzukic détourne de la tête directement dans la lucarne gauche.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
+    (152, 'But de Perisic en finale Coupe du monde', 'But Perisic à 28 min de jeu : Après un coup franc de Modric vers Vrsaljko sur la droite, le latéral remet de la tête vers le centre de la surface et Perisic récupère après un contre favorable. Le joueur de l Inter crochète Kanté et marque d un tir croisé dévié par Varane. ', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
+    (153, 'But de Griezmann en finale Coupe du monde', 'But Griezmann sur penalty à 38 min de jeu : Antoine Griezmann ne tremble pas et transforme son penalty en trompant Danijel Subasic sur sa droite, le portier monégasque ayant plongé sur sa gauche.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
+    (154, 'But de Pogba en finale Coupe du monde', 'But Pogba à 59 min de jeu : Mbappé est bien lancé sur la droite et centre en retrait vers Griezmann qui temporise avant de trouver Pogba à l entrée de la surface. Le Mancunien s y prend à deux fois pour tromper Subasic d une frappe sèche sur la droite du gardien.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
+    (155, 'But de Mbappé en finale Coupe du monde', 'But Mbappé à 65 min de jeu : Hernandez résiste à deux défenseurs en les fixant côté gauche et trouve Mbappé dans l axe des 25 mètres. Le joueur parisien contrôle et décoche alors une frappe magnifique du pied droit qui vient se loger dans le petit filet droit de Subasic.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15),
+    (156, 'But de Mandzukic en finale Coupe du monde', 'But Mandzukic à 69 min de jeu : Lloris est à la relance au pied et se manque complètement sous la pression de Mandzukic qui en profite pour marquer dans le but vide.', 'Russie', TO_DATE('2018/07/15', 'yyyy/mm/dd'), TO_DATE('2018/07/15', 'yyyy/mm/dd'),15);
+
+    (2, 'Manifestation Gilet Jaune','Au début de l’année 2018, des mouvements protestataires spontanés en France s opposent à la réduction à 80 km/h de la vitesse sur une grande partie du réseau routier et s opposent au coût de la vie. Certains manifestants portent des gilets de haute visibilité de couleur jaune, sans que cet accessoire ne soit encore un signe de ralliement. La plupart des membres de ce mouvement, baptisé « Colère », se retrouvent ensuite au sein des Gilets jaunes...','France',TO_DATE('2018/11/09', 'yyyy/mm/dd'), TO_DATE('2020/10/09', 'yyyy/mm/dd'),2),
+    (21,'Acte 1','Le samedi 17 novembre 2018, le mouvement commence tôt à Paris, notamment avec le blocage du périphérique, après un rassemblement organisé à la Porte Maillot. L après-midi, plusieurs dizaines de manifestants défilent sur l avenue des Champs-Élysées, au niveau de la place Charles-de-Gaulle, puis se dirigent vers le palais de l Élysée, avant de se retrouver bloqués sur la place de la Concorde.','Paris', TO_DATE('2018/11/17', 'yyyy/mm/dd'), TO_DATE('2018/11/17', 'yyyy/mm/dd'),2);
+
 INSERT INTO Position(id, longitude, latitude, orientation) VALUES 
-    (1, 144, 51, 1),
-    (2, 48, 75, 50),
-    (3, 107, 110, 154),
-    (4, 78, 51, 298),
-    (5, 181, 2, 306),
-    (6, 53, 10, 179),
-    (7, 144, 51, 63),
-    (8, 48, 75, 123),
-    (9, 107, 110, 236),
-    (10, 178, 51, 147),
-    (11, 181, 52, 89),
-    (12, 53, 100, 69),
-    (13, 144, 51, 56),
-    (14, 48, 75, 354),
-    (15, 107, 110, 10),
-    (16, 78, 51, 126),
-    (17, 181, 2, 30),
-    (18, 53, 10, 12),
-    (19, 144, 66, 158),
-    (20, 48, 75, 236),
-    (21, 107, 110, 258),
-    (22, 8, 59, 247),
-    (23, 18, 2, 289),
-    (24, 4, 107, 301),
-    (25, 144, 166, 129),
-    (26, 66, 75, 3),
-    (27, 107, 184,158),
-    (28, 94, 51, 69),
-    (29, 181, 16, 72),
-    (30, 147, 10, 103),
-    (31, 144, 90, 167),
-    (32, 12, 75, 233),
-    (33, 107, 129, 11),
-    (34, 154, 51, 22),
-    (35, 144, 87, 33),
-    (36, 78, 34, 44),
-    (37, 111, 23, 55),
-    (38, 42, 120, 66);
+    
+    (1, 105.319, 61.524, null), /*Position de la Russie*/
+    (2, 40.095, 43.545, null), /*Position Sochi, Fisht Olympic Stadium*/
+    (3, 55.333, 51, null), /*Position Kazan, Ak Bars Arena*/
+    (4, 36.783, 52.117, null), /*Position Samara, Solidarnost Arena*/
+    (5, 44.002, 56.329, null), /*Position Nizhny Novgorod, Nizhny Novgorod Stadium*/
+    (6, 39.711, 47.221, null), /*Position Rostov-on-Don, Rostov Arena*/
+    (7, 30.220, 59.973, null), /*Position Saint Petersburg, Krestovsky Stadium*/
+    (71, 30.220, 59.973, 42.35),/*Position Saint Petersburg, Krestovsky Stadium, orientation 1*/
+    (72, 30.220, 59.973, 80.54),/*Position Saint Petersburg, Krestovsky Stadium, orientation 2*/
+    (8, 39.494, 57.727, null), /*Position Moscow, Otkritie Arena*/
+    (9, 37.555, 55.716, null), /*Position Moscow, Luzhniki Stadium*/
+    (91, 37.555, 55.716, 32.01), /*Position Moscow, Luzhniki Stadium, orientation 1*/
+    (92, 37.555, 55.716, 74.63); /*Position Moscow, Luzhniki Stadium, orientation 2*/
+ 
     
 
 INSERT INTO Item(id, nom_item, type_item, date_item, evenement_id, position_id) VALUES
+    
     (1, 'item1', 'image', TO_DATE('2018/06/14', 'yyyy/mm/dd'), 1, 1),
-    (2, 'item2', 'vidéo', TO_DATE('2018/06/15', 'yyyy/mm/dd'), 1,2),
-    (3, 'item3', 'image', TO_DATE('2018/06/25', 'yyyy/mm/dd'), 1,3),
-    (4, 'item4', 'tweet', TO_DATE('2018/06/26', 'yyyy/mm/dd'), 1,4),
-    (5, 'item5', 'image', TO_DATE('2018/06/30', 'yyyy/mm/dd'), 12,5),
-    (6, 'item6', 'vidéo', TO_DATE('2018/07/02', 'yyyy/mm/dd'), 12,6),
-    (7, 'item7', 'tweet', TO_DATE('2018/07/03', 'yyyy/mm/dd'), 12,7),
-    (8, 'item8', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13,8),
-    (9, 'item9', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 13,9),
-    (10, 'item10', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13,10),
-    (11, 'item11', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 13,11),
-    (12, 'item12', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,12),
-    (13, 'item13', 'vidéo', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,13),
-    (14, 'item14', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 14,14),
-    (15, 'item15', 'tweet', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,15),
-    (16, 'item16', 'image', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,16),
-    (17, 'item17', 'vidéo', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 14,17),
-    (18, 'item18', 'image', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,18),
-    (19, 'item19', 'tweet', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,19),
-    (20, 'item20', 'vidéo', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,20);
-
-
-
-
+    (2, 'item2', 'vidéo', TO_DATE('2018/06/15', 'yyyy/mm/dd'), 1,1),
+    (3, 'item3', 'image', TO_DATE('2018/06/25', 'yyyy/mm/dd'), 1,1),
+    (4, 'item4', 'tweet', TO_DATE('2018/06/26', 'yyyy/mm/dd'), 1,1),
+    (5, 'item5', 'image', TO_DATE('2018/06/30', 'yyyy/mm/dd'), 121,2),
+    (6, 'item6', 'vidéo', TO_DATE('2018/07/02', 'yyyy/mm/dd'), 122,3),
+    (7, 'item7', 'tweet', TO_DATE('2018/07/03', 'yyyy/mm/dd'), 126,6),
+    (8, 'item8', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 131,5),
+    (9, 'item9', 'tweet', TO_DATE('2018/07/06', 'yyyy/mm/dd'), 132,3),
+    (10, 'item10', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 133,2),
+    (11, 'item11', 'tweet', TO_DATE('2018/07/07', 'yyyy/mm/dd'), 134,4),
+    (12, 'item12', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141,7),
+    (13, 'item13', 'vidéo', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141,71),
+    (14, 'item14', 'image', TO_DATE('2018/07/10', 'yyyy/mm/dd'), 141,72),
+    (15, 'item15', 'tweet', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,9),
+    (16, 'item16', 'image', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,91),
+    (17, 'item17', 'vidéo', TO_DATE('2018/07/11', 'yyyy/mm/dd'), 142,91),
+    (18, 'item18', 'image', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 15,9),
+    (19, 'item19', 'tweet', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 156,9),
+    (20, 'item20', 'vidéo', TO_DATE('2018/07/15', 'yyyy/mm/dd'), 155,92);
