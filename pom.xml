@@ -103,6 +103,12 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+                <!-- Driver JDBC Postgres pour déploiement sur heroku -->
+                <dependency>
+                    <groupId> org.postgresql </groupId>
+                    <artifactId>postgresql</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
 	</dependencies>
 
 	<build>
