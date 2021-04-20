@@ -43,8 +43,8 @@ function goToPlace() {
                   content: "<p>"+dataJson.content[i].nomItem+"</p>"
                 });
                 marker.addListener("click", () => {
-                    window.location.href="http://localhost:8080/wiki/showSsEventWikiPage?id="+dataJson.content[i].id;
-                 // infowindow.open(map, marker);
+                    //window.location.href="http://localhost:8080/wiki/showSsEventWikiPage?id="+dataJson.content[i].id;
+                  infowindow.open(map, marker);
                 });
             });
         }
