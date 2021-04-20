@@ -46,7 +46,6 @@ public class ListEventController {
     @Autowired
     PositionRepository positionRepository;
      
-     BoiteATools outil = new BoiteATools();
      
     @GetMapping(path = "delete")
     public String supprimeUnEvenementPuisMontreLaListe(@RequestParam("id") Evenement evenement, RedirectAttributes redirectInfo) {
