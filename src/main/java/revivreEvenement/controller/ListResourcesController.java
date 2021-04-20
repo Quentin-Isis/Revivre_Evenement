@@ -6,7 +6,6 @@
 package revivreEvenement.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
+
 import revivreEvenement.dao.ItemRepository;
 import revivreEvenement.entity.Evenement;
 import revivreEvenement.entity.Item;
@@ -23,12 +23,11 @@ import revivreEvenement.storageservice.StorageService;
 
 /**
  *
- * @author Léa
+ * @author Mathieu
  */
 @Controller
 @RequestMapping(path="/ressources")
-public class ListResourcesController {
-        
+public class ListResourcesController {        
 
     private final StorageService storageService;
 
@@ -36,17 +35,23 @@ public class ListResourcesController {
     public ListResourcesController(StorageService storageService) {
             this.storageService = storageService;
     }
+
     @Autowired
     ItemRepository itemRepository;
-
-        public void fillItemListOf(Evenement evenement){
-        /**
-         * Pour un évènement donné, rempli sa liste d'item
-         */
-        
+    
+    /**
+     * Remplit la liste d'items d'un évènement donné
+     * @param evenement 
+     */
+    public void fillItemListOf(Evenement evenement){
+    
+        // On va chercher tous les items
         List<Item> liste_item = itemRepository.findAll();
         
+        // On parcourt cette liste
         for (Item i: liste_item){
+            // On récupère l'évènement correspondant à l'item et on vérifie si c'est l'évènement en paramètre. 
+            //Si oui et s'il n'est pas déjà dans la liste, on l'ajoute
             if(i.getEvenement()==evenement){
                 if(!evenement.getItems().contains(i)){
                     evenement.getItems().add(i);
@@ -55,32 +60,32 @@ public class ListResourcesController {
         }
     }
     
+    /**On affiche la liste d'item d'un évènement donné grâce à thymeleaf
+     * 
+     * @param model
+     * @param evenement
+     * @return
+     * @throws IOException 
+     */
     @GetMapping("liste_item")
-    public String showListItemOf(Model model, @RequestParam(name="id") Evenement evenement) throws IOException{
+    public String showListItemOf(Model model, @RequestParam(name="id") Evenement evenement) throws IOException{        
         
-        
+        // On ajoute la liste de fichier au model
         model.addAttribute("files", storageService.loadAll().map(
 				path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
 						"serveFile", path.getFileName().toString()).build().toUri().toString())
 				.collect(Collectors.toList()));
         
+        // On remplit la liste d'item de l'évènement et on récupère cette liste
         fillItemListOf(evenement);
         List<Item> liste_item_of_event = evenement.getItems();
-        List<String> liste_extensions = new ArrayList<>();
+        
+        // On vérifie si l'évènement a des items pour faciliter l'utilisation de thymeleaf
         boolean hasItems = false;
         if (!liste_item_of_event.isEmpty()){
             hasItems = true;
-            for (Item i: liste_item_of_event){
-                if (i.getTypeItem().contains("/")){
-                    liste_extensions.add(i.getTypeItem().split("/")[1]);
-                } 
-                else{
-                    liste_extensions.add("undefined");
-                }
-            }
         }
-        
-        model.addAttribute("extensions", liste_extensions);
+
         model.addAttribute("hasItems", hasItems);
         model.addAttribute("evenement", evenement);
         model.addAttribute("liste_item_of_event", liste_item_of_event);
