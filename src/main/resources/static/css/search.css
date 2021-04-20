@@ -44,6 +44,10 @@ table{
     margin-left: 15px;
 }
 
+#resultats{
+    overflow-y: scroll;
+}
+
 @media (min-width:768px) and (max-width:992px){
     .card-body{
         height:350px;
