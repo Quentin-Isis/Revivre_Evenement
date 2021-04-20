@@ -13,6 +13,10 @@ html{
     overflow:scroll;
 }
 
+header{
+    width:auto;
+}
+
 div a {
     font-size: 20px;
 }
@@ -86,3 +90,19 @@ li{
     display:none;
 }
 
+.pagination{
+    margin-right: 15px;
+}
+
+@media(max-width:576px){
+    html{
+        zoom:40%;
+        width:auto;
+    }
+}
+    
+@media(min-width:576px) and (max-width:992px){
+    table{
+        zoom:60%;
+    }
+}

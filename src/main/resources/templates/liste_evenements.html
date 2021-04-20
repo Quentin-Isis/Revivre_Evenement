@@ -29,8 +29,8 @@
                                     </ul>
                                 </div>    
                             </div>
-                                                  
-                           <!-- <button id="affichage" ><img id="mode" src="../images/header/mini_mode_jour.jpg" alt="mode jour/nuit"/></button>-->
+
+                            <!-- <button id="affichage" ><img id="mode" src="../images/header/mini_mode_jour.jpg" alt="mode jour/nuit"/></button>-->
                         </nav>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
         </header>
         <main>
             <div class="bg-light">
-                <div class="container">
+                <div class="container-fluid container-lg">
                     <div class="row">
                         <div id= "liste" class="col">
                             <div class="card">
@@ -68,12 +68,12 @@
                                             <td>
                                                 <a th:href="@{/liste_events/showWikiPage(id=${e.id})}">Wiki</a>
                                             </td>
-                                                
+
                                         </tr>
-                                 </table>
-                                    <ul>
+                                    </table>
+                                    <ul class="row">
                                         <!-- Pour la pagination (10 évènements par pages (LE CSS N'EST PAS FAIT) -->
-                                        <li th:each="page,status:${pages}">
+                                        <li class="pagination" th:each="page,status:${pages}">
                                             <a th:href="@{/wiki/liste_evenements(page=${status.index})}" th:text="${status.index}"></a>
                                         </li>
                                     </ul>
@@ -84,30 +84,51 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="bg-light">
-		<div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item text-primary">A propos</li>
-                                <li class="list-inline-item text-primary">© Revivre l'évènement</li>
-                            </ul>
+        <div th:each="e,state:${listEvenements}" >
+            <div th:if="${(state.size < 4)}" class="bg-light" style="position:fixed;bottom:0px;width:100%;justify-content:center;">
+                <div th:if="${(state.index == 0)}">
+                    <footer>
+                        <div class="bg-light">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <ul class="list-inline text-center">
+                                            <li class="list-inline-item text-primary">A propos</li>
+                                            <li class="list-inline-item text-primary">© Revivre l'évènement</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-		</div>
+                    </footer>
+                </div>
             </div>
-        </footer>
+            <div th:unless="${(state.size < 4)}" class="bg-light">
+                <div th:if="${(state.index == 0)}">
+                    <footer>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-inline text-center">
+                                        <li class="list-inline-item text-primary">A propos</li>
+                                        <li class="list-inline-item text-primary">© Revivre l'évènement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
 
-        
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
         <script src="../javascript/liste_events.js"></script>
     </body>
 </html>

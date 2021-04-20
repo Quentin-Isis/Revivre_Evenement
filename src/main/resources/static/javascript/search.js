@@ -2,16 +2,21 @@
  * Apparition des menus et des formulaires de recherche.
  */
 
-document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
+/*document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
 document.getElementById("date").addEventListener("click", afficheRechercheDate);
-document.getElementById("btn-retour").addEventListener("click", retour);
-/**let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
+document.getElementById("btn-retour").addEventListener("click", retour);*/
+document.getElementById("rechercheMotCle").addEventListener("click", afficheCarteResultat);
 
+/*let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
 for(let i = 0; i < bouttons_rechercher.length; i++) {
   bouttons_rechercher[i].addEventListener("click", affichageResultats)
 }
 */
 
+function afficheCarteResultat(){
+    document.getElementById("carteResultats").style.display = "block";
+}
+/*
 function afficheRechercheLieu(event){
     document.getElementById("espace_mot_cle").style.display = "none";
     document.getElementById("espace_lieu_1").style.display = "block";
@@ -35,7 +40,7 @@ function retour(event){
     document.getElementById("espace_date").style.display = "none";
     document.getElementById("btn-retour").style.display = "none";
 }
-
+*/
 // Formulaire recherche par date
 // https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/date
 

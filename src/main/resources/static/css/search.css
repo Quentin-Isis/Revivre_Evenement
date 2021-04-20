@@ -22,37 +22,21 @@ div a {
     font-size: 20px;
 }
 
-#espace_date{
-    margin-top: 25px;
-    display:none;
-}
-
-
-#espace_lieu_1{
-    margin-top: 25px;
-    display:none;
-}
-
-#espace_lieu_2{
-    margin-top: 25px;
-    display:none;
-}
-
-#btn-retour{
-    display:none;
-}
-
-#rechercher{
-    margin-bottom: 25px;
-}
-
 .emplacementRecherche{
-    height:120px;
+    height:300px;
+}
+
+.card-body{
+    height:250px;
+}
+
+.card{
     margin-bottom: 25px;
 }
 
 #carteResultats{
     margin-bottom: 25px;
+    display:none;
 }
 
 table{
@@ -60,8 +44,8 @@ table{
     margin-left: 15px;
 }
 
-footer{
-    position:relative;
-    bottom:0px;
-    align-items: center;
+@media (min-width:768px) and (max-width:992px){
+    .card-body{
+        height:350px;
+}
 }

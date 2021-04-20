@@ -10,7 +10,12 @@ and open the template in the editor.
 
 html{
     background-color: rgb(248,249,250);
-    overflow:scroll;
+    overflow-y:scroll;
+}
+
+body{
+    background-color: rgb(248,249,250);
+    height:380px;
 }
 
 div a {
