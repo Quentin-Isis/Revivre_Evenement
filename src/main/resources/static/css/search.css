@@ -36,7 +36,7 @@ div a {
 
 #carteResultats{
     margin-bottom: 25px;
-    display:none;
+    display:block;
 }
 
 table{
@@ -49,3 +49,4 @@ table{
         height:350px;
 }
 }
+

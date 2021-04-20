@@ -124,14 +124,14 @@
                             </div>
                         </div>
                     </div>
-                    <div id="resultats" class="row">
+                    <div th:if="${recherche_en_cours}" id="resultats" class="row">
                         <div id="carteResultats" class="col-12">
                             <div class="card" >
                                 <div class="card-body">
                                     <div class="row " >
-                                        <div class="col-12">
-                                            <h1>Résultats:</h1>
+                                        <div class="col-12">                                            
                                             <div th:if="${recherche_par_mot_cle}">
+                                                <h1>Résultats:</h1>
                                                 <h3 th:if="${!isValide}">Veuillez saisir un mot clé</h3>
                                                 <div th:unless="${!isValide}">
                                                     <div th:if="${trouves}">

@@ -36,10 +36,12 @@ public class SearchController {
     @GetMapping("fctSearch")
     private String fctSearch(Model model, @RequestParam(name="motCle", defaultValue ="") String motCle){
         
+        boolean recherche_en_cours = true;
         boolean recherche_par_mot_cle = true;
         boolean motCleIsValide = motCleIsValide(motCle);
         boolean resultats_trouves = false;
-       
+        
+        model.addAttribute("recherche_en_cours", recherche_en_cours);
         model.addAttribute("recherche_par_mot_cle", recherche_par_mot_cle);
         model.addAttribute("isValide", motCleIsValide);
         model.addAttribute("motCle", motCle);

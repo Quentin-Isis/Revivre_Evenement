@@ -4,18 +4,18 @@
 
 /*document.getElementById("lieu").addEventListener("click", afficheRechercheLieu);
 document.getElementById("date").addEventListener("click", afficheRechercheDate);
-document.getElementById("btn-retour").addEventListener("click", retour);*/
-document.getElementById("rechercheMotCle").addEventListener("click", afficheCarteResultat);
+document.getElementById("btn-retour").addEventListener("click", retour);
+document.getElementById("rechercheMotCle").addEventListener("click", afficheCarteResultat);*/
 
 /*let bouttons_rechercher = document.getElementsByClassName("btn-rechercher")
 for(let i = 0; i < bouttons_rechercher.length; i++) {
   bouttons_rechercher[i].addEventListener("click", affichageResultats)
 }
 */
-
+/**
 function afficheCarteResultat(){
     document.getElementById("carteResultats").style.display = "block";
-}
+}*/
 /*
 function afficheRechercheLieu(event){
     document.getElementById("espace_mot_cle").style.display = "none";
