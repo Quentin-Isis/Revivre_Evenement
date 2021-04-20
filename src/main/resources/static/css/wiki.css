@@ -22,6 +22,25 @@ div a {
     font-size: 20px;
 }
 
+.date {
+    border : 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    position:relative;
+    bottom: 25px;
+    color:rgba(0,0,0,0.4);
+    background-color: white;
+}
+
+.date:hover{
+    color:rgba(0,0,0,0.4);
+    text-decoration: none;
+}
+
+#timeline{
+    height:300px;
+    overflow-x: scroll;
+}
 
 #emplacementDescription{
     height: 400px;
@@ -37,7 +56,7 @@ div a {
 
 #tailleCarteSsEvent{
     height:478px;
-    overflow:scroll-y;
+    overflow-y:scroll;
 }
 
 #description{
@@ -86,7 +105,7 @@ div a {
     border-radius: 4px;
     padding: 2px 4px;
 }
-@media (min-width: 1140px) {
+
     .hori-timeline .events .event-list {
         display: inline-block;
         width: 24%;
@@ -95,7 +114,6 @@ div a {
     .hori-timeline .events .event-list .event-date {
         top: -12px;
     }
-}
 
 .card {
     border: none;
@@ -105,6 +123,29 @@ div a {
 }
 
 .liste-evenement{
-    height:110px;
+    height:150px;
     overflow-y: scroll;
+}
+
+@media (max-width:991px){
+    #triangle{
+        display:none;
+    }
+}
+
+@media (max-width:767px){
+    #map{
+        overflow: auto;
+        display:block;
+    }
+}
+
+@media (max-width:576px){
+    #timeline{
+        display:flex;
+        flex-wrap: nowrap;
+    }
+    .list-inline.events{
+        height:120px;
+    }
 }

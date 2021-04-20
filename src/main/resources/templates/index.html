@@ -44,47 +44,35 @@ and open the template in the editor.
         <main>
             <div class="bg-light">
                 <br/>
-                <div class="container">            
-                    <div class="row">
-                        <div class="col">
-                            <div class="jumbotron">
-                                <p>Image de présentation ?</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-light">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body" id="timeline">
-                                    <h4 class="card-title mb-5">Horizontal Timeline</h4>
+                            <div class="card" id="timeline">
+                                <div class="card-body" >
                                     <div class="row">
                                         <div class="hori-timeline col-11" dir="ltr">
                                             <ul class="list-inline events">
                                                 <li class="list-inline-item event-list" th:each="d:${dates}">
-                                                <div class="px-4">
-                                                    <div class="event-date bg-soft-success text-success">
-                                                        <div class="annee" >
-                                                            <a class="date" th:text="${d}" href="#"></a>
-                                                            <div th:each="Map1:${da}">
-                                                                <div class="liste-evenement" th:each="Map2:${Map1}" th:if="${Map2.key == d}">
-                                                                    <div class="border border-black rounded" >
-                                                                        <div th:each="value:${Map2.value}" >
-                                                                            <div th:each="evenement:${evenements}">
-                                                                                <div th:if="${evenement.nomEvenement == value}">
-                                                                                    <a class="evenements" th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-success text-success">
+                                                            <div class="annee" >
+                                                                <a class="date" th:text="${d}" href="#"></a>
+                                                                <div th:each="Map1:${da}">
+                                                                    <div class="liste-evenement" th:each="Map2:${Map1}" th:if="${Map2.key == d}">
+                                                                        <div class="border border-black rounded" >
+                                                                            <div th:each="value:${Map2.value}" >
+                                                                                <div th:each="evenement:${evenements}">
+                                                                                    <div th:if="${evenement.nomEvenement == value}">
+                                                                                        <a class="evenements" th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </div>  
+                                                                        </div>  
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 </li>
                                             </ul>
                                         </div>
@@ -102,7 +90,7 @@ and open the template in the editor.
                                     <h5 class="card-title"> Bienvenue dans notre projet: Revivre l'évènement.
                                     </h5>
                                     <div id="emplacementDescription" class="card-text"> Notre projet consiste à mettre en place un wiki collaboratif permettant aux utilisateurs de voir les évènements qui les intéressent et de leur donner une immersion maximale grâce à la récupération d'items (photos, vidéos, tweets, ...) auprès des contributeurs. 
-                                    <!--texte qui va changer-->
+                                        <!--texte qui va changer-->
                                     </div>
                                 </div>
                             </div>
@@ -133,16 +121,16 @@ and open the template in the editor.
                 </div>
             </div>
         </footer>
-        
+
         <script src="../javascript/index.js"></script>
-        
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        
-       <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=initMap" async >
-        </script>-->
-        
+
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4FpKz6XLGE9hvSPPmP54lpfQQxHjVOkc&callback=initMap" async >
+         </script>-->
+
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>

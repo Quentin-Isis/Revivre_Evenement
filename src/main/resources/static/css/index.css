@@ -41,7 +41,7 @@ div a {
 }
 
 #emplacementCarte{
-    height: 400px;
+    height: 425px;
 }
 
 #emplacementDescription{
@@ -71,6 +71,7 @@ div a {
 .evenements{
     text-decoration: none;
     color:black;
+    margin-bottom: 10px;
 }
 .border,.border-black,.rounded{
     position:relative;
@@ -83,7 +84,7 @@ div a {
 }
 
 #timeline{
-    height:500px;
+    height:300px;
 }
 
 /*Timeline*/
@@ -123,25 +124,52 @@ div a {
     border-radius: 4px;
     padding: 2px 4px;
 }
-@media (min-width: 1140px) {
-    .hori-timeline .events .event-list {
-        display: inline-block;
-        width: 24%;
-        padding-top: 45px;
-    }
-    .hori-timeline .events .event-list .event-date {
-        top: -12px;
-    }
-}
 
 .card {
     border: none;
-    margin-bottom: 24px;
     -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
     box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
 }
 
 .liste-evenement{
-    height:110px;
+    height:150px;
     overflow-y: scroll;
 }
+
+.hori-timeline .events .event-list {
+    display: inline-block;
+    width: 24%;
+    padding-top: 45px;
+}
+.hori-timeline .events .event-list .event-date {
+    top: -12px;
+}
+
+@media (max-width:991px){
+    #triangle{
+        position:relative;
+        margin-top:-15.75%;
+        margin-left:91.65%;
+    }
+}
+
+@media (max-width:767px){
+    #triangle{
+        position:relative;
+        margin-top:-21.5%;
+        margin-left:91.65%;
+    }
+}
+
+@media (max-width:576px){
+    #triangle{
+        display:none;
+    }
+    .liste-evenement{
+        width:150%;
+    }
+    #timeline{
+        overflow-x: scroll;
+    }
+}
+

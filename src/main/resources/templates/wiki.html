@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="../css/wiki.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
         <link rel="icon" href="../images/logo_icon.ico"/>
-        <script src="javascript/map.js"></script>
+        <script src="../javascript/map.js"></script>
+        <script src="../javascript/index.js"></script>
     </head>
     <body>
         <header>
@@ -56,11 +57,11 @@
                         <h5 id="adresse" th:value="${evenement.lieu}" th:text="${evenement.lieu}"></h5>
                     </div>
                     <div class="row">
-                        <div class="col" id="timeline">
-                            <div class="card">
-                                <div class="card-body">
+                        <div class="col" >
+                            <div class="card" id="timeline">
+                                <div class="card-body" >
                                    <!-- <h4 class="card-title mb-5">Horizontal Timeline</h4>-->
-                                    <div class="row">
+                                    <div class="row" id="frise">
                                         <div class="hori-timeline col-11" dir="ltr">
                                             <ul class="list-inline events">
                                                 <li class="list-inline-item event-list" th:each="d:${days}">
