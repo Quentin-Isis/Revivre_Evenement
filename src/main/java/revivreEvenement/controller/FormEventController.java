@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package revivreEvenement.controller;
 
 import javax.validation.Valid;
@@ -18,11 +13,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.entity.Evenement;
-
-/**
- *
- * @author mathieu
- */
 
 @Controller
 @RequestMapping(path="/formulaireEvenement")

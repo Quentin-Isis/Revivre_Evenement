@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package revivreEvenement.controller;
 
 import java.util.ArrayList;
@@ -27,10 +22,6 @@ import revivreEvenement.dao.ItemRepository;
 import revivreEvenement.entity.Evenement;
 import revivreEvenement.entity.Item;
 
-/**
- *
- * @author Léa
- */
 @Controller
 @RequestMapping(path="/wiki")
 public class WikiController {
@@ -50,17 +41,21 @@ public class WikiController {
     
     @GetMapping("showSsEventWikiPage")
     public String showSsEventWikiPage(Model model, @RequestParam("id") Evenement ssEvent){
-        
+        //création de la liste de sous-événement s'il y a des sous-événements
         fillSsEventListOf(ssEvent);
         
         boolean hasSsEvent = false;
         if (!ssEvent.getListeSousEvenements().isEmpty()){
             hasSsEvent = true;
             
+            /*
+             * Conception de la frise d'un événement en particulier
+            */
+            
             ArrayList<LocalDate> days = new ArrayList<>();
             LocalDate dDebut;
             LocalDate dFin;
-            
+            // création de la liste de date pour les affichages sur la frise
             for (Evenement e : ssEvent.getListeSousEvenements()) {
                 dDebut = e.getDateDebut();
                 dFin = e.getDateFin();
@@ -77,11 +72,12 @@ public class WikiController {
                     }
                 }
             }
-            
+            // tri de la liste de date
             Collections.sort(days);
             
             HashMap<LocalDate, List<String>> dateForDays = new HashMap<LocalDate, List<String>>();
-            
+            // vérification des événements
+            // si la date dDays correspond à une date de début d'un des sous-événements, ajouter le nom de l'événenement à la hashmap
             for (LocalDate dDays : days) {
                 List<String> eventForDays = new ArrayList<>();
                 for (Evenement e : ssEvent.getListeSousEvenements()) {
@@ -93,7 +89,7 @@ public class WikiController {
             }
             Map sortedDaysMap = new TreeMap(dateForDays);
             model.addAttribute("days", days); //On ajoute la liste au modèle qui permet l'affichage
-            model.addAttribute("sortedDays",sortedDaysMap);
+            model.addAttribute("sortedDays",sortedDaysMap); // liste de noms des événements triés par leurs dates
         }
         model.addAttribute("evenements", evenementRepository.findAll());
         model.addAttribute("hasSsEvent", hasSsEvent);
@@ -109,7 +105,9 @@ public class WikiController {
     
     @GetMapping("ajoutSsEvent")
     public String showContribuerAddSsEventTo(Model model, @RequestParam(name="id") Evenement evenement){
-        
+        /*
+         * Aller sur la page contribuer.html
+        */
         boolean fromWiki = true;
         model.addAttribute("fromWiki", fromWiki);
         model.addAttribute("evenement", new Evenement());
@@ -138,7 +136,6 @@ public class WikiController {
          * Pour un évènement donné, remplit la liste de sous-évènements
          */
         List<Evenement> listeEvenement = evenementRepository.findAll(Sort.by(Sort.Direction.ASC, "dateDebut"));
-      //  System.out.println("vbioqeboiqz : "+listeEvenement.get(0));
         for (Evenement e:listeEvenement){
             if ((event.getEvenementPrincipal() != null) && (e.getEvenementPrincipal() != null)) {
                 if ((e.getEvenementPrincipal().getId() == event.getId()) && (e.getId()!=event.getId())){
@@ -168,7 +165,9 @@ public class WikiController {
     
     @GetMapping("liste_item")
     public String showListItemOf(Model model, @RequestParam(name="id") Evenement evenement){
-        
+        /*
+         * afficher la liste des items sur la page liste_ressources_event
+        */
         fillItemListOf(evenement);
         List<Item> liste_item_of_event = evenement.getItems();
         boolean hasItems = false;

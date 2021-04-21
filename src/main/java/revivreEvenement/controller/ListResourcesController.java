@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package revivreEvenement.controller;
 
 import java.io.IOException;
@@ -21,10 +16,6 @@ import revivreEvenement.entity.Evenement;
 import revivreEvenement.entity.Item;
 import revivreEvenement.storageservice.StorageService;
 
-/**
- *
- * @author Mathieu
- */
 @Controller
 @RequestMapping(path="/ressources")
 public class ListResourcesController {        

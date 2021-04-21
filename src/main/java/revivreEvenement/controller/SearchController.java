@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package revivreEvenement.controller;
 
 import java.time.LocalDate;
@@ -22,11 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.entity.Evenement;
-
-/**
- *
- * @author Mathieu & Lea
- */
 
 @Controller
 @RequestMapping(path="/recherches")
@@ -111,10 +101,14 @@ public class SearchController {
         if (!event.getListeSousEvenements().isEmpty()){
             hasSsEvent = true;
             
+            /*
+             * Conception de la frise d'un événement en particulier
+            */
+            
             ArrayList<LocalDate> days = new ArrayList<>();
             LocalDate dDebut;
             LocalDate dFin;
-            
+            // création de la liste de date pour les affichages sur la frise
             for (Evenement e : event.getListeSousEvenements()) {
                 dDebut = e.getDateDebut();
                 dFin = e.getDateFin();
@@ -131,11 +125,12 @@ public class SearchController {
                     }
                 }
             }
-            
+            // tri de la liste de date
             Collections.sort(days);
             
             HashMap<LocalDate, List<String>> dateForDays = new HashMap<LocalDate, List<String>>();
-            
+            // vérification des événements
+            // si la date dDays correspond à une date de début d'un des sous-événements, ajouter le nom de l'événenement à la hashmap
             for (LocalDate dDays : days) {
                 List<String> eventForDays = new ArrayList<>();
                 for (Evenement e : event.getListeSousEvenements()) {
@@ -147,7 +142,7 @@ public class SearchController {
             }
             Map sortedDaysMap = new TreeMap(dateForDays);
             model.addAttribute("days", days); //On ajoute la liste au modèle qui permet l'affichage
-            model.addAttribute("sortedDays",sortedDaysMap);
+            model.addAttribute("sortedDays",sortedDaysMap); // liste de noms des événements triés par leurs dates
         }
         model.addAttribute("evenements", evenementRepository.findAll());
         model.addAttribute("hasSsEvent", hasSsEvent);

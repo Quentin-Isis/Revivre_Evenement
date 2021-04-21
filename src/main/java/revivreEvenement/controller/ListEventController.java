@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package revivreEvenement.controller;
 
 import java.time.LocalDate;
@@ -24,11 +19,6 @@ import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.dao.ItemRepository;
 import revivreEvenement.dao.PositionRepository;
 import revivreEvenement.entity.Evenement;
-
-/**
- *
- * @author Mathieu
- */
 
 @Controller
 @RequestMapping(path="/liste_events")
@@ -75,10 +65,14 @@ public class ListEventController {
         if (!evenement.getListeSousEvenements().isEmpty()){
             hasSsEvent = true;
             
+            /*
+             * Conception de la frise d'un événement en particulier
+            */
+            
             ArrayList<LocalDate> days = new ArrayList<>();
             LocalDate dDebut;
             LocalDate dFin;
-            
+            // création de la liste de date pour les affichages sur la frise
             for (Evenement e : evenement.getListeSousEvenements()) {
                 dDebut = e.getDateDebut();
                 dFin = e.getDateFin();
@@ -95,11 +89,12 @@ public class ListEventController {
                     }
                 }
             }
-            
+            // tri de la liste de date
             Collections.sort(days);
             
             HashMap<LocalDate, List<String>> dateForDays = new HashMap<LocalDate, List<String>>();
-            
+            // vérification des événements
+            // si la date dDays correspond à une date de début d'un des sous-événements, ajouter le nom de l'événenement à la hashmap
             for (LocalDate dDays : days) {
                 List<String> eventForDays = new ArrayList<>();
                 for (Evenement e : evenement.getListeSousEvenements()) {
@@ -111,7 +106,7 @@ public class ListEventController {
             }
             Map sortedDaysMap = new TreeMap(dateForDays);
             model.addAttribute("days", days); //On ajoute la liste au modèle qui permet l'affichage
-            model.addAttribute("sortedDays",sortedDaysMap);
+            model.addAttribute("sortedDays",sortedDaysMap); // liste de noms des événements triés par leurs dates
         }
         model.addAttribute("evenements", evenementRepository.findAll());
         model.addAttribute("hasSsEvent", hasSsEvent);           

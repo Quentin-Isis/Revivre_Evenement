@@ -1,6 +1,4 @@
-
 package revivreEvenement.controller;
-
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -13,12 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import revivreEvenement.dao.EvenementRepository;
 import revivreEvenement.entity.Evenement;
-
-
-/**
- *
- * @author Mathieu
- */
 
 @Controller
 @RequestMapping(path="/")
@@ -46,10 +38,14 @@ public class IndexController{
         if (!evenementRandom.getListeSousEvenements().isEmpty()){
             hasSsEvent = true;
             
+            /*
+             * Conception de la frise d'un événement en particulier
+            */
+            
             ArrayList<LocalDate> days = new ArrayList<>();
             LocalDate dDebut;
             LocalDate dFin;
-            
+            // création de la liste de date pour les affichages sur la frise
             for (Evenement e : evenementRandom.getListeSousEvenements()) {
                 dDebut = e.getDateDebut();
                 dFin = e.getDateFin();
@@ -66,11 +62,12 @@ public class IndexController{
                     }
                 }
             }
-            
+            // tri de la liste de date
             Collections.sort(days);
             
             HashMap<LocalDate, List<String>> dateForDays = new HashMap<LocalDate, List<String>>();
-            
+            // vérification des événements
+            // si la date dDays correspond à une date de début d'un des sous-événements, ajouter le nom de l'événenement à la hashmap
             for (LocalDate dDays : days) {
                 List<String> eventForDays = new ArrayList<>();
                 for (Evenement e : evenementRandom.getListeSousEvenements()) {
@@ -82,7 +79,7 @@ public class IndexController{
             }
             Map sortedDaysMap = new TreeMap(dateForDays);
             model.addAttribute("days", days); //On ajoute la liste au modèle qui permet l'affichage
-            model.addAttribute("sortedDays",sortedDaysMap);
+            model.addAttribute("sortedDays",sortedDaysMap); // liste de noms des événements triés par leurs dates
         }
         model.addAttribute("evenements", evenementRepository.findAll());
         model.addAttribute("hasSsEvent", hasSsEvent);
@@ -99,8 +96,6 @@ public class IndexController{
         boolean fromWiki = false;
         model.addAttribute("fromWiki", fromWiki);
         model.addAttribute("evenement", new Evenement());
-        //model.addAttribute("evenementPrincipal", new Evenement()); ESSAI 2 et 3
-        
         return "contribuer";
     }
     
@@ -112,14 +107,11 @@ public class IndexController{
     @GetMapping("/")
     public String showListEventPage(Model model){
         /**
-         * Author: léa
          * conception de la frise
-         * 
-         * 
          */
         
         List<Evenement> events = evenementRepository.findAll(Sort.by(Sort.Direction.ASC, "dateDebut"));
-        
+        // création de la liste de date pour les affichages sur la frise
         ArrayList<Integer> listeDatesDebutAnnee = new ArrayList<>();
         for (Evenement e : events) {
             listeDatesDebutAnnee.add(e.getDateDebut().getYear());
@@ -134,7 +126,8 @@ public class IndexController{
         }
    
         HashMap<Integer, List<String>> da = new HashMap<Integer, List<String>>();     
-        
+        // vérification des événements
+        // si la date dDays correspond à une date de début d'un des sous-événements, ajouter le nom de l'événenement à la hashmap
         for (Integer d: listeDatesDebutAnnee) {
             List<String> eventForD = new ArrayList<>();
             for (Evenement e : events) {
@@ -145,7 +138,6 @@ public class IndexController{
             }
         }
         Map sortedMap = new TreeMap(da);
-        System.out.println(sortedMap);
         
         model.addAttribute("evenements", evenementRepository.findAll());
         model.addAttribute("dates", listeDatesDebutAnnee); //On ajoute la liste au modèle qui permet l'affichage
