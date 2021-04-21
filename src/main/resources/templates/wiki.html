@@ -73,9 +73,9 @@
                                                                 <div class="liste-evenement" th:each="Map2:${Map1}" th:if="${Map2.key == d}">
                                                                     <div class="border border-black rounded" >
                                                                         <div th:each="value:${Map2.value}" >
-                                                                            <div th:each="evenement:${evenements}">
-                                                                                <div th:if="${evenement.nomEvenement == value}">
-                                                                                    <a class="evenements" th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${evenement.id})}"></a>
+                                                                            <div th:each="ev:${evenements}">
+                                                                                <div th:if="${ev.nomEvenement == value}">
+                                                                                    <a class="evenements" th:text="${value}" th:href="@{/recherches/eventWikiPage(id=${ev.id})}"></a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
