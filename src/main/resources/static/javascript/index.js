@@ -15,10 +15,17 @@ function searchIndexOf(lienCible){
     let index = 0;
     if (lienCible.className == "date"){
         for (let i=0; i<dates.length;i++){
-                return index;
+                if (lienCible == dates[i]){
+                    index = i;
+                    return index;
+                }
+                else{
+                    index++;
+                }
         }
     }
-    }
+    
+}
     
 function affichage(event){
     let lienCible = event.target;

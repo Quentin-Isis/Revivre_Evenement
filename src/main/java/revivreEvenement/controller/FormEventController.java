@@ -72,4 +72,4 @@ public class FormEventController {
         
         return "redirect:/contribuer"; // On renvoie à  contribuer POUR ESSAI 3, remplacer par "redirect:/"
     }
-}
+}   
