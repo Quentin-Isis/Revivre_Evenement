@@ -139,7 +139,7 @@
                                             <a th:href="@{/ressources/liste_item(id=${evenement.id})}">Liste des ressources</a>
                                              <form method="POST" enctype="multipart/form-data"  th:object="${item}" th:action="@{/formulaireItem/upload2(id=${evenement.id})}">
                                                 <table>
-                                                    <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+                                                    <tr><td>File to upload:</td><td><input type="file" name="file" required='true'/></td></tr>
                                                 </table>
                                                 <input type="submit" value="Upload"/><input type="reset" value="Réinitialiser" />
                                             </form>

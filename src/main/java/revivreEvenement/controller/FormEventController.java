@@ -60,7 +60,7 @@ public class FormEventController {
             message = "Erreur : L'évènement '" + evenement.getNomEvenement() + "' existe déjà";
         }
         
-        evenement.getEvenementPrincipal().getListeSousEvenements().add(evenement); // ESSAI 1: Cannot invoke "revivreEvenement.entity.Evenement.getListeSousEvenements()" because the return value of "revivreEvenement.entity.Evenement.getEvenementPrincipal()" is null
+        //evenement.getEvenementPrincipal().getListeSousEvenements().add(evenement); // ESSAI 1: Cannot invoke "revivreEvenement.entity.Evenement.getListeSousEvenements()" because the return value of "revivreEvenement.entity.Evenement.getEvenementPrincipal()" is null
         //evenement.setEvenementPrincipal(evenementPrincipal); //ESSAI 2:  java.lang.StackOverflowError: null
         //evenementPrincipal.getListeSousEvenements().add(evenement); ESSAI 3: Cette ligne de rnvoie pas d'erreur. Seulement, il n'y a plus aucun evenement dans le dao (????????)
         
