@@ -126,6 +126,12 @@ div a {
     overflow: scroll;
 }
 
+.evenements{
+    text-decoration: none;
+    color:black;
+    font-size:17px;
+}
+
 @media (max-width:991px){
     #triangle{
         display:none;

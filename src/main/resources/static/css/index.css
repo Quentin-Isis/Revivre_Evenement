@@ -71,8 +71,9 @@ div a {
 .evenements{
     text-decoration: none;
     color:black;
-    margin-bottom: 10px;
+    font-size:17px;
 }
+
 .border,.border-black,.rounded{
     position:relative;
     top: 20px;
@@ -138,7 +139,7 @@ div a {
 
 .hori-timeline .events .event-list {
     display: inline-block;
-    width: 24%;
+    width: 15%;
     padding-top: 45px;
 }
 .hori-timeline .events .event-list .event-date {
